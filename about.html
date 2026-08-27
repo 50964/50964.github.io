@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Story — THREE:SIXTEEN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><span class="nav-logo-text">C316</span></a>
+      <nav class="nav-links">
+        <a href="/#sundays">Sundays</a>
+        <a href="messages.html">Messages</a>
+        <a href="about.html">Our Story</a>
+        <a href="/#groups">Groups</a>
+      </nav>
+      <div class="nav-cta"><a href="/#sundays" class="btn btn-primary">Plan a Visit</a></div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#sundays">Sundays</a>
+    <a href="messages.html">Messages</a>
+    <a href="about.html">Our Story</a>
+    <a href="/#groups">Groups</a>
+  </div>
+  <section class="section" style="padding-top:8rem;padding-bottom:3rem;text-align:center">
+    <div class="container" style="max-width:720px">
+      <div class="eyebrow">Our Story</div>
+      <h1 class="headline mb-4">From distance to calling</h1>
+      <p class="subhead">A church for the curious, the hopeful, and the in-between.</p>
+    </div>
+  </section>
+  <section class="section section-sm">
+    <div class="container" style="max-width:720px">
+      <div class="card mb-8" style="padding:2.5rem">
+        <h2 style="font-size:1.5rem;margin-bottom:1rem">Meet Math</h2>
+        <p style="color:var(--text-muted);margin-bottom:0.5rem;font-weight:600">Founder & Lead Pastor</p>
+        <p class="body-lg">Math didn’t grow up in church. For most of his life he was a committed atheist. Then Jesus interrupted everything.</p>
+      </div>
+      <p class="body-lg mb-6">THREE:SIXTEEN was born out of that journey. A church for sceptics, seekers and questioners. A place where you don’t have to pretend. Where faith is real, community is genuine, and everyone is welcome at the table.</p>
+      <div class="card" style="background:linear-gradient(160deg, rgba(216,50,110,0.12), rgba(255,222,89,0.05));border-color:rgba(216,50,110,0.25);margin:3rem 0">
+        <p style="font-size:1.3rem;line-height:1.55;font-weight:500">If you’re curious, if you’re searching, if you’re not sure what you believe — you belong here.</p>
+      </div>
+      <div class="text-center" style="margin-top:3rem"><a href="/#sundays" class="btn btn-primary btn-lg">Join us this Sunday</a></div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none;padding-top:0">
+        <span>© 2026 THREE:SIXTEEN</span>
+        <a href="/" style="color:var(--pink)">← Back to home</a>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('navToggle').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('active'));</script>
+</body>
+</html>
