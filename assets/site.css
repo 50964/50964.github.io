@@ -628,6 +628,34 @@ ul { list-style: none; }
   background: rgba(212, 42, 106, 0.18);
 }
 .live-stage.is-playing .cine-media img { filter: brightness(1.08); }
+.live-stage.has-video .cine-copy { padding-bottom: 3.5rem; }
+.live-player {
+  width: 100%;
+  max-width: 860px;
+  margin: 1.5rem auto 0;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid var(--border-soft);
+  display: none;
+}
+.live-stage.has-video .live-player { display: block; }
+.live-player iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+@media (max-width: 640px) {
+  .live-player {
+    margin-top: 1.1rem;
+    border-radius: 12px;
+  }
+  .live-stage.has-video .live-copy {
+    padding-bottom: 2rem;
+  }
+}
 @keyframes glowIn {
   to { opacity: 0.85; transform: scale(1); }
 }

@@ -208,7 +208,13 @@
     }
   });
 
-  /* Live / Watch */
+  /* Live / Watch
+     Set youtubeChannelId to your UC… id (YouTube → channel → Share → channel ID).
+     Mevo streams to that YouTube Live destination; this page embeds it. */
+  var LIVE = {
+    youtubeChannelId: ""
+  };
+
   var stage = document.getElementById("liveStage");
   if (stage) {
     var london = new Date(new Date().toLocaleString("en-US", { timeZone: "Europe/London" }));
@@ -217,12 +223,34 @@
     var liveNow = day === 0 && mins >= 11 * 60 + 15 && mins < 13 * 60;
     var badge = document.getElementById("liveBadge");
     var status = document.getElementById("liveStatus");
+    var player = document.getElementById("livePlayer");
+    var ytId = (LIVE.youtubeChannelId || "").trim();
+
+    if (ytId && player) {
+      stage.classList.add("has-video");
+      if (!player.querySelector("iframe")) {
+        var frame = document.createElement("iframe");
+        frame.src = "https://www.youtube.com/embed/live_stream?channel=" + encodeURIComponent(ytId) + "&rel=0";
+        frame.title = "Church 316 live";
+        frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        frame.setAttribute("allowfullscreen", "");
+        frame.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+        player.appendChild(frame);
+      }
+    }
+
     if (liveNow) {
       stage.classList.add("is-live");
       if (badge) badge.textContent = "Live now";
-      if (status) status.textContent = "We're gathered. Press play to join in from wherever you are.";
+      if (status) {
+        status.textContent = ytId
+          ? "We're gathered. Watch live below — or be in the room."
+          : "We're gathered. Press play to join in from wherever you are.";
+      }
     } else if (status) {
-      status.textContent = "Sundays 11:30am. Press play to listen — or be in the room.";
+      status.textContent = ytId
+        ? "Sundays 11:30am. When we go live, the stream appears here."
+        : "Sundays 11:30am. Press play to listen — or be in the room.";
     }
 
     var play = document.getElementById("livePlay");
