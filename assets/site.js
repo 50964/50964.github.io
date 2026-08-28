@@ -320,8 +320,8 @@
 
   /* Live / Watch — Mevo streams to the C316 Facebook Page. */
   var LIVE = {
-    facebookPageUrl: "https://www.facebook.com/p/Church-Three-Sixteen-61581511337481/",
-    facebookPageId: "61581511337481"
+    facebookPageUrl: "https://www.facebook.com/profile.php?id=61586615711328",
+    facebookPageId: "61586615711328"
   };
 
   var stage = document.getElementById("liveStage");
