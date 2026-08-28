@@ -38,7 +38,7 @@
   </div>
 
   <main>
-    <section class="live-stage" id="liveStage">
+    <section class="live-stage has-video" id="liveStage">
       <div class="cine-media" aria-hidden="true">
         <img src="/assets/hero-worship.jpg" alt="" style="object-position:center 38%" />
       </div>
@@ -46,8 +46,16 @@
       <div class="live-copy">
         <span class="chip" id="liveBadge"><span class="dot"></span> Sundays 11:30am</span>
         <h1 class="headline">WATCH <span class="accent">LIVE</span></h1>
-        <p class="subhead" id="liveStatus">Sundays 11:30am. Press play to listen — or be in the room.</p>
-        <div class="live-player" id="livePlayer"></div>
+        <p class="subhead" id="liveStatus">Next live service: Sunday 11:30am. The stream appears here when we go live.</p>
+        <div class="live-player" id="livePlayer">
+          <div class="live-offline" id="liveOffline">
+            <img class="live-offline-logo" src="/assets/logo-transparent.png" alt="" />
+            <p class="live-offline-kicker">Next live service</p>
+            <p class="live-offline-when">Sunday <span>11:30am</span></p>
+            <p class="live-offline-date" id="liveNextDate">Every Sunday</p>
+            <p class="live-offline-where">Howley Grange Scout Hut · Halesowen</p>
+          </div>
+        </div>
         <div class="live-controls">
           <a class="btn btn-primary" id="liveFacebook" href="https://www.facebook.com/p/Church-Three-Sixteen-61581511337481/" target="_blank" rel="noopener">Watch on Facebook</a>
           <button class="btn btn-ghost" type="button" id="livePlay">Play anthem</button>

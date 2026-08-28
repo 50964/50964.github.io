@@ -328,18 +328,45 @@
     var london = new Date(new Date().toLocaleString("en-US", { timeZone: "Europe/London" }));
     var day = london.getDay();
     var mins = london.getHours() * 60 + london.getMinutes();
-    var liveNow = day === 0 && mins >= 11 * 60 + 15 && mins < 13 * 60;
+    var forceLive = params.get("live");
+    var liveNow = forceLive === "1" || forceLive === "true"
+      ? true
+      : forceLive === "0" || forceLive === "false"
+        ? false
+        : day === 0 && mins >= 11 * 60 + 15 && mins < 13 * 60;
     var badge = document.getElementById("liveBadge");
     var status = document.getElementById("liveStatus");
     var player = document.getElementById("livePlayer");
+    var nextDate = document.getElementById("liveNextDate");
     var fbUrl = (LIVE.facebookPageUrl || "").trim();
     var fbId = (LIVE.facebookPageId || "").trim();
     var fbLive = fbId
       ? "https://www.facebook.com/" + fbId + "/live"
       : fbUrl;
 
-    if (fbLive && player) {
-      stage.classList.add("has-video");
+    function nextService(from) {
+      var d = new Date(from.getTime());
+      var add = d.getDay() === 0
+        ? (d.getHours() * 60 + d.getMinutes() < 13 * 60 ? 0 : 7)
+        : 7 - d.getDay();
+      d.setDate(d.getDate() + add);
+      return d;
+    }
+    function formatServiceDay(d) {
+      var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      return d.getDate() + " " + months[d.getMonth()];
+    }
+    var service = nextService(london);
+    var isThisSunday = service.getDate() === london.getDate() && service.getMonth() === london.getMonth();
+    if (nextDate) {
+      nextDate.textContent = isThisSunday
+        ? "This Sunday · " + formatServiceDay(service)
+        : "Sunday " + formatServiceDay(service);
+    }
+
+    stage.classList.add("has-video");
+    if (liveNow && fbLive && player) {
+      stage.classList.add("is-live");
       if (!player.querySelector("iframe")) {
         var frame = document.createElement("iframe");
         frame.src = "https://www.facebook.com/plugins/video.php?href=" + encodeURIComponent(fbLive) + "&show_text=false&width=860";
@@ -350,6 +377,10 @@
         frame.setAttribute("allowTransparency", "true");
         player.appendChild(frame);
       }
+    } else if (player) {
+      var existing = player.querySelector("iframe");
+      if (existing) existing.remove();
+      stage.classList.remove("is-live");
     }
 
     var fbBtn = document.getElementById("liveFacebook");
@@ -359,17 +390,14 @@
     }
 
     if (liveNow) {
-      stage.classList.add("is-live");
       if (badge) badge.textContent = "Live now";
       if (status) {
         status.textContent = fbLive
-          ? "We're gathered. Watch on Facebook below — or be in the room."
+          ? "We're gathered. Watch below — or be in the room."
           : "We're gathered. Press play to join in from wherever you are.";
       }
     } else if (status) {
-      status.textContent = fbLive
-        ? "Sundays 11:30am. When we go live on Facebook, it shows here."
-        : "Sundays 11:30am. Press play to listen — or be in the room.";
+      status.textContent = "Next live service: Sunday 11:30am. The stream appears here when we go live.";
     }
 
     var play = document.getElementById("livePlay");
