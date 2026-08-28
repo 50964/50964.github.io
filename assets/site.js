@@ -341,9 +341,9 @@
     var nextDate = document.getElementById("liveNextDate");
     var fbUrl = (LIVE.facebookPageUrl || "").trim();
     var fbId = (LIVE.facebookPageId || "").trim();
-    var fbLive = fbId
-      ? "https://www.facebook.com/" + fbId + "/live"
-      : fbUrl;
+    /* Never use facebook.com/{id}/live — Facebook often sends that
+       to a different Church 3:16 that happens to be streaming. */
+    var fbLive = fbUrl || (fbId ? "https://www.facebook.com/" + fbId : "");
 
     function nextService(from) {
       var d = new Date(from.getTime());
@@ -385,8 +385,8 @@
     }
 
     var fbBtn = document.getElementById("liveFacebook");
-    if (fbBtn && fbLive) {
-      fbBtn.href = fbLive;
+    if (fbBtn && fbUrl) {
+      fbBtn.href = fbUrl;
       fbBtn.hidden = false;
     }
 
