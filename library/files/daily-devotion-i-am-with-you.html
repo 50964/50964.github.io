@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily Devotion · I Am With You · C316</title>
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Literata:ital,opsz,wght@0,7..72,500;1,7..72,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #0a0a0a; --black-soft: #141414; --gold: #c4a86a; --gold-light: #dcc896;
+      --yellow: #f0d050; --pink: #d42a6a; --cream: #f7f2e8; --muted: #9a9a9a;
+      --text-soft: rgba(255,255,255,0.82); --border: rgba(196,168,106,0.28);
+      --font-display: "Bebas Neue", Impact, sans-serif;
+      --font-body: "Outfit", system-ui, sans-serif;
+      --font-verse: "Literata", Georgia, serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #1a1a1a; color: #fff; font-family: var(--font-body); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .wrap { max-width: 640px; margin: 0 auto; padding: 1.25rem; }
+    .card {
+      background: var(--black); border: 2px solid var(--gold); border-radius: 14px;
+      padding: 2rem 1.5rem 1.75rem; position: relative; overflow: hidden;
+    }
+    .card::after {
+      content: ""; position: absolute; inset: 8px; border: 1px solid rgba(196,168,106,0.35);
+      border-radius: 8px; pointer-events: none;
+    }
+    .accent-bar { height: 4px; margin: -2rem -1.5rem 1.5rem; background: linear-gradient(90deg, var(--yellow), var(--pink), var(--gold)); }
+    .chip {
+      display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.85rem;
+      border-radius: 999px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; border: 1.5px solid var(--gold); color: var(--gold-light);
+      background: rgba(196,168,106,0.08);
+    }
+    .chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pink); box-shadow: 0 0 10px var(--pink); }
+    .kicker { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 1rem 0 0.5rem; }
+    h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.4rem, 8vw, 3.2rem); line-height: 0.95; letter-spacing: 0.02em; }
+    h1 .accent { color: var(--gold-light); }
+    .rule { width: 64px; height: 3px; background: linear-gradient(90deg, var(--gold), var(--pink)); border-radius: 2px; margin: 1rem 0 1.25rem; }
+    h2 { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.04em; color: var(--gold-light); margin: 1.5rem 0 0.6rem; }
+    p { color: var(--text-soft); font-size: 1.05rem; margin: 0.65rem 0; }
+    p strong { color: #fff; }
+    .verse-box {
+      background: var(--black-soft); border: 1px solid var(--border); border-radius: 12px;
+      padding: 1.15rem 1.2rem; margin: 1.25rem 0;
+    }
+    .verse { font-family: var(--font-verse); font-style: italic; font-size: 1.2rem; color: var(--cream); line-height: 1.45; }
+    .ref { margin-top: 0.75rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+    ul { margin: 0.5rem 0 0.75rem 1.15rem; color: var(--text-soft); }
+    li { margin: 0.4rem 0; }
+    .pray {
+      border-left: 3px solid var(--pink); background: rgba(212,42,106,0.08);
+      padding: 1rem 1.1rem; border-radius: 0 10px 10px 0; margin: 1rem 0;
+    }
+    .footer {
+      margin-top: 1.75rem; padding-top: 1.15rem; border-top: 1px solid var(--border);
+      display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+    }
+    .footer img { width: 72px; height: 72px; object-fit: contain; }
+    .footer p { font-size: 0.88rem; margin: 0.2rem 0; }
+    .meta { font-size: 0.8rem; color: var(--muted); }
+    .meta strong { color: #fff; }
+    .logo-top { width: 88px; height: 88px; object-fit: contain; display: block; margin: 0 auto 0.75rem; }
+    .center { text-align: center; }
+    @media print { body { background: #000; } .wrap { padding: 0; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <article class="card">
+      <div class="accent-bar"></div>
+      <div class="center">
+        <img class="logo-top" src="logo.png" alt="C316" />
+        <span class="chip"><span class="dot"></span> Daily Devotion</span>
+      </div>
+      <p class="kicker center" style="text-align:center;">From YHWH Week 1 · Names &amp; Stories</p>
+      <h1 class="center">I AM<br /><span class="accent">WITH YOU</span></h1>
+      <div class="rule" style="margin-left:auto;margin-right:auto;"></div>
+
+      <h2>Read</h2>
+      <div class="verse-box">
+        <p class="verse">“So He said, ‘I will be with you. And this shall be a sign to you that I have sent you: When you have brought the people out of Egypt, you shall serve God on this mountain.’”</p>
+        <p class="ref">Exodus 3:12</p>
+      </div>
+      <div class="verse-box">
+        <p class="verse">“God said to Moses, ‘I am who I am. This is what you are to say to the Israelites: “I am has sent me to you.”’”</p>
+        <p class="ref">Exodus 3:14</p>
+      </div>
+
+      <h2>Reflect</h2>
+      <p>
+        In the Bible study we saw that we know people by their <strong>names</strong> and their <strong>stories</strong>.
+        Elohim is a title — God. YHWH is personal — the LORD who draws near.
+      </p>
+      <p>
+        At the burning bush, Moses does what many of us do when God invites us forward:
+        he looks at himself. <strong>“Who am I?”</strong>
+      </p>
+      <p>
+        God does not answer with a list of Moses’ strengths. He answers with a name and a promise:
+        <strong>I AM</strong> — and <strong>I will be with you</strong>.
+      </p>
+      <p>
+        The weight of the call does not rest on whether Moses feels enough.
+        It rests on whether God is present. And He is.
+      </p>
+      <p>
+        Yesterday we remembered: God heard, remembered, looked, and acknowledged His people (Exodus 2:23–25).
+        Today, take that personally. The same God who named Himself to Moses still says to the fearful and the curious:
+        <em>I will be with you.</em>
+      </p>
+
+      <h2>Pray</h2>
+      <div class="pray">
+        <p style="margin:0;">
+          LORD (YHWH), thank You that You are not a distant title but a present God.
+          Where I am asking “Who am I?”, teach me to trust “I AM with you.”
+          Be with me in today’s fears, decisions, and conversations. Amen.
+        </p>
+      </div>
+
+      <h2>Live it today</h2>
+      <ul>
+        <li>Say Exodus 3:12 out loud once this morning: <strong>“I will be with you.”</strong></li>
+        <li>Name one place you feel inadequate — and deliberately invite God’s presence into it.</li>
+        <li>If you can, tell someone: “I’m learning God is with me, not just ‘up there’.”</li>
+      </ul>
+
+      <div class="footer">
+        <img src="logo.png" alt="C316" />
+        <div>
+          <p><strong>Church 316</strong> · Church for the Curious</p>
+          <p class="meta"><strong>Sundays 11:30am</strong> · Halesowen · churchthreesixteen.co.uk</p>
+          <p class="meta">Baptism Sunday this week — come celebrate new life in Jesus.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</body>
+</html>

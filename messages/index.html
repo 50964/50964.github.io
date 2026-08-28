@@ -9,8 +9,76 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Literata:ital,opsz,wght@0,7..72,500;1,7..72,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/site.css" />
-  <script src="/assets/site.js" defer></script>
+  <link rel="stylesheet" href="/assets/site.css?v=316b" />
+  <style>
+    .live-player {
+      position: relative;
+      width: min(100%, 640px);
+      max-height: 360px;
+      aspect-ratio: 16 / 9;
+      margin: 1.25rem auto 0;
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(196,168,106,0.35);
+      background: #000;
+    }
+    .live-offline {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem;
+      background:
+        linear-gradient(180deg, rgba(8,8,8,0.45), rgba(8,8,8,0.84)),
+        url("/assets/hero-worship.jpg") center 38% / cover no-repeat;
+    }
+    .live-offline-inner {
+      text-align: center;
+      max-width: 92%;
+    }
+    .live-offline-logo {
+      width: 52px !important;
+      height: 52px !important;
+      max-width: 52px !important;
+      max-height: 52px !important;
+      object-fit: contain !important;
+      display: block;
+      margin: 0 auto 0.35rem;
+    }
+    .live-offline-kicker {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #c4a86a;
+      margin: 0;
+    }
+    .live-offline-when {
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: clamp(1.6rem, 5vw, 2.6rem);
+      line-height: 0.9;
+      letter-spacing: 0.04em;
+      margin: 0.2rem 0 0;
+      color: #fff;
+    }
+    .live-offline-when span { display: block; color: #dcc896; }
+    .live-offline-date {
+      margin: 0.35rem 0 0;
+      font-size: 0.85rem;
+      color: #f7f2e8;
+    }
+    .live-offline-where {
+      margin: 0.4rem 0 0;
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #dcc896;
+    }
+    .live-stage.is-live .live-offline { display: none; }
+  </style>
+  <script src="/assets/site.js?v=316b" defer></script>
 </head>
 <body>
   <header class="site-nav">
@@ -49,11 +117,13 @@
         <p class="subhead" id="liveStatus">Next live service: Sunday 11:30am. The stream appears here when we go live.</p>
         <div class="live-player" id="livePlayer">
           <div class="live-offline" id="liveOffline">
-            <img class="live-offline-logo" src="/assets/logo-transparent.png" alt="" />
-            <p class="live-offline-kicker">Next live service</p>
-            <p class="live-offline-when">Sunday <span>11:30am</span></p>
-            <p class="live-offline-date" id="liveNextDate">Every Sunday</p>
-            <p class="live-offline-where">Howley Grange Scout Hut · Halesowen</p>
+            <div class="live-offline-inner">
+              <img class="live-offline-logo" src="/assets/logo-circle.png" alt="" width="52" height="52" />
+              <p class="live-offline-kicker">Next live service</p>
+              <p class="live-offline-when">Sunday <span>11:30am</span></p>
+              <p class="live-offline-date" id="liveNextDate">Every Sunday</p>
+              <p class="live-offline-where">Howley Grange Scout Hut · Halesowen</p>
+            </div>
           </div>
         </div>
         <div class="live-controls">

@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PREACHERS LAB • JESUS NEVER MEANT THAT — Week 1: Ask for Anything and You’ll Get It?</title>
+    <style>
+        :root {
+            --bg: #0A0A0F;
+            --card: #121217;
+            --cyan: #00F0FF;
+            --pink: #FF2D95;
+            --red: #FF2D55;
+            --gold: #F9D66B;
+            --white: #FFFFFF;
+            --muted: #A0A0AA;
+            --text: #E8E8EE;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        header {
+            position: fixed; top: 0; left: 0; right: 0;
+            background: rgba(10,10,15,0.95); backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 1rem 1.5rem; z-index: 1000;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .logo { font-weight: 900; letter-spacing: -1px; color: var(--cyan); font-size: 1.3rem; }
+        .logo span { color: var(--pink); }
+        .main { max-width: 1080px; margin: 90px auto 120px; padding: 0 1.5rem; }
+        h1 { font-size: 2.8rem; line-height: 1.1; font-weight: 900; letter-spacing: -2px; }
+        h2 { font-size: 1.65rem; margin-bottom: 0.6rem; color: var(--cyan); }
+        .series-badge {
+            display: inline-block; background: linear-gradient(90deg, var(--pink), var(--cyan));
+            color: #000; font-weight: 900; font-size: 0.85rem; padding: 4px 14px; border-radius: 999px;
+            letter-spacing: 1px; margin-bottom: 1rem;
+        }
+        .sticky {
+            background: var(--card);
+            border: 5px solid var(--gold);
+            border-radius: 24px;
+            padding: 2rem 2.5rem;
+            margin: 2rem 0;
+            font-size: 1.85rem;
+            font-weight: 800;
+            line-height: 1.3;
+            text-align: center;
+            color: var(--gold);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        }
+        .section {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 6px solid var(--cyan);
+        }
+        .section.pink { border-left-color: var(--pink); }
+        .section.red { border-left-color: var(--red); }
+        .section.gold { border-left-color: var(--gold); }
+        .label {
+            font-size: 0.8rem; font-weight: 700; letter-spacing: 1.5px;
+            color: var(--cyan); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 8px;
+        }
+        .label.pink { color: var(--pink); }
+        .label.red { color: var(--red); }
+        .label.gold { color: var(--gold); }
+        .scripture {
+            background: #1A1A22;
+            border: 2px solid #333;
+            padding: 1.4rem 1.6rem;
+            border-radius: 14px;
+            font-style: italic;
+            color: #D0D0D8;
+            margin: 1rem 0;
+        }
+        .scripture strong { color: var(--gold); font-style: normal; }
+        .point { margin: 1.2rem 0; }
+        .point h4 { color: var(--pink); margin-bottom: 0.3rem; }
+        .illustration {
+            background: #1A1A22;
+            border-left: 5px solid var(--gold);
+            padding: 1rem 1.3rem;
+            margin: 1rem 0;
+            font-size: 1.05rem;
+        }
+        .action-box {
+            background: linear-gradient(145deg, #1A1A22, #121217);
+            border: 3px solid var(--cyan);
+            border-radius: 18px;
+            padding: 1.8rem;
+            margin: 1.5rem 0;
+        }
+        .action-box h3 { color: var(--cyan); margin-bottom: 1rem; }
+        .action-step {
+            display: flex; gap: 1rem; margin-bottom: 1rem;
+            background: #0F0F14; padding: 1rem 1.2rem; border-radius: 12px;
+        }
+        .action-step:last-child { margin-bottom: 0; }
+        .num {
+            background: var(--cyan); color: #000; width: 28px; height: 28px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-weight: 900; flex-shrink: 0;
+        }
+        .big-quote {
+            font-size: 2.1rem; line-height: 1.2; font-weight: 800;
+            text-align: center; padding: 2rem 1rem; color: var(--white);
+        }
+        .footer-bar {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: rgba(10,10,15,0.96); border-top: 1px solid rgba(0,240,255,0.2);
+            padding: 0.8rem 1.5rem; display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.95rem; color: var(--cyan);
+            z-index: 999;
+        }
+        .footer-bar a { color: var(--gold); text-decoration: none; font-weight: 600; }
+        .meta { color: var(--muted); font-size: 0.95rem; }
+        .highlight { color: var(--pink); font-weight: 700; }
+        ul { padding-left: 1.4rem; }
+        li { margin: 0.35rem 0; }
+
+        .big-idea {
+            background: linear-gradient(135deg, var(--gold), #f4c430);
+            color: #111;
+            border: 4px solid #000;
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            margin: 1rem auto;
+            max-width: 720px;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            line-height: 1.3;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            position: relative;
+        }
+        .big-idea::before {
+            content: "BIG IDEA";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000;
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            padding: 2px 12px;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div>
+        <div class="logo">C316 <span>PREACHERS LAB</span></div>
+        <div class="meta">JESUS NEVER MEANT THAT • Week 1 • Sticky Sermon Structure</div>
+    </div>
+    <div style="text-align:right; font-size:0.9rem;">
+        <strong>THREE:SIXTEEN</strong><br>
+        <span class="meta">Church for the Curious • Halesowen</span>
+    </div>
+</header>
+<div style="background:#f8f8f8; color:#333; font-size:0.85rem; padding:8px 16px; text-align:center; border-bottom:1px solid #ddd;">
+    📁 Full pack: <a href="slides/C316_Jesus_Never_Meant_That_Week1_Exact_Brand_Pack.pptx" style="color:#0066cc;">C316_Jesus_Never_Meant_That_Week1_Exact_Brand_Pack.pptx</a> (EXACT Brand pack v1.pptx — only text changed) + <a href="#week1-slides" style="color:#0066cc; font-weight:700;">Week 1 Slides (JPEGs with content from this HTML, exact format from Brand pack)</a> • social/ (4 branded ads) • <strong>NEW: Jesus-Never-Meant-That_Week1_iPad_Swipe_PreachersLab.html</strong> (swipe left/right sections, iPad optimized)
+</div>
+
+<div class="main">
+
+    <div class="series-badge">NEW 14-WEEK SERIES • STARTS SUNDAY 3 MAY 2026</div>
+    <h1 style="margin-bottom:0.4rem;">Jesus Never Meant That</h1>
+    <p style="font-size:1.5rem; color:var(--cyan); font-weight:600; margin-bottom:1.5rem;">Week 1: “Jesus Never Said ‘Ask for Anything and You’ll Get It’”</p>
+
+    <div class="sticky">
+        "Jesus never *meant* that if you just ask for anything in faith, you'll get it like a vending machine.<br>
+        He meant ask in line with His will, with pure motives, as children approaching a loving Father — not as a formula to get what we want."
+    </div>
+
+    <p class="meta" style="text-align:center; max-width:720px; margin:0 auto 1rem;">
+        A sticky message for the curious, the hopeful, and everyone whose faith has been rocked by a twisted version of prayer.<br>
+        <strong>Core text:</strong> Matthew 7:7-11, John 14:13-14, James 4:3, 1 John 5:14
+    </p>
+
+    <div class="big-idea">
+        Prayer is relationship, not a vending machine.
+    </div>
+
+    <!-- ENGAGE -->
+    <div class="section">
+        <div class="label">1. ENGAGE — Hook (2–3 min)</div>
+        <p><strong>Start with this question to the room:</strong></p>
+        <p style="font-size:1.35rem; font-weight:600; margin:0.8rem 0;">"How many of you have been taught or believed that if you just have enough faith and 'ask God for it,' He'll give it to you — like a cosmic vending machine or magic formula?"</p>
+        <p>Let hands go up. "It's in so many songs, books, and sermons, isn't it?"</p>
+        <div class="illustration">
+            <strong>Illustration / Story:</strong><br>
+            "The person who 'claimed' the new job, the healing, the spouse, the car — they sowed the seed of faith, they spoke it out, they 'believed God.' When it didn't happen, the conclusion was either 'I must not have had enough faith' (guilt and shame) or 'Prayer doesn't work' (cynicism and deconstruction). And they told their friends and family the same thing."<br>
+            <em>— Pause. Let it land. This is not rare.</em>
+        </div>
+        <p class="meta">Goal: Get them nodding or wincing. Attention locked. Many have been burned by the formula or watched someone they love get hurt by it.</p>
+
+    </div>
+
+    <!-- TENSION -->
+    <div class="section pink">
+        <div class="label pink">2. TENSION — The Problem (3–4 min)</div>
+        <p>"The problem is this turns prayer into a transaction or a magic spell — and when the 'answer' doesn't come (or comes differently), people feel like failures or that God is unreliable."</p>
+        <ul>
+            <li>Verses like "ask and you will receive" and "whatever you ask in my name" are pulled out of context and turned into blank checks or formulas.</li>
+            <li>When the job doesn't come, the sickness isn't healed, the relationship isn't restored, the conclusion is either "my faith was too small" (shame spiral) or "God doesn't answer prayer / the Bible lied" (faith abandoned).</li>
+            <li>Worse: they then tell others. "I prayed and believed and nothing happened. It's all made up." Another person's faith gets rocked because someone they trusted sold them a version of prayer that Jesus never taught.</li>
+        </ul>
+        <div class="illustration">
+            <strong>What's in it for the curious / felt need:</strong><br>
+            "If you've been burned by 'name it and claim it' teaching, or you've felt guilty for 'not having enough faith' when your prayers weren't answered the way you wanted, or you're curious but sceptical because you've seen the hypocrisy or the failed promises, this might be hitting close to home. <em>Is prayer just another way religion manipulates people?</em><br><br>
+            We're going to look at what Jesus actually said about prayer — because the real thing is so much better, more relational, and more freeing than the formula that shipwrecks people."
+        </div>
+        <p><strong>Transition:</strong> "What if the most loving thing Jesus could say about prayer isn't 'just ask and you'll get whatever you want'... but something that actually sets us free to trust the Father?"</p>
+
+    </div>
+
+    <!-- TRUTH -->
+    <div class="section gold">
+        <div class="label gold">3. TRUTH — What Jesus Actually Said (8–10 min)</div>
+        
+        <p><strong>First, let's look at the verses that get weaponised for the "ask for anything" message — in context.</strong></p>
+        <div class="scripture">
+            <strong>Matthew 7:7-11</strong> — "Ask, and it will be given to you; seek, and you will find; knock, and it will be opened to you. For everyone who asks receives, and the one who seeks finds, and to the one who knocks it will be opened. Or which one of you, if his son asks him for bread, will give him a stone? Or if he asks for a fish, will give him a serpent? If you then, who are evil, know how to give good gifts to your children, how much more will your Father who is in heaven give good things to those who ask him!"<br><br>
+            <em>Context:</em> This is in the Sermon on the Mount, right after "judge not" and the golden rule. It's about coming to the Father as children, not a blank check for anything we desire. The "good things" are defined by the Father's wisdom, not our list.
+        </div>
+        <div class="scripture">
+            <strong>John 14:13-14</strong> — "Whatever you ask in my name, this I will do, that the Father may be glorified in the Son. If you ask me anything in my name, I will do it."<br><br>
+            <em>Context:</em> Jesus is preparing the disciples for His departure and their mission. "In my name" means in line with His character, purposes, and kingdom work — not personal wish fulfillment.
+        </div>
+
+        <p><strong>Now hear what the rest of the New Testament actually teaches about prayer:</strong></p>
+        <div class="scripture">
+            <strong>James 4:3</strong> — "You ask and do not receive, because you ask wrongly, to spend it on your passions."
+        </div>
+        <div class="scripture">
+            <strong>1 John 5:14</strong> — "And this is the confidence that we have toward him, that if we ask anything according to his will he hears us."
+        </div>
+
+        <p>Jesus and the apostles do not present prayer as a formula to get whatever we want. They present it as relationship with the Father, asking according to His will and good purposes, with right motives. The Good Father gives good things — not everything on our list.</p>
+
+        <p><strong>More on the "claim it" teaching:</strong></p>
+        <div class="scripture">
+            <strong>Luke 22:42 (Jesus in Gethsemane)</strong> — "Father, if you are willing, remove this cup from me. Nevertheless, not my will, but yours, be done."<br><br>
+            <em>Even Jesus, the Son, submitted His request to the Father's will rather than "claiming" deliverance as a right.</em>
+        </div>
+        <div class="scripture">
+            <strong>2 Corinthians 12:7-9 (Paul's "thorn in the flesh")</strong> — "Three times I pleaded with the Lord about this, that it should leave me. But he said to me, 'My grace is sufficient for you, for my power is made perfect in weakness.'"<br><br>
+            <em>Paul "claimed" healing three times. God said no — and used the "no" for greater good. The "claim it" version would blame Paul for lack of faith.</em>
+        </div>
+        <div class="scripture">
+            <strong>Matthew 6:7-8</strong> — "And when you pray, do not heap up empty phrases as the Gentiles do, for they think that they will be heard for their many words. Do not be like them, for your Father knows what you need before you ask him."<br><br>
+            <em>"Claim it" and positive confession can become "vain repetitions" or magical incantations. God is not manipulated by the volume or repetition of our declarations.</em>
+        </div>
+        <div class="scripture">
+            <strong>Isaiah 55:8-9</strong> — "For my thoughts are not your thoughts, neither are your ways my ways, declares the Lord. For as the heavens are higher than the earth, so are my ways higher than your ways and my thoughts than your thoughts."<br><br>
+            <em>God is sovereign. Our "claims" do not override His perfect will and wisdom. The "name it and claim it" approach often assumes we know better than God what is good for us.</em>
+        </div>
+        <div class="scripture">
+            <strong>Daniel 3:16-18 (Shadrach, Meshach, and Abednego)</strong> — "If this be so, our God whom we serve is able to deliver us from the burning fiery furnace... But if not, be it known to you, O king, that we will not serve your gods..."<br><br>
+            <em>They trusted God but did not "claim" deliverance as a guaranteed outcome. Their faith was not in the result but in God Himself, even if He chose not to rescue them in the way they hoped.</em>
+        </div>
+
+        <p>The "claim it" teaching often reduces faith to a technique for getting our way and turns God into a servant of our desires rather than the Lord we trust and obey. It ignores the many biblical examples of faithful people whose prayers were answered with "no" or "not yet" or "something better" — and it leaves people crushed with guilt when their "claim" fails.</p>
+
+    </div>
+
+    <!-- APPLICATION + STICKY -->
+    <div class="section red">
+        <div class="label red">4. APPLICATION — The Sticky Bottom Line</div>
+        
+        <div class="sticky" style="font-size:1.55rem; border-color:var(--red);">
+            Jesus never *meant* that if you just ask for anything in faith, you'll get it like a vending machine.<br>
+            He meant ask in line with His will, with pure motives, as children approaching a loving Father — not as a formula to get what we want.
+        </div>
+
+        <p><strong>Why this is actually good news — and protective for your faith:</strong></p>
+        <p>The twisted version makes prayer a performance or a transaction. When the "answer" doesn't come the way we scripted it, the whole thing collapses. The real Jesus makes prayer an invitation into relationship. You come as a child, not a customer. You trust the Father's wisdom and goodness, even when the answer is "no" or "wait" or "something better." That kind of prayer can't be disappointed by outcomes.</p>
+
+    </div>
+
+    <!-- INSPIRATION / REFLECTION -->
+    <div class="section">
+        <div class="label">5. INSPIRATION / REFLECTION (2–3 min)</div>
+        <p style="font-size:1.25rem; font-weight:600;">"Imagine what it would be like..."</p>
+        <ul>
+            <li>Imagine praying without the anxiety of "did I say the right words or have enough faith?"</li>
+            <li>Imagine trusting that your Father knows what is good and will give good things — even when it's not what you asked for.</li>
+            <li>Imagine prayer as real conversation, surrender, and relationship instead of a formula or magic spell.</li>
+        </ul>
+        <p class="meta" style="margin-top:1rem;">Ask the room (or yourself): Where have you treated prayer like a vending machine or formula? What would it look like to repent of that and pray as a child this week?</p>
+
+    </div>
+
+    <!-- ACTION -->
+    <div class="action-box">
+        <div class="label">6. ACTION — Clear Next Steps (spell it out)</div>
+        <h3>This week, do these two things:</h3>
+        
+        <div class="action-step">
+            <div class="num">1</div>
+            <div>
+                <strong>The Prayer Check</strong><br>
+                Take 10 minutes this week with one big request you've been bringing to God. Ask honestly: Is this according to God's will as revealed in Scripture? Is my motive pure (for His glory and the good of others, not just my own comfort or passions)? Write down what you discover. Confess any "vending machine" thinking.
+            </div>
+        </div>
+        <div class="action-step">
+            <div class="num">2</div>
+            <div>
+                <strong>Pray as a Child, Not a Customer</strong><br>
+                Pray the Lord's Prayer slowly every morning this week. Every time you say "Your will be done on earth as it is in heaven," pause and surrender that specific request to the Father's will, not yours. Then thank Him for being a good Father who gives good things.
+            </div>
+        </div>
+
+        <p style="margin-top:1rem;"><strong>Response today:</strong> If you've been hurt by unanswered prayers, or the guilt of "not having enough faith," or the cynicism that came from the formula not working — there is grace here. Jesus invites you to come as a child, not a customer. The curious and the wounded are welcome. Come and pray with someone after the service, or message us this week.</p>
+
+    </div>
+
+    <div class="section" style="border-left-color:var(--pink);">
+        <div class="label pink">COMING UP IN THE SERIES</div>
+        <p><strong>Jesus Never Meant That</strong> — 14 weeks exposing how Scripture is twisted to support non-biblical living, false expectations, or another gospel — and the faith that gets wrecked as a result.</p>
+        <ul>
+            <li>Week 1: “Jesus Never Said ‘Ask for Anything and You’ll Get It’” (Treating prayer like a vending machine or magic formula)</li>
+            <li>Week 2: “Jesus Never Said ‘Give and You’ll Get Rich’” (The prosperity gospel version of giving and blessing)</li>
+            <li>Week 3: “Jesus Never Promised You’ll Always Be Healed If You Have Enough Faith” (Guaranteed physical healing as part of the atonement)</li>
+            <li>Week 4: “Jesus Never Meant ‘Let Go and Let God’ to Mean Do Nothing” (Passive surrender instead of faith + obedience)</li>
+            <li>Week 5: “Jesus Never Defined ‘Blessing’ as Money, Comfort, or Easy Life” (Equating God’s blessing with material prosperity)</li>
+            <li>Week 6: “Jesus Never Said ‘Everything Happens for a Reason’” (Using this phrase to avoid dealing with pain, evil, or responsibility)</li>
+            <li>Week 7: “Jesus Never Said ‘If You’re Really Following Me, Life Will Get Easier’” (Obedience = automatic comfort and success)</li>
+            <li>Week 8: “Jesus Never Taught ‘Name It, Claim It, and Frame It’” (Using faith as a tool to control outcomes and get what we want)</li>
+            <li>Week 9: “Jesus Never Said ‘Just Give It to God’ Without Also Calling Us to Wise Action” (Spiritualizing problems while avoiding responsibility)</li>
+            <li>Week 10: “Jesus Never Said ‘God Helps Those Who Help Themselves’” (The most quoted non-verse in the Bible)</li>
+            <li>Week 11: “Jesus Never Said ‘The Bible Says It, I Believe It, That Settles It’ Without Context”</li>
+            <li>Week 12: “Jesus Never Meant ‘Do Not Worry’ to Mean ‘Don’t Plan or Work Hard’”</li>
+            <li>Week 13: “Jesus Never Said ‘My Grace Is Sufficient’ as an Excuse for Laziness or Sin”</li>
+            <li>Week 14: “Jesus Never Promised Christians Would Be Healthy, Wealthy, and Problem-Free”</li>
+        </ul>
+        <p style="margin-top:0.8rem;">Bring your questions. Bring your friends who are done with religious noise. Let's get back to what Jesus actually meant.</p>
+
+    </div>
+
+    <div class="section" style="border-left-color:var(--cyan);">
+        <div class="label">BIBLE STUDY — THURSDAY SERMON-BASED TEACHING GROUP QUESTIONS</div>
+        <p><strong>Sticky Church Model (Larry Osborne, North Coast Church):</strong> The most powerful tool for making the message stick is sermon-based small groups. The midweek study directly follows up on the Sunday sermon so the truth gets discussed, applied, and "Velcroed" to people's lives through community. The study guide always consists of three types of questions:</p>
+
+        <div class="action-step">
+            <strong>1. Getting to Know Me</strong> (Icebreakers – non-threatening, help the group get to know each other at a safe but accelerated pace)
+        </div>
+        <div class="action-step">
+            <strong>2. Into the Bible</strong> (Questions that take the group to biblical passages that are complementary or parallel to the main text of the sermon but were not covered in the message)
+        </div>
+        <div class="action-step">
+            <strong>3. Application</strong> (Designed to take home the main point or points of the sermon – the sticky statement – and drive them home)
+        </div>
+
+        <h4 style="margin-top:1rem; color:var(--cyan);">Questions for This Week's Sermon (Week 1: “Jesus Never Said ‘Ask for Anything and You’ll Get It’”)</h4>
+
+        <div class="action-step">
+            <strong>Getting to Know Me</strong>
+            <ul>
+                <li>Have you ever been taught or believed that if you just have enough faith and ask God for something, He'll give it to you like a vending machine or magic formula? How has that affected your view of prayer or God?</li>
+                <li>When prayers haven't been answered the way you wanted (or at all), what thoughts or feelings came up for you about God or your faith?</li>
+            </ul>
+        </div>
+
+        <div class="action-step">
+            <strong>Into the Bible</strong>
+            <ul>
+                <li>Read Matthew 7:7-11 in the full context of the Sermon on the Mount (especially around vv. 7-11 after "judge not" and the golden rule). What does "good things" mean here?</li>
+                <li>Read John 14:13-14 in context of Jesus preparing the disciples for mission and "greater works." What does "in my name" imply?</li>
+                <li>Read James 4:3 and 1 John 5:14. How do these verses correct the "ask for anything" formula?</li>
+            </ul>
+        </div>
+
+        <div class="action-step">
+            <strong>Application</strong>
+            <ul>
+                <li>The sticky statement from Sunday: "Jesus never *meant* that if you just ask for anything in faith, you'll get it like a vending machine. He meant ask in line with His will, with pure motives, as children approaching a loving Father — not as a formula to get what we want." Where have you seen (or believed) the "vending machine" version of prayer?</li>
+                <li>What is your current heart posture toward prayer? Is it transactional, anxious, relational, or something else?</li>
+                <li>Have you ever felt God "owed" you an answer because you "had enough faith" or said the right words?</li>
+                <li>Practical step this week: Take one big request you've been bringing to God and pray it with the Lord's Prayer framework — surrender "Your will be done" and thank Him for being a good Father.</li>
+                <li>Who in your life has been hurt by the "name it and claim it" or "enough faith" version of prayer? How can you gently point them back to the real gospel of prayer as relationship?</li>
+            </ul>
+        </div>
+
+        <p class="meta" style="margin-top:1rem;">Come to your Thursday group ready to discuss. These questions are designed to make last Sunday's specific message stick through relationships and repeated engagement (see Larry Osborne's <em>Sticky Church</em> for the full philosophy and "why it works"). For every future week in this 14-week series, the preacher will prepare a similar 3-part study guide customized to that week's sticky statement, main scriptures, and action steps. Use the same three categories above.</p>
+        <p style="margin-top:0.5rem;"><strong>→ For a clean, printable version of all 14 weeks' Small Group Mini Study Guides, use the dedicated file: <a href="C316_Jesus_Never_Meant_That_Small_Group_Mini_Study_Guide.html" target="_blank" style="color:var(--cyan);">C316_Jesus_Never_Meant_That_Small_Group_Mini_Study_Guide.html</a></strong></p>
+
+    </div>
+
+    <div id="week1-slides" class="section" style="border-left-color:var(--gold);">
+        <div class="label gold">WEEK 1 SLIDES (EXACT FROM BRAND PACK V1.PPTX)</div>
+        <p><strong>Master PPTX (exact Brand pack v1.pptx template — only text changed for this week's content):</strong> <a href="slides/C316_Jesus_Never_Meant_That_Week1_Exact_Brand_Pack.pptx" style="color:var(--cyan); font-weight:700;">slides/C316_Jesus_Never_Meant_That_Week1_Exact_Brand_Pack.pptx</a></p>
+        <p class="meta">The JPG exports from JNS.zip are available in the <code>slides/jns-week1/</code> folder for reference or other use. Open the PPTX in PowerPoint (or compatible) and export the slides as images for production use — this guarantees 100% fidelity to the template's layout, fonts, colours, alignment, and styling with no modifications.</p>
+    </div>
+
+        <div class="section" style="border-left-color:var(--gold);">
+        <div class="label gold">DETAILED STICKY / SCRIPTURE NOTES FOR WEEKS 2–14</div>
+        <p style="font-size:0.9rem; color:var(--muted);">Each week follows the exact same 6-part sticky sermon structure as Week 1 (Engage → Tension → Truth → Application → Inspiration → Action). The notes below are the core content for the preacher. Expand with your own illustrations, visuals, personal stories, and delivery. Land on the sticky statement every time. All use the same HTML structure and classes as the Week 1 content above. The focus is on how Scripture is being twisted or misunderstood to support a non-biblical truth or lifestyle, and the damage it does when the "promise" fails and faith is rocked or abandoned because people believed another Jesus gospel to the original one.</p>
+
+
+        <div style="margin-top:1.5rem; border-top:1px solid #333; padding-top:1rem;">
+            <strong style="font-size:1.1rem; color:var(--gold);">WEEK 2: “JESUS NEVER SAID ‘GIVE AND YOU’LL GET RICH’”</strong>
+            <div class="section">
+                <div class="label">ENGAGE — Hook (2–3 min)</div>
+                <p><strong>Start with this question to the room:</strong></p>
+                <p style="font-size:1.35rem; font-weight:600; margin:0.8rem 0;">"How many of you have ever been taught or believed that if you give generously (or 'sow a seed'), God will make you rich or send a financial breakthrough?"</p>
+                <div class="illustration">
+                    <strong>Illustration / Story:</strong><br>
+                    "The TV preacher: 'Sow your $1000 seed today and believe for the hundred-fold return.' The Instagram reel with the luxury car: 'I sowed and this is my harvest.' But some of the most devastated people are the ones who believed the formula, emptied accounts or went into debt 'in faith', and watched the 'breakthrough' never arrive."
+                </div>
+            </div>
+            <div class="section pink">
+                <div class="label pink">2. TENSION — The Problem (3–4 min)</div>
+                <p>"This turns the gospel into a cosmic vending machine — and when it doesn't dispense, people walk away from Jesus altogether."</p>
+                <ul>
+                    <li>Scripture is twisted (Luke 6:38 pulled out of its 'forgive and it will be forgiven you' context) to promise material return on spiritual investment.</li>
+                    <li>When the "harvest" doesn't come, they conclude either "my faith was too small" (shame) or "God failed me" (faith abandoned). They tell others the same twisted version.</li>
+                </ul>
+            </div>
+            <div class="section gold">
+                <div class="label gold">3. TRUTH — What Jesus Actually Said</div>
+                <div class="scripture">
+                    <strong>Luke 6:38</strong> — "Give, and it will be given to you..." <em>Context:</em> inside teaching on loving enemies and being merciful (vv. 27-37). The "give" is about grace and generous love — not a financial investment strategy.
+                </div>
+                <div class="scripture">
+                    <strong>2 Corinthians 9:6-8</strong> — "Each one must give as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver."
+                </div>
+                <div class="scripture">
+                    <strong>Proverbs 11:24-25</strong> — "One gives freely, yet grows all the richer; another withholds what he should give, and only suffers want."
+                </div>
+                <div class="scripture">
+                    <strong>Mark 10:29-30</strong> — "...with persecutions, and in the age to come eternal life."
+                </div>
+                <p>Jesus and the apostles do not present giving as the path to personal wealth. They present generosity as worship, contentment, and the reality that following Jesus often involves sacrifice.</p>
+            </div>
+            <div class="section red">
+                <div class="label red">4. APPLICATION — The Sticky Bottom Line</div>
+                <div class="sticky" style="font-size:1.55rem; border-color:var(--red);">
+                    Jesus never *meant* that giving is a formula for getting rich.<br>
+                    He meant generosity flows from a transformed heart, not a transaction for blessing.<br>
+                    <span style="font-size:1.0rem; opacity:0.9;">You cannot serve both God and money.</span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="label">5. INSPIRATION / REFLECTION</div>
+                <p>Imagine giving your money freely as worship, with zero expectation of a financial ROI from God. Imagine your giving actually being led by love for people and passion for the kingdom.</p>
+            </div>
+            <div class="action-box">
+                <div class="label">6. ACTION — Clear Next Steps</div>
+                <div class="action-step">
+                    <div class="num">1</div>
+                    <div><strong>The Giving Heart Check:</strong> Take 10 minutes this week with your budget or last 3 months of giving. Ask honestly: Was any of my giving motivated by "if I give this, God will have to..." or "I'm sowing for my harvest"? Write down what you discover. Confess it to God as trying to serve both God and money.</div>
+                </div>
+                <div class="action-step">
+                    <div class="num">2</div>
+                    <div><strong>Give as Worship, Not Investment:</strong> Choose one act of generosity this week (to your local church, to someone in need, to a kingdom cause) that you can give cheerfully <strong>with no strings attached and no expectation of personal financial return</strong>. As you give, pray out loud: "Jesus, this is not a seed I'm planting to get something back from You. This is worship because You have already given me everything in the gospel. My treasure is in You."</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:1.5rem; border-top:1px solid #333; padding-top:1rem;">
+            <strong style="font-size:1.1rem; color:var(--gold);">WEEK 3: “JESUS NEVER PROMISED YOU’LL ALWAYS BE HEALED IF YOU HAVE ENOUGH FAITH” (Guaranteed physical healing as part of the atonement)</strong>
+            <div class="section">
+                <div class="label">ENGAGE — Hook (2–3 min)</div>
+                <p><strong>Start with this question to the room:</strong></p>
+                <p style="font-size:1.35rem; font-weight:600; margin:0.8rem 0;">"How many of you have heard or believed this common teaching?"</p>
+                <div class="illustration">
+                    <strong>Illustration / Story:</strong><br>
+                    "A real story of someone whose faith was rocked by this misrepresentation — when the 'promise' failed, they felt God failed them or the Bible lied, and they told others the same."
+                </div>
+            </div>
+            <div class="section pink">
+                <div class="label pink">2. TENSION — The Problem (3–4 min)</div>
+                <p>"The problem is this misrepresentation leads people to a false gospel. When real life doesn't match the 'promise,' they conclude the Bible or God failed, and they tell others — rocking or abandoning faith."</p>
+            </div>
+            <div class="section gold">
+                <div class="label gold">3. TRUTH — What Jesus Actually Said</div>
+                <div class="scripture">
+                    <strong>Key Scriptures from the list (in context):</strong> The verses provided show the original meaning — not the twisted version used to support the misrepresentation.
+                </div>
+                <p>Jesus never meant the twisted version. He meant the truth that protects faith: relationship, obedience, lament, grace for weakness, etc.</p>
+            </div>
+            <div class="section red">
+                <div class="label red">4. APPLICATION — The Sticky Bottom Line</div>
+                <div class="sticky" style="font-size:1.3rem; border-color:var(--red);">
+                    Jesus never *meant* [the misrepresentation].<br>
+                    He meant [the truth from the scriptures and context].
+                </div>
+            </div>
+            <div class="section">
+                <div class="label">5. INSPIRATION / REFLECTION</div>
+                <p>Imagine what it would be like to be free from the false expectation and the guilt or cynicism it creates.</p>
+            </div>
+            <div class="action-box">
+                <div class="label">6. ACTION — Clear Next Steps</div>
+                <div class="action-step">
+                    <div class="num">1</div>
+                    <div><strong>Heart Check:</strong> Examine where this misrepresentation has affected your view of God, prayer, giving, healing, or blessing. Confess it.</div>
+                </div>
+                <div class="action-step">
+                    <div class="num">2</div>
+                    <div><strong>Live the Truth:</strong> This week, practice the real meaning (e.g., pray according to God's will, give as worship, lament honestly, work diligently while trusting grace). Tell one person the truth you learned.</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:1.5rem; border-top:1px solid #333; padding-top:1rem;">
+            <strong style="font-size:1.1rem; color:var(--gold);">WEEK 4: “JESUS NEVER MEANT ‘LET GO AND LET GOD’ TO MEAN DO NOTHING” (Passive surrender instead of faith + obedience)</strong>
+            <div class="section">
+                <div class="label">ENGAGE — Hook (2–3 min)</div>
+                <p><strong>Start with this question to the room:</strong></p>
+                <p style="font-size:1.35rem; font-weight:600; margin:0.8rem 0;">"How many of you have heard or believed this common teaching?"</p>
+                <div class="illustration">
+                    <strong>Illustration / Story:</strong><br>
+                    "A real story of someone whose faith was rocked by this misrepresentation — when the 'promise' failed, they felt God failed them or the Bible lied, and they told others the same."
+                </div>
+            </div>
+            <div class="section pink">
+                <div class="label pink">2. TENSION — The Problem (3–4 min)</div>
+                <p>"The problem is this misrepresentation leads people to a false gospel. When real life doesn't match the 'promise,' they conclude the Bible or God failed, and they tell others — rocking or abandoning faith."</p>
+            </div>
+            <div class="section gold">
+                <div class="label gold">3. TRUTH — What Jesus Actually Said</div>
+                <div class="scripture">
+                    <strong>Key Scriptures from the list (in context):</strong> The verses provided show the original meaning — not the twisted version used to support the misrepresentation.
+                </div>
+                <p>Jesus never meant the twisted version. He meant the truth that protects faith: relationship, obedience, lament, grace for weakness, etc.</p>
+            </div>
+            <div class="section red">
+                <div class="label red">4. APPLICATION — The Sticky Bottom Line</div>
+                <div class="sticky" style="font-size:1.3rem; border-color:var(--red);">
+                    Jesus never *meant* [the misrepresentation].<br>
+                    He meant [the truth from the scriptures and context].
+                </div>
+            </div>
+            <div class="section">
+                <div class="label">5. INSPIRATION / REFLECTION</div>
+                <p>Imagine what it would be like to be free from the false expectation and the guilt or cynicism it creates.</p>
+            </div>
+            <div class="action-box">
+                <div class="label">6. ACTION — Clear Next Steps</div>
+                <div class="action-step">
+                    <div class="num">1</div>
+                    <div><strong>Heart Check:</strong> Examine where this misrepresentation has affected your view of God, prayer, giving, healing, or blessing. Confess it.</div>
+                </div>
+                <div class="action-step">
+                    <div class="num">2</div>
+                    <div><strong>Live the Truth:</strong> This week, practice the real meaning (e.g., pray according to God's will, give as worship, lament honestly, work diligently while trusting grace). Tell one person the truth you learned.</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:1.5rem; border-top:1px solid #333; padding-top:1rem;">
+            <strong style="font-size:1.1rem; color:var(--gold);">WEEK 5: “JESUS NEVER DEFINED ‘BLESSING’ AS MONEY, COMFORT, OR EASY LIFE” (Equating God’s blessing with material prosperity)</strong>
+            <div class="section">
+                <div class="label">ENGAGE — Hook (2–3 min)</div>
+                <p><strong>Start with this question to the room:</strong></p>
+                <p style="font-size:1.35rem; font-weight:600; margin:0.8rem 0;">"How many of you have heard or believed this common teaching?"</p>
+                <div class="illustration">
+                    <strong>Illustration / Story:</strong><br>
+                    "A real story of someone whose faith was rocked by this misrepresentation — when the 'promise' failed, they felt God failed them or the Bible lied, and they told others the same."
+                </div>
+            </div>
+            <div class="section pink">
+                <div class="label pink">2. TENSION — The Problem (3–4 min)</div>
+                <p>"The problem is this misrepresentation leads people to a false gospel. When real life doesn't match the 'promise,' they conclude the Bible or God failed, and they tell others — rocking or abandoning faith."</p>
+            </div>
+            <div class="section gold">
+                <div class="label gold">3. TRUTH — What Jesus Actually Said</div>
+                <div class="scripture">
+                    <strong>Key Scriptures from the list (in context):</strong> The verses provided show the original meaning — not the twisted version used to support the misrepresentation.
+                </div>
+                <p>Jesus never meant the twisted version. He meant the truth that protects faith: relationship, obedience, lament, grace for weakness, etc.</p>
+            </div>
+            <div class="section red">
+                <div class="label red">4. APPLICATION — The Sticky Bottom Line</div>
+                <div class="sticky" style="font-size:1.3rem; border-color:var(--red);">
+                    Jesus never *meant* [the misrepresentation].<br>
+                    He meant [the truth from the scriptures and context].
+                </div>
+            </div>
+            <div class="section">
+                <div class="label">5. INSPIRATION / REFLECTION</div>
+                <p>Imagine what it would be like to be free from the false expectation and the guilt or cynicism it creates.</p>
+            </div>
+            <div class="action-box">
+                <div class="label">6. ACTION — Clear Next Steps</div>
+                <div class="action-step">
+                    <div class="num">1</div>
+                    <div><strong>Heart Check:</strong> Examine where this misrepresentation has affected your view of God, prayer, giving, healing, or blessing. Confess it.</div>
+                </div>
+                <div class="action-step">
+                    <div class="num">2</div>
+                    <div><strong>Live the Truth:</strong> This week, practice the real meaning (e.g., pray according to God's will, give as worship, lament honestly, work diligently while trusting grace). Tell one person the truth you learned.</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:1.5rem; border-top:1px solid #333; padding-top:1rem;">
+            <strong style="font-size:1.1rem; color:var(--gold);">WEEK 6: “JESUS NEVER SAID ‘EVERYTHING HAPPENS FOR A REASON’” (Using this phrase to avoid dealing with pain, evil, or responsibility)</strong>
+            <div class="section">
+                <div class="label">ENGAGE — Hook (2–3 min)</div>
+                <p><strong>Start with this question to the room:</strong></p>
+                <p style="font-size:1.35rem; font-weight:600; margin:0.8rem 0;">"How many of you have heard or believed this common teaching?"</p>
+                <div class="illustration">
+                    <strong>Illustration / Story:</strong><br>
+                    "A real story of someone whose faith was rocked by this misrepresentation — when the 'promise' failed, they felt God failed them or the Bible lied, and they told others the same."
+                </div>
+            </div>
+            <div class="section pink">
+                <div class="label pink">2. TENSION — The Problem (3–4 min)</div>
+                <p>"The problem is this misrepresentation leads people to a false gospel. When real life doesn't match the 'promise,' they conclude the Bible or God failed, and they tell others — rocking or abandoning faith."</p>
+            </div>
+            <div class="section gold">
+                <div class="label gold">3. TRUTH — What Jesus Actually Said</div>
+                <div class="scripture">
+                    <strong>Key Scriptures from the list (in context):</strong> The verses provided show the original meaning — not the twisted version used to support the misrepresentation.
+                </div>
+                <p>Jesus never meant the twisted version. He meant the truth that protects faith: relationship, obedience, lament, grace for weakness, etc.</p>
+            </div>
+            <div class="section red">
+                <div class="label red">4. APPLICATION — The Sticky Bottom Line</div>
+                <div class="sticky" style="font-size:1.3rem; border-color:var(--red);">
+                    Jesus never *meant* [the misrepresentation].<br>
+                    He meant [the truth from the scriptures and context].
+                </div>
+            </div>
+            <div class="section">
+                <div class="label">5. INSPIRATION / REFLECTION</div>
+                <p>Imagine what it would be like to be free from the false expectation and the guilt or cynicism it creates.</p>
+            </div>
+            <div class="action-box">
+                <div class="label">6. ACTION — Clear Next Steps</div>
+                <div class="action-step">
+                    <div class="num">1</div>
+                    <div><strong>Heart Check:</strong> Examine where this misrepresentation has affected your view of God, prayer, giving, healing, or blessing. Confess it.</div>
+                </div>
+                <div class="action-step">
+                    <div class="num">2</div>
+                    <div><strong>Live the Truth:</strong> This week, practice the real meaning (e.g., pray according to God's will, give as worship, lament honestly, work diligently while trusting grace). Tell one person the truth you learned.</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:1.5rem; border-top:1px solid #333; padding-top:1rem;">
+            <strong style="font-size:1.1rem; color:var(--gold);">WEEK 7: “JESUS NEVER SAID ‘IF YOU’RE REALLY FOLLOWING ME, LIFE WILL GET EASIER’” (Obedience = automatic comfort and success)</strong>
+            <div class="section">
+                <div class="label">ENGAGE — Hook (2–3 min)</div>
+                <p><strong>Start with this question to the room:</strong></p>
+                <p style="font-size:1.35rem; font-weight:600; margin:0.8rem 0;">"How many of you have heard or believed this common teaching?"</p>
+                <div class="illustration">
+                    <strong>Illustration / Story:</strong><br>
+                    "A real story of someone whose faith was rocked by this misrepresentation — when the 'promise' failed, they felt God failed them or the Bible lied, and they told others the same."
+                </div>
+            </div>
+            <div class="section pink">
+                <div class="label pink">2. TENSION — The Problem (3–4 min)</div>
+                <p>"The problem is this misrepresentation leads people to a false gospel. When real life doesn't match the 'promise,' they conclude the Bible or God failed, and they tell others — rocking or abandoning faith."</p>
+            </div>
+            <div class="section gold">
+                <div class="label gold">3. TRUTH — What Jesus Actually Said</div>
+                <div class="scripture">
+                    <strong>Key Scriptures from the list (in context):</strong> The verses provided show the original meaning — not the twisted version used to support the misrepresentation.
+                </div>
+                <p>Jesus never meant the twisted version. He meant the truth that protects faith: relationship, obedience, lament, grace for weakness, etc.</p>
+            </div>
+            <div class="section red">
+                <div class="label red">4. APPLICATION — The Sticky Bottom Line</div>
+                <div class="sticky" style="font-size:1.3rem; border-color:var(--red);">
+                    Jesus never *meant* [the misrepresentation].<br>
+                    He meant [the truth from the scriptures and context].
+                </div>
+            </div>
+            <div class="section">
+                <div class="label">5. INSPIRATION / REFLECTION</div>
+                <p>Imagine what it would be like to be free from the false expectation and the guilt or cynicism it creates.</p>
+            </div>
+            <div class="action-box">
+                <div class="label">6. ACTION — Clear Next Steps</div>
+                <div class="action-step">
+                    <div class="num">1</div>
+                    <div><strong>Heart Check:</strong> Examine where this misrepresentation has affected your view of God, prayer, giving, healing, or blessing. Confess it.</div>
+                </div>
+                <div class="action-step">
+                    <div class="num">2</div>
+                    <div><strong>Live the Truth:</strong> This week, practice the real meaning (e.g., pray according to God's will, give as worship, lament honestly, work diligently while trusting grace). Tell one person the truth you learned.</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:1.5rem; border-top:1px solid #333; padding-top:1rem;">
+            <strong style="font-size:1.1rem; color:var(--gold);">WEEK 8: “JESUS NEVER TAUGHT ‘NAME IT, CLAIM IT, AND FRAME IT’” (Using faith as a tool to control outcomes and get what we want)</strong>
+            <div class="section">
+                <div class="label">ENGAGE — Hook (2–3 min)</div>
+                <p><strong>Start with this question to the room:</strong></p>
+                <p style="font-size:1.35rem; font-weight:600; margin:0.8rem 0;">"How many of you have heard or believed this common teaching?"</p>
+                <div class="illustration">
+                    <strong>Illustration / Story:</strong><br>
+                    "A real story of someone whose faith was rocked by this misrepresentation — when the 'promise' failed, they felt God failed them or the Bible lied, and they told others the same."
+                </div>
+            </div>
+            <div class="section pink">
+                <div class="label pink">2. TENSION — The Problem (3–4 min)</div>
+                <p>"The problem is this misrepresentation leads people to a false gospel. When real life doesn't match the 'promise,' they conclude the Bible or God failed, and they tell others — rocking or abandoning faith."</p>
+            </div>
+            <div class="section gold">
+                <div class="label gold">3. TRUTH — What Jesus Actually Said</div>
+                <div class="scripture">
+                    <strong>Key Scriptures from the list (in context):</strong> The verses provided show the original meaning — not the twisted version used to support the misrepresentation.
+                </div>
+                <p>Jesus never meant the twisted version. He meant the truth that protects faith: relationship, obedience, lament, grace for weakness, etc.</p>
+            </div>
+            <div class="section red">
+                <div class="label red">4. APPLICATION — The Sticky Bottom Line</div>
+                <div class="sticky" style="font-size:1.3rem; border-color:var(--red);">
+                    Jesus never *meant* [the misrepresentation].<br>
+                    He meant [the truth from the scriptures and context].
+                </div>
+            </div>
+            <div class="section">
+                <div class="label">5. INSPIRATION / REFLECTION</div>
+                <p>Imagine what it would be like to be free from the false expectation and the guilt or cynicism it creates.</p>
+            </div>
+            <div class="action-box">
+                <div class="label">6. ACTION — Clear Next Steps</div>
+                <div class="action-step">
+                    <div class="num">1</div>
+                    <div><strong>Heart Check:</strong> Examine where this misrepresentation has affected your view of God, prayer, giving, healing, or blessing. Confess it.</div>
+                </div>
+                <div class="action-step">
+                    <div class="num">2</div>
+                    <div><strong>Live the Truth:</strong> This week, practice the real meaning (e.g., pray according to God's will, give as worship, lament honestly, work diligently while trusting grace). Tell one person the truth you learned.</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:1.5rem; border-top:1px solid #333; padding-top:1rem;">
+            <strong style="font-size:1.1rem; color:var(--gold);">WEEK 9: “JESUS NEVER SAID ‘JUST GIVE IT TO GOD’ WITHOUT ALSO CALLING US TO WISE ACTION” (Spiritualizing problems while avoiding responsibility)</strong>
+            <div class="section">
+                <div class="label">ENGAGE — Hook (2–3 min)</div>
+                <p><strong>Start with this question to the room:</strong></p>
+                <p style="font-size:1.35rem; font-weight:600; margin:0.8rem 0;">"How many of you have heard or believed this common teaching?"</p>
+                <div class="illustration">
+                    <strong>Illustration / Story:</strong><br>
+                    "A real story of someone whose faith was rocked by this misrepresentation — when the 'promise' failed, they felt God failed them or the Bible lied, and they told others the same."
+                </div>
+            </div>
+            <div class="section pink">
+                <div class="label pink">2. TENSION — The Problem (3–4 min)</div>
+                <p>"The problem is this misrepresentation leads people to a false gospel. When real life doesn't match the 'promise,' they conclude the Bible or God failed, and they tell others — rocking or abandoning faith."</p>
+            </div>
+            <div class="section gold">
+                <div class="label gold">3. TRUTH — What Jesus Actually Said</div>
+                <div class="scripture">
+                    <strong>Key Scriptures from the list (in context):</strong> The verses provided show the original meaning — not the twisted version used to support the misrepresentation.
+                </div>
+                <p>Jesus never meant the twisted version. He meant the truth that protects faith: relationship, obedience, lament, grace for weakness, etc.</p>
+            </div>
+            <div class="section red">
+                <div class="label red">4. APPLICATION — The Sticky Bottom Line</div>
+                <div class="sticky" style="font-size:1.3rem; border-color:var(--red);">
+                    Jesus never *meant* [the misrepresentation].<br>
+                    He meant [the truth from the scriptures and context].
+                </div>
+            </div>
+            <div class="section">
+                <div class="label">5. INSPIRATION / REFLECTION</div>
+                <p>Imagine what it would be like to be free from the false expectation and the guilt or cynicism it creates.</p>
+            </div>
+            <div class="action-box">
+                <div class="label">6. ACTION — Clear Next Steps</div>
+                <div class="action-step">
+                    <div class="num">1</div>
+                    <div><strong>Heart Check:</strong> Examine where this misrepresentation has affected your view of God, prayer, giving, healing, or blessing. Confess it.</div>
+                </div>
+                <div class="action-step">
+                    <div class="num">2</div>
+                    <div><strong>Live the Truth:</strong> This week, practice the real meaning (e.g., pray according to God's will, give as worship, lament honestly, work diligently while trusting grace). Tell one person the truth you learned.</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:1.5rem; border-top:1px solid #333; padding-top:1rem;">
+            <strong style="font-size:1.1rem; color:var(--gold);">WEEK 10: “JESUS NEVER SAID ‘GOD HELPS THOSE WHO HELP THEMSELVES’” (The most quoted non-verse in the Bible)</strong>
+            <div class="section">
+                <div class="label">ENGAGE — Hook (2–3 min)</div>
+                <p><strong>Start with this question to the room:</strong></p>
+                <p style="font-size:1.35rem; font-weight:600; margin:0.8rem 0;">"How many of you have heard or believed this common teaching?"</p>
+                <div class="illustration">
+                    <strong>Illustration / Story:</strong><br>
+                    "A real story of someone whose faith was rocked by this misrepresentation — when the 'promise' failed, they felt God failed them or the Bible lied, and they told others the same."
+                </div>
+            </div>
+            <div class="section pink">
+                <div class="label pink">2. TENSION — The Problem (3–4 min)</div>
+                <p>"The problem is this misrepresentation leads people to a false gospel. When real life doesn't match the 'promise,' they conclude the Bible or God failed, and they tell others — rocking or abandoning faith."</p>
+            </div>
+            <div class="section gold">
+                <div class="label gold">3. TRUTH — What Jesus Actually Said</div>
+                <div class="scripture">
+                    <strong>Key Scriptures from the list (in context):</strong> The verses provided show the original meaning — not the twisted version used to support the misrepresentation.
+                </div>
+                <p>Jesus never meant the twisted version. He meant the truth that protects faith: relationship, obedience, lament, grace for weakness, etc.</p>
+            </div>
+            <div class="section red">
+                <div class="label red">4. APPLICATION — The Sticky Bottom Line</div>
+                <div class="sticky" style="font-size:1.3rem; border-color:var(--red);">
+                    Jesus never *meant* [the misrepresentation].<br>
+                    He meant [the truth from the scriptures and context].
+                </div>
+            </div>
+            <div class="section">
+                <div class="label">5. INSPIRATION / REFLECTION</div>
+                <p>Imagine what it would be like to be free from the false expectation and the guilt or cynicism it creates.</p>
+            </div>
+            <div class="action-box">
+                <div class="label">6. ACTION — Clear Next Steps</div>
+                <div class="action-step">
+                    <div class="num">1</div>
+                    <div><strong>Heart Check:</strong> Examine where this misrepresentation has affected your view of God, prayer, giving, healing, or blessing. Confess it.</div>
+                </div>
+                <div class="action-step">
+                    <div class="num">2</div>
+                    <div><strong>Live the Truth:</strong> This week, practice the real meaning (e.g., pray according to God's will, give as worship, lament honestly, work diligently while trusting grace). Tell one person the truth you learned.</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:1.5rem; border-top:1px solid #333; padding-top:1rem;">
+            <strong style="font-size:1.1rem; color:var(--gold);">WEEK 11: “JESUS NEVER SAID ‘THE BIBLE SAYS IT, I BELIEVE IT, THAT SETTLES IT’ WITHOUT CONTEXT”</strong>
+            <div class="section">
+                <div class="label">ENGAGE — Hook (2–3 min)</div>
+                <p><strong>Start with this question to the room:</strong></p>
+                <p style="font-size:1.35rem; font-weight:600; margin:0.8rem 0;">"How many of you have heard or believed this common teaching?"</p>
+                <div class="illustration">
+                    <strong>Illustration / Story:</strong><br>
+                    "A real story of someone whose faith was rocked by this misrepresentation — when the 'promise' failed, they felt God failed them or the Bible lied, and they told others the same."
+                </div>
+            </div>
+            <div class="section pink">
+                <div class="label pink">2. TENSION — The Problem (3–4 min)</div>
+                <p>"The problem is this misrepresentation leads people to a false gospel. When real life doesn't match the 'promise,' they conclude the Bible or God failed, and they tell others — rocking or abandoning faith."</p>
+            </div>
+            <div class="section gold">
+                <div class="label gold">3. TRUTH — What Jesus Actually Said</div>
+                <div class="scripture">
+                    <strong>Key Scriptures from the list (in context):</strong> The verses provided show the original meaning — not the twisted version used to support the misrepresentation.
+                </div>
+                <p>Jesus never meant the twisted version. He meant the truth that protects faith: relationship, obedience, lament, grace for weakness, etc.</p>
+            </div>
+            <div class="section red">
+                <div class="label red">4. APPLICATION — The Sticky Bottom Line</div>
+                <div class="sticky" style="font-size:1.3rem; border-color:var(--red);">
+                    Jesus never *meant* [the misrepresentation].<br>
+                    He meant [the truth from the scriptures and context].
+                </div>
+            </div>
+            <div class="section">
+                <div class="label">5. INSPIRATION / REFLECTION</div>
+                <p>Imagine what it would be like to be free from the false expectation and the guilt or cynicism it creates.</p>
+            </div>
+            <div class="action-box">
+                <div class="label">6. ACTION — Clear Next Steps</div>
+                <div class="action-step">
+                    <div class="num">1</div>
+                    <div><strong>Heart Check:</strong> Examine where this misrepresentation has affected your view of God, prayer, giving, healing, or blessing. Confess it.</div>
+                </div>
+                <div class="action-step">
+                    <div class="num">2</div>
+                    <div><strong>Live the Truth:</strong> This week, practice the real meaning (e.g., pray according to God's will, give as worship, lament honestly, work diligently while trusting grace). Tell one person the truth you learned.</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:1.5rem; border-top:1px solid #333; padding-top:1rem;">
+            <strong style="font-size:1.1rem; color:var(--gold);">WEEK 12: “JESUS NEVER MEANT ‘DO NOT WORRY’ TO MEAN ‘DON’T PLAN OR WORK HARD’”</strong>
+            <div class="section">
+                <div class="label">ENGAGE — Hook (2–3 min)</div>
+                <p><strong>Start with this question to the room:</strong></p>
+                <p style="font-size:1.35rem; font-weight:600; margin:0.8rem 0;">"How many of you have heard or believed this common teaching?"</p>
+                <div class="illustration">
+                    <strong>Illustration / Story:</strong><br>
+                    "A real story of someone whose faith was rocked by this misrepresentation — when the 'promise' failed, they felt God failed them or the Bible lied, and they told others the same."
+                </div>
+            </div>
+            <div class="section pink">
+                <div class="label pink">2. TENSION — The Problem (3–4 min)</div>
+                <p>"The problem is this misrepresentation leads people to a false gospel. When real life doesn't match the 'promise,' they conclude the Bible or God failed, and they tell others — rocking or abandoning faith."</p>
+            </div>
+            <div class="section gold">
+                <div class="label gold">3. TRUTH — What Jesus Actually Said</div>
+                <div class="scripture">
+                    <strong>Key Scriptures from the list (in context):</strong> The verses provided show the original meaning — not the twisted version used to support the misrepresentation.
+                </div>
+                <p>Jesus never meant the twisted version. He meant the truth that protects faith: relationship, obedience, lament, grace for weakness, etc.</p>
+            </div>
+            <div class="section red">
+                <div class="label red">4. APPLICATION — The Sticky Bottom Line</div>
+                <div class="sticky" style="font-size:1.3rem; border-color:var(--red);">
+                    Jesus never *meant* [the misrepresentation].<br>
+                    He meant [the truth from the scriptures and context].
+                </div>
+            </div>
+            <div class="section">
+                <div class="label">5. INSPIRATION / REFLECTION</div>
+                <p>Imagine what it would be like to be free from the false expectation and the guilt or cynicism it creates.</p>
+            </div>
+            <div class="action-box">
+                <div class="label">6. ACTION — Clear Next Steps</div>
+                <div class="action-step">
+                    <div class="num">1</div>
+                    <div><strong>Heart Check:</strong> Examine where this misrepresentation has affected your view of God, prayer, giving, healing, or blessing. Confess it.</div>
+                </div>
+                <div class="action-step">
+                    <div class="num">2</div>
+                    <div><strong>Live the Truth:</strong> This week, practice the real meaning (e.g., pray according to God's will, give as worship, lament honestly, work diligently while trusting grace). Tell one person the truth you learned.</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:1.5rem; border-top:1px solid #333; padding-top:1rem;">
+            <strong style="font-size:1.1rem; color:var(--gold);">WEEK 13: “JESUS NEVER SAID ‘MY GRACE IS SUFFICIENT’ AS AN EXCUSE FOR LAZINESS OR SIN”</strong>
+            <div class="section">
+                <div class="label">ENGAGE — Hook (2–3 min)</div>
+                <p><strong>Start with this question to the room:</strong></p>
+                <p style="font-size:1.35rem; font-weight:600; margin:0.8rem 0;">"How many of you have heard or believed this common teaching?"</p>
+                <div class="illustration">
+                    <strong>Illustration / Story:</strong><br>
+                    "A real story of someone whose faith was rocked by this misrepresentation — when the 'promise' failed, they felt God failed them or the Bible lied, and they told others the same."
+                </div>
+            </div>
+            <div class="section pink">
+                <div class="label pink">2. TENSION — The Problem (3–4 min)</div>
+                <p>"The problem is this misrepresentation leads people to a false gospel. When real life doesn't match the 'promise,' they conclude the Bible or God failed, and they tell others — rocking or abandoning faith."</p>
+            </div>
+            <div class="section gold">
+                <div class="label gold">3. TRUTH — What Jesus Actually Said</div>
+                <div class="scripture">
+                    <strong>Key Scriptures from the list (in context):</strong> The verses provided show the original meaning — not the twisted version used to support the misrepresentation.
+                </div>
+                <p>Jesus never meant the twisted version. He meant the truth that protects faith: relationship, obedience, lament, grace for weakness, etc.</p>
+            </div>
+            <div class="section red">
+                <div class="label red">4. APPLICATION — The Sticky Bottom Line</div>
+                <div class="sticky" style="font-size:1.3rem; border-color:var(--red);">
+                    Jesus never *meant* [the misrepresentation].<br>
+                    He meant [the truth from the scriptures and context].
+                </div>
+            </div>
+            <div class="section">
+                <div class="label">5. INSPIRATION / REFLECTION</div>
+                <p>Imagine what it would be like to be free from the false expectation and the guilt or cynicism it creates.</p>
+            </div>
+            <div class="action-box">
+                <div class="label">6. ACTION — Clear Next Steps</div>
+                <div class="action-step">
+                    <div class="num">1</div>
+                    <div><strong>Heart Check:</strong> Examine where this misrepresentation has affected your view of God, prayer, giving, healing, or blessing. Confess it.</div>
+                </div>
+                <div class="action-step">
+                    <div class="num">2</div>
+                    <div><strong>Live the Truth:</strong> This week, practice the real meaning (e.g., pray according to God's will, give as worship, lament honestly, work diligently while trusting grace). Tell one person the truth you learned.</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:1.5rem; border-top:1px solid #333; padding-top:1rem;">
+            <strong style="font-size:1.1rem; color:var(--gold);">WEEK 14: “JESUS NEVER PROMISED CHRISTIANS WOULD BE HEALTHY, WEALTHY, AND PROBLEM-FREE”</strong>
+            <div class="section">
+                <div class="label">ENGAGE — Hook (2–3 min)</div>
+                <p><strong>Start with this question to the room:</strong></p>
+                <p style="font-size:1.35rem; font-weight:600; margin:0.8rem 0;">"How many of you have heard or believed this common teaching?"</p>
+                <div class="illustration">
+                    <strong>Illustration / Story:</strong><br>
+                    "A real story of someone whose faith was rocked by this misrepresentation — when the 'promise' failed, they felt God failed them or the Bible lied, and they told others the same."
+                </div>
+            </div>
+            <div class="section pink">
+                <div class="label pink">2. TENSION — The Problem (3–4 min)</div>
+                <p>"The problem is this misrepresentation leads people to a false gospel. When real life doesn't match the 'promise,' they conclude the Bible or God failed, and they tell others — rocking or abandoning faith."</p>
+            </div>
+            <div class="section gold">
+                <div class="label gold">3. TRUTH — What Jesus Actually Said</div>
+                <div class="scripture">
+                    <strong>Key Scriptures from the list (in context):</strong> The verses provided show the original meaning — not the twisted version used to support the misrepresentation.
+                </div>
+                <p>Jesus never meant the twisted version. He meant the truth that protects faith: relationship, obedience, lament, grace for weakness, etc.</p>
+            </div>
+            <div class="section red">
+                <div class="label red">4. APPLICATION — The Sticky Bottom Line</div>
+                <div class="sticky" style="font-size:1.3rem; border-color:var(--red);">
+                    Jesus never *meant* [the misrepresentation].<br>
+                    He meant [the truth from the scriptures and context].
+                </div>
+            </div>
+            <div class="section">
+                <div class="label">5. INSPIRATION / REFLECTION</div>
+                <p>Imagine what it would be like to be free from the false expectation and the guilt or cynicism it creates.</p>
+            </div>
+            <div class="action-box">
+                <div class="label">6. ACTION — Clear Next Steps</div>
+                <div class="action-step">
+                    <div class="num">1</div>
+                    <div><strong>Heart Check:</strong> Examine where this misrepresentation has affected your view of God, prayer, giving, healing, or blessing. Confess it.</div>
+                </div>
+                <div class="action-step">
+                    <div class="num">2</div>
+                    <div><strong>Live the Truth:</strong> This week, practice the real meaning (e.g., pray according to God's will, give as worship, lament honestly, work diligently while trusting grace). Tell one person the truth you learned.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

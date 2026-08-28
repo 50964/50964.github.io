@@ -3,6 +3,7 @@
   var NAV = [
     { href: "/sundays", label: "Sundays" },
     { href: "/messages", label: "Watch" },
+    { href: "/library", label: "Library" },
     { href: "/about", label: "About" }
   ];
 
@@ -421,5 +422,25 @@
     }
     audio.addEventListener("ended", function () { setPlay(false); });
     audio.addEventListener("pause", function () { if (!intro) setPlay(false); });
+  }
+
+  var filters = document.getElementById("libFilters");
+  if (filters) {
+    var buttons = filters.querySelectorAll("button[data-filter]");
+    var items = document.querySelectorAll("[data-kind]");
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var kind = btn.getAttribute("data-filter");
+        buttons.forEach(function (b) { b.classList.toggle("is-on", b === btn); });
+        items.forEach(function (el) {
+          var show = kind === "all" || el.getAttribute("data-kind") === kind;
+          el.hidden = !show;
+        });
+        document.querySelectorAll("[data-kind-group]").forEach(function (group) {
+          var visible = group.querySelector("[data-kind]:not([hidden])");
+          group.hidden = !visible;
+        });
+      });
+    });
   }
 })();
