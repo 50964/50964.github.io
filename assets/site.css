@@ -1534,7 +1534,7 @@ body.home .site-nav.is-solid {
   width: 168px;
   height: 168px;
   object-fit: cover;
-  object-position: 40% 58%;
+  object-position: center 42%;
   border-radius: 50%;
   border: 2px solid var(--gold);
   box-shadow: 0 14px 36px rgba(0,0,0,0.45);
