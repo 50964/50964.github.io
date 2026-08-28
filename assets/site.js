@@ -48,6 +48,57 @@
     document.body.appendChild(audio);
   }
 
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var params = new URLSearchParams(location.search);
+  var playCode = (params.get("play") || params.get("code") || "").toLowerCase();
+  var wantPlay = playCode === "316" || playCode === "c316" || params.has("listen");
+
+  function saveAudio() {
+    if (!audio) return;
+    try {
+      sessionStorage.setItem("c316-audio", JSON.stringify({
+        playing: !audio.paused,
+        t: audio.currentTime || 0
+      }));
+    } catch (e) {}
+  }
+  function loadAudioState() {
+    try {
+      return JSON.parse(sessionStorage.getItem("c316-audio") || "{}");
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function showDock() {
+    var dock = document.getElementById("audioDock");
+    if (dock) dock.classList.add("is-on");
+    paintDock();
+  }
+  function paintDock() {
+    var btn = document.getElementById("audioToggle");
+    if (!btn || !audio) return;
+    btn.textContent = audio.paused ? "Play" : "Pause";
+    btn.setAttribute("aria-label", audio.paused ? "Play music" : "Pause music");
+  }
+
+  if (!document.getElementById("audioDock")) {
+    var dock = document.createElement("div");
+    dock.id = "audioDock";
+    dock.className = "audio-dock";
+    dock.innerHTML = '<button type="button" id="audioToggle" class="audio-dock-btn">Pause</button>';
+    document.body.appendChild(dock);
+    dock.querySelector("#audioToggle").addEventListener("click", function () {
+      if (!audio) return;
+      if (audio.paused) window.C316.playAnthem();
+      else {
+        audio.pause();
+        saveAudio();
+        paintDock();
+      }
+    });
+  }
+
   function fadeAudio(to, ms) {
     if (!audio) return;
     var from = audio.volume;
@@ -65,31 +116,70 @@
     playAnthem: function () {
       if (!audio) return Promise.resolve();
       audio.volume = 0.85;
-      return audio.play().catch(function () {});
+      return audio.play().then(function () {
+        showDock();
+        saveAudio();
+        paintDock();
+      }).catch(function () {});
     },
     stopAnthem: function () { fadeAudio(0, 700); }
   };
+
+  audio.addEventListener("play", function () {
+    showDock();
+    saveAudio();
+    paintDock();
+  });
+  audio.addEventListener("pause", saveAudio);
+  audio.addEventListener("ended", function () {
+    saveAudio();
+    paintDock();
+  });
+  audio.addEventListener("timeupdate", function () {
+    if (Math.floor(audio.currentTime) % 2 === 0) saveAudio();
+  });
+  window.addEventListener("pagehide", saveAudio);
+  window.addEventListener("beforeunload", saveAudio);
+
+  document.querySelectorAll("a[href]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      var href = a.getAttribute("href") || "";
+      if (href.charAt(0) === "/" || href.indexOf(location.origin) === 0) saveAudio();
+    });
+  });
+
+  var saved = loadAudioState();
+  if (saved.t && !isNaN(saved.t)) {
+    try { audio.currentTime = saved.t; } catch (e) {}
+  }
+
+  function startFromCodeOrResume() {
+    if (reduceMotion) return Promise.resolve();
+    if (saved.playing || wantPlay || saved.t > 0.4) {
+      showDock();
+      return window.C316.playAnthem();
+    }
+    return Promise.resolve();
+  }
 
   const intro = document.getElementById("logoIntro");
   function finishIntro() {
     if (!intro || intro.classList.contains("is-done")) return;
     intro.classList.add("is-done");
     document.body.classList.remove("intro-lock");
-    fadeAudio(0, 900);
     try { sessionStorage.setItem("c316-intro", "1"); } catch (e) {}
+    saveAudio();
     setTimeout(function () { intro.remove(); }, 1000);
   }
   if (intro) {
     var skip = false;
     try { skip = sessionStorage.getItem("c316-intro") === "1"; } catch (e) {}
-    if (skip || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (skip || reduceMotion) {
       intro.remove();
+      startFromCodeOrResume();
     } else {
       document.body.classList.add("intro-lock");
-      function startIntroSound() {
-        window.C316.playAnthem();
-      }
-      startIntroSound();
+      window.C316.playAnthem();
       audio.addEventListener("play", function hideGate() {
         intro.classList.remove("needs-tap");
       });
@@ -98,17 +188,36 @@
       }, 400);
       intro.addEventListener("click", function (e) {
         if (e.target && e.target.closest("[data-skip-intro]")) return;
-        if (audio.paused) startIntroSound();
+        window.C316.playAnthem();
       });
       setTimeout(finishIntro, 20000);
       intro.querySelectorAll("[data-skip-intro]").forEach(function (btn) {
         btn.addEventListener("click", function (e) {
           e.stopPropagation();
+          window.C316.playAnthem();
           finishIntro();
         });
       });
     }
+  } else {
+    startFromCodeOrResume();
   }
+
+  /* Code 316 anywhere starts / resumes the anthem */
+  var typed = "";
+  window.addEventListener("keydown", function (e) {
+    if (!e.key || e.key.length !== 1) return;
+    typed = (typed + e.key.toLowerCase()).slice(-8);
+    if (typed.indexOf("316") !== -1 || typed.indexOf("c316") !== -1) {
+      typed = "";
+      window.C316.playAnthem();
+    }
+  });
+  document.addEventListener("pointerdown", function unlock() {
+    if (audio && audio.paused && (wantPlay || loadAudioState().playing)) {
+      window.C316.playAnthem();
+    }
+  }, { once: false });
 
   const nav = document.querySelector(".site-nav");
   function onScroll() {

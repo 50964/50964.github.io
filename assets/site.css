@@ -588,6 +588,35 @@ ul { list-style: none; }
 .logo-intro.needs-tap { cursor: pointer; }
 .logo-intro.needs-tap .intro-tap { display: block; animation: tagIn 0.6s var(--ease) both; }
 
+.audio-dock {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 1600;
+  display: none;
+}
+.audio-dock.is-on { display: block; }
+.audio-dock-btn {
+  min-width: 4.5rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(10, 10, 10, 0.78);
+  color: var(--cream);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+.audio-dock-btn:hover { border-color: var(--gold); color: var(--gold-light); }
+@media (max-width: 640px) {
+  .audio-dock {
+    left: 0.75rem;
+    bottom: 0.75rem;
+  }
+}
+
 .live-stage {
   position: relative;
   min-height: 100vh;
