@@ -1,7 +1,9 @@
-# churchthreesixteen.co.uk
+# Church Three Sixteen
 
-Church Three Sixteen website, served by GitHub Pages.
+Live site for [churchthreesixteen.co.uk](https://churchthreesixteen.co.uk).
 
-- Live (GitHub): https://50964.github.io
-- Custom domain: https://churchthreesixteen.co.uk
-- Source project: https://github.com/50964/churchthreesixteen
+Hosted on GitHub Pages (`50964.github.io`).
+
+The previous site is archived at:
+- Branch [`archive/old-site-2026-08`](https://github.com/50964/50964.github.io/tree/archive/old-site-2026-08)
+- Repo https://github.com/50964/churchthreesixteen-archive
