@@ -321,7 +321,7 @@
      Set youtubeChannelId to your UC… id (YouTube → channel → Share → channel ID).
      Mevo streams to that YouTube Live destination; this page embeds it. */
   var LIVE = {
-    youtubeChannelId: ""
+    youtubeChannelId: "UCpKjo9BNX6xvKxkB6kxFvhQ"
   };
 
   var stage = document.getElementById("liveStage");
