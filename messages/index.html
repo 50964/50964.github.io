@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Watch — C316</title>
+  <meta name="description" content="Watch and listen with Church Three:Sixteen. Live Sundays 11:30am, and the C316 anthem anytime." />
+  <link rel="icon" href="/assets/logo-mark.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Literata:ital,opsz,wght@0,7..72,500;1,7..72,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script src="/assets/site.js" defer></script>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="inner">
+      <a class="nav-brand" href="/">
+        <img src="/assets/logo-transparent.png" alt="C316" />
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/sundays">Sundays</a>
+        <a href="/messages">Watch</a>
+        <a href="/about">About</a>
+      </nav>
+      <a class="btn btn-primary nav-cta-btn" href="/sundays">Plan a Visit</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu"><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <img class="nav-logo-lg" src="/assets/logo-circle.png" alt="" />
+    <a href="/">Home</a>
+    <a href="/sundays">Sundays</a>
+    <a href="/messages">Watch</a>
+    <a href="/about">About</a>
+    <a class="btn btn-primary" href="/sundays" style="margin-top:1rem">Plan a Visit</a>
+  </div>
+
+  <main>
+    <section class="live-stage" id="liveStage">
+      <div class="cine-media" aria-hidden="true">
+        <img src="/assets/hero-worship.jpg" alt="" style="object-position:center 38%" />
+      </div>
+      <div class="cine-shade"></div>
+      <div class="live-copy">
+        <span class="chip" id="liveBadge"><span class="dot"></span> Sundays 11:30am</span>
+        <h1 class="headline">WATCH <span class="accent">LIVE</span></h1>
+        <p class="subhead" id="liveStatus">Sundays 11:30am. Press play to listen — or be in the room.</p>
+        <div class="live-controls">
+          <button class="btn btn-primary" type="button" id="livePlay">Play</button>
+          <a class="btn btn-ghost" href="/sundays">Be in the room</a>
+        </div>
+        <p class="live-track">Church Three Sixteen</p>
+      </div>
+    </section>
+    <audio id="c316Audio" src="/assets/c316-anthem.mp3" preload="auto" playsinline></audio>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <img class="logo" src="/assets/logo-transparent.png" alt="C316" />
+      <p class="invite">Church 316 is a church for the curious, the doubters, the followers — why not come and join us this Sunday?</p>
+      <div class="meta-line">
+        <span><strong>Sundays 11:30am</strong> · Howley Grange Scout Hut</span>
+        <span>Bournebrook Cres, Halesowen B62 0HY</span>
+        <a href="https://churchthreesixteen.co.uk">churchthreesixteen.co.uk</a>
+      </div>
+      <p class="copy">© Church Three Sixteen · C316</p>
+    </div>
+  </footer>
+</body>
+</html>

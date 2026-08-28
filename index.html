@@ -2,140 +2,229 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-  <title>THREE:SIXTEEN — Church for the Curious</title>
-  <meta name="description" content="A church for the curious, the hopeful, and everyone in between. Sundays 11:30am in Halesowen. Come as you are." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C316 — Church for the Curious</title>
+  <meta name="description" content="Church Three:Sixteen is a church for the curious, the doubters, the followers. Sundays 11:30am at Howley Grange Scout Hut, Halesowen. Come as you are." />
+  <meta property="og:title" content="C316 — Church for the Curious" />
+  <meta property="og:description" content="Come As You Are — four Sundays of welcome in Halesowen. Sundays 11:30am · Howley Grange Scout Hut." />
+  <meta property="og:image" content="/assets/logo-circle.png" />
+  <link rel="icon" href="/assets/logo-mark.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Literata:ital,opsz,wght@0,7..72,500;1,7..72,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js" defer></script>
+  <script src="/assets/site.js" defer></script>
 </head>
-<body>
-  <header class="nav">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo"><span class="nav-logo-text">C316</span></a>
-      <nav class="nav-links">
-        <a href="#sundays">Sundays</a>
-        <a href="messages.html">Messages</a>
-        <a href="about.html">Our Story</a>
-        <a href="groups.html">Groups</a>
-        <a href="#volunteers">Volunteers</a>
+<body class="home">
+
+  <div id="logoIntro" class="logo-intro" aria-hidden="true">
+    <img class="intro-glow" src="/assets/intro-glow.jpg" alt="" />
+    <div class="intro-stage">
+      <img class="intro-seal" src="/assets/logo-circle.png" alt="C316 — Church for the Curious" />
+      <p class="intro-tag">Church for the Curious</p>
+      <p class="intro-tap">Tap to enter</p>
+    </div>
+    <button class="intro-skip" type="button" data-skip-intro>Skip</button>
+  </div>
+  <audio id="c316Audio" src="/assets/c316-anthem.mp3" preload="auto" playsinline></audio>
+
+  <header class="site-nav">
+    <div class="inner">
+      <a class="nav-brand" href="/">
+        <img src="/assets/logo-transparent.png" alt="C316" />
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/sundays">Sundays</a>
+        <a href="/messages">Watch</a>
+        <a href="/about">About</a>
       </nav>
-      <div class="nav-cta"><a href="#sundays" class="btn btn-primary">Plan a Visit</a></div>
-      <button class="nav-toggle" aria-label="Menu" id="navToggle"><span></span><span></span><span></span></button>
+      <a class="btn btn-primary nav-cta-btn" href="/sundays">Plan a Visit</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu"><span></span></button>
     </div>
   </header>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#sundays">Sundays</a>
-    <a href="messages.html">Messages</a>
-    <a href="about.html">Our Story</a>
-    <a href="groups.html">Groups</a>
-    <a href="#volunteers">Volunteers</a>
-    <a href="#sundays" class="btn btn-primary" style="margin-top:1rem">Plan a Visit</a>
+
+  <div class="mobile-nav" id="mobileNav">
+    <img class="nav-logo-lg" src="/assets/logo-circle.png" alt="" />
+    <a href="/">Home</a>
+    <a href="/sundays">Sundays</a>
+    <a href="/messages">Watch</a>
+    <a href="/about">About</a>
+    <a class="btn btn-primary" href="/sundays" style="margin-top:1rem">Plan a Visit</a>
   </div>
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-tag">Church for the Curious</div>
-      <h1 class="display">Come as you are.<br />Leave different.</h1>
-      <p class="subhead">A church for the curious, the hopeful, and everyone in between. No pressure. No performance. Just Jesus, real community, and space to grow.</p>
-      <div class="hero-ctas">
-        <a href="#sundays" class="btn btn-primary btn-lg">Plan a Visit</a>
-        <a href="#live" class="btn btn-secondary btn-lg">Watch Live</a>
+
+  <main>
+    <section class="cine-hero" id="this-sunday">
+      <div class="cine-media" aria-hidden="true">
+        <img src="/assets/series-table.jpg" alt="" style="object-position:center 72%" />
       </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">What we’re about</div>
-        <h2 class="headline">Jesus at the centre.<br />People matter.</h2>
-      </div>
-      <div class="card-grid cols-3">
-        <div class="card"><div class="card-icon">✝</div><h3>Jesus at the Centre</h3><p>Everything begins and ends with Him. His life shapes our life. Simple as that.</p></div>
-        <div class="card"><div class="card-icon">♥</div><h3>People Matter</h3><p>Every story is sacred. Every person is loved by God. You’re not a project — you’re family.</p></div>
-        <div class="card"><div class="card-icon">✦</div><h3>Authenticity</h3><p>We show up as we are — honest, imperfect, growing. No masks required.</p></div>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="sundays" style="background: var(--bg-elevated);">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">Join us</div>
-        <h2 class="headline">Sundays at 11:30</h2>
-        <p class="subhead" style="margin-top:1rem">All welcome. Come as you are.</p>
-      </div>
-      <div class="info-block">
-        <div>
-          <h3 class="mb-4" style="font-size:1.6rem">Find us this Sunday</h3>
-          <p class="body-lg mb-6">We meet at the Howley Grange Scout Hut — a simple, warm space where you can explore faith without the pressure.</p>
-          <a href="https://maps.google.com/?q=Bournebrook+Cres,+Halesowen+B62+0HY" target="_blank" rel="noopener" class="btn btn-primary">Get Directions</a>
+      <div class="cine-shade"></div>
+      <div class="cine-copy">
+        <p class="kicker">Come As You Are · Week 1</p>
+        <h1 class="headline">ROOM AT<br /><span class="accent">THE TABLE</span></h1>
+        <p class="subhead verse-line">“Jesus still makes space for the ones who feel left out.”</p>
+        <p class="ref">Luke 14:15–24 · Sunday 6 September · 11:30am</p>
+        <div class="hero-meta">
+          <span class="chip"><span class="dot"></span> 11:30am</span>
+          <span class="chip pink">Halesowen</span>
         </div>
-        <div class="info-meta">
-          <div class="info-item"><div><strong>Address</strong><span>Bournebrook Cres, Halesowen B62 0HY</span></div></div>
-          <div class="info-item"><div><strong>what3words</strong><span>///bunny.jars.stews</span></div></div>
-          <div class="info-item"><div><strong>Time</strong><span>Sundays 11:30 AM — All welcome</span></div></div>
-          <div class="info-item"><div><strong>Email</strong><span>hello@churchthreesixteen.com</span></div></div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/sundays">This Sunday · 11:30</a>
+          <a class="btn btn-ghost" href="/messages">Watch</a>
+          <button class="btn btn-pink" type="button" data-open-invite>Invite a Friend</button>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="section" id="live">
-    <div class="container">
-      <div class="live-banner">
-        <div class="live-dot">Live & Catch-up</div>
-        <h2 class="headline mb-4" style="font-size:clamp(1.8rem,4vw,2.5rem)">Join us online</h2>
-        <p class="subhead mb-6" style="max-width:480px;margin-left:auto;margin-right:auto">When we go live for Sunday or Bible study you’ll find the stream right here. Until then, catch up on recent messages.</p>
-        <div class="hero-ctas">
-          <a href="messages.html" class="btn btn-primary">Watch Messages</a>
-          <a href="#sundays" class="btn btn-secondary">Come in person</a>
+      <a class="scroll-cue" href="#sit">Scroll</a>
+    </section>
+
+    <section class="cine-panel" id="sit">
+      <div class="cine-media" aria-hidden="true">
+        <img src="/assets/hero-coffee.jpg" alt="" />
+      </div>
+      <div class="cine-shade reverse"></div>
+      <div class="cine-copy left">
+        <p class="kicker">You’re invited</p>
+        <h2 class="headline">COME SIT<br /><span class="accent">WITH US</span></h2>
+        <p class="subhead">A church for the curious, the doubters, the followers — why not come and join us this Sunday? No pressure. Come as you are.</p>
+        <div class="hero-meta">
+          <span class="chip"><span class="dot"></span> Sundays 11:30am</span>
+          <span class="chip pink">Halesowen · All welcome</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/sundays">Plan Your Visit</a>
+          <a class="btn btn-ghost" href="https://what3words.com/bunny.jars.stews" target="_blank" rel="noopener">///bunny.jars.stews</a>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <div class="card-grid cols-2" style="align-items:center">
-        <div>
-          <div class="eyebrow">Our Story</div>
-          <h2 class="headline mb-4">From atheist to pastor</h2>
-          <p class="body-lg mb-6">Math didn’t grow up in church. For most of his life he was a committed atheist. Then Jesus interrupted everything. THREE:SIXTEEN was born out of that journey — a place for sceptics, seekers and questioners.</p>
-          <a href="about.html" class="btn btn-secondary">Read the full story →</a>
+    </section>
+
+    <section class="section series-section" id="series">
+      <div class="container">
+        <div class="section-header">
+          <p class="kicker">September 2026</p>
+          <h2 class="headline">COME AS <span class="accent">YOU ARE</span></h2>
+          <p class="subhead">Four Sundays of welcome, curiosity, and real invitation — for the hopeful, the in-between, and anyone still asking questions.</p>
         </div>
-        <div class="card" style="background:linear-gradient(160deg, rgba(216,50,110,0.12), rgba(255,222,89,0.05)); border-color:rgba(216,50,110,0.25)">
-          <p style="font-size:1.25rem; line-height:1.6; color:var(--text); font-weight:500">“If you’re curious, if you’re searching, if you’re not sure what you believe — you belong here.”</p>
-          <p style="margin-top:1.5rem; color:var(--text-muted); font-size:0.95rem">— Math, Lead Pastor</p>
+        <div class="series-grid">
+          <a class="series-card" href="/sundays#week-1">
+            <img src="/assets/series-table.jpg" alt="" />
+            <div class="series-shade"></div>
+            <div class="series-copy">
+              <p class="week">Week 1 · 6 September</p>
+              <h3>Room at the Table</h3>
+              <p>Luke 14:15–24</p>
+            </div>
+          </a>
+          <a class="series-card" href="/sundays#week-2">
+            <img src="/assets/series-hallway.jpg" alt="" />
+            <div class="series-shade"></div>
+            <div class="series-copy">
+              <p class="week">Week 2 · 13 September</p>
+              <h3>Curious Is Welcome</h3>
+              <p>John 1:35–46</p>
+            </div>
+          </a>
+          <a class="series-card" href="/sundays#week-3">
+            <img src="/assets/series-door.jpg" alt="" />
+            <div class="series-shade"></div>
+            <div class="series-copy">
+              <p class="week">Week 3 · 20 September</p>
+              <h3>The Name on Our Door</h3>
+              <p>John 3:16–17</p>
+            </div>
+          </a>
+          <a class="series-card" href="/sundays#week-4">
+            <img src="/assets/series-street.jpg" alt="" />
+            <div class="series-shade"></div>
+            <div class="series-copy">
+              <p class="week">Week 4 · 27 September</p>
+              <h3>Bring Them With You</h3>
+              <p>Mark 2:1–12</p>
+            </div>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="section" id="groups" style="background:var(--bg-elevated)">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">Grow together</div>
-        <h2 class="headline">Find your people</h2>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="scripture-card">
+          <p class="kicker">John 3:16</p>
+          <div class="rule center"></div>
+          <p class="verse">“For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.”</p>
+          <p class="ref">The verse that holds us</p>
+        </div>
       </div>
-      <div class="card-grid cols-3">
-        <div class="card"><div class="card-icon">📖</div><h3>Messages</h3><p>Catch up on recent teachings and explore the story of Jesus at your own pace.</p><a href="messages.html" class="btn btn-secondary" style="margin-top:1.5rem; padding:0.7rem 1.4rem; font-size:0.9rem">Watch →</a></div>
-        <div class="card"><div class="card-icon">🤝</div><h3>Groups & Rhythms</h3><p>Small daily steps towards Jesus — Scripture, prayer and real connection with people.</p><a href="groups.html" class="btn btn-secondary" style="margin-top:1.5rem; padding:0.7rem 1.4rem; font-size:0.9rem">Explore →</a></div>
-        <div class="card" id="volunteers"><div class="card-icon">🙌</div><h3>Volunteers</h3><p>Use your gifts. Serve the family. The volunteers portal is ready when you are.</p><a href="https://churchthreesixteen.my.canva.site" target="_blank" rel="noopener" class="btn btn-secondary" style="margin-top:1.5rem; padding:0.7rem 1.4rem; font-size:0.9rem">Open portal →</a></div>
+    </section>
+
+    <section class="section" style="background:var(--black-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+      <div class="container">
+        <div class="section-header">
+          <p class="kicker">Next step</p>
+          <h2 class="headline">FIND YOUR <span class="accent">PLACE</span></h2>
+        </div>
+        <div class="grid-3" style="max-width:960px;margin:0 auto;">
+          <a class="nav-card" href="/sundays"><span class="icon">◎</span><div><h3>Sundays</h3><p>11:30am · Howley Grange Scout Hut</p></div><span class="arrow">→</span></a>
+          <a class="nav-card" href="/messages"><span class="icon">▶</span><div><h3>Watch</h3><p>Listen live, or be in the room</p></div><span class="arrow">→</span></a>
+          <a class="nav-card" href="/about"><span class="icon">✦</span><div><h3>About</h3><p>Our story, Math, and belonging</p></div><span class="arrow">→</span></a>
+        </div>
       </div>
-    </div>
-  </section>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand"><p>A church for the curious, the hopeful, and everyone in between.</p></div>
-        <div><h4>Explore</h4><ul><li><a href="#sundays">Sundays</a></li><li><a href="messages.html">Messages</a></li><li><a href="about.html">Our Story</a></li><li><a href="groups.html">Groups</a></li></ul></div>
-        <div><h4>Visit</h4><ul><li>Bournebrook Cres<br>Halesowen B62 0HY</li><li style="margin-top:0.8rem">Sundays 11:30 AM</li><li style="margin-top:0.8rem"><a href="mailto:hello@churchthreesixteen.com">hello@churchthreesixteen.com</a></li></ul></div>
+    </section>
+
+    <section class="cta-band">
+      <p class="kicker">This season</p>
+      <h2 class="headline">WHY NOT COME <span class="accent">JOIN US?</span></h2>
+      <p class="subhead">Church 316 is a church for the curious, the doubters, the followers — Halesowen, 11:30am.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/sundays">Sundays @ 11:30am</a>
+        <button class="btn btn-pink" type="button" data-open-invite>Share Invite</button>
       </div>
-      <div class="footer-bottom"><span>© 2026 THREE:SIXTEEN. All rights reserved.</span><span>For God so loved the world…</span></div>
+    </section>
+
+    <section class="cine-panel cine-panel-mid" id="belong">
+      <div class="cine-media" aria-hidden="true">
+        <img src="/assets/hero-worship.jpg" alt="" style="object-position:center 38%" />
+      </div>
+      <div class="cine-shade"></div>
+      <div class="cine-copy">
+        <p class="kicker">Belong</p>
+        <h2 class="headline">NOT A CLUB.<br /><span class="accent">A COVENANT.</span></h2>
+        <p class="subhead">You can keep coming as a guest. The curious are welcome every week — membership is only for the moment you want to say: this is my church, and these are my people.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/about#belong">How belonging works</a>
+          <a class="btn btn-ghost" href="mailto:hello@churchthreesixteen.com?subject=Membership">Talk about belonging</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <img class="logo" src="/assets/logo-transparent.png" alt="C316" />
+      <p class="invite">Church 316 is a church for the curious, the doubters, the followers — why not come and join us this Sunday?</p>
+      <div class="meta-line">
+        <span><strong>Sundays 11:30am</strong> · Howley Grange Scout Hut</span>
+        <span>Bournebrook Cres, Halesowen B62 0HY</span>
+        <a href="https://what3words.com/bunny.jars.stews" target="_blank" rel="noopener">///bunny.jars.stews</a>
+        <a href="https://churchthreesixteen.co.uk">churchthreesixteen.co.uk</a>
+      </div>
+      <p class="copy">© Church Three Sixteen · C316</p>
     </div>
   </footer>
-  <script>
-    const toggle = document.getElementById('navToggle');
-    const menu = document.getElementById('mobileMenu');
-    toggle.addEventListener('click', () => { menu.classList.toggle('active'); toggle.classList.toggle('active'); });
-    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.classList.remove('active')));
-  </script>
+
+  <div class="modal" id="inviteModal" role="dialog" aria-modal="true" aria-labelledby="inviteTitle">
+    <div class="modal-backdrop" data-close-invite></div>
+    <div class="modal-card">
+      <button class="modal-close" type="button" data-close-invite aria-label="Close">×</button>
+      <img src="/assets/logo-transparent.png" alt="" />
+      <h2 id="inviteTitle">COME SIT WITH US</h2>
+      <p>Share C316 with someone who needs a place at the table.</p>
+      <div class="qr" id="inviteQR"></div>
+      <div class="share-row">
+        <button class="btn btn-primary" type="button" onclick="shareInvite()">Share</button>
+        <a class="btn btn-ghost" href="/sundays">Plan Visit</a>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

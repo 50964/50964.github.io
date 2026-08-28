@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YHWH Week 2 · Merciful &amp; Gracious · C316 Bible Study</title>
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Literata:ital,opsz,wght@0,7..72,500;1,7..72,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --black-soft: #141414;
+      --gold: #c4a86a;
+      --gold-light: #dcc896;
+      --yellow: #f0d050;
+      --pink: #d42a6a;
+      --pink-soft: #e85a8c;
+      --cream: #f7f2e8;
+      --muted: #9a9a9a;
+      --text-soft: rgba(255,255,255,0.8);
+      --border: rgba(196,168,106,0.28);
+      --font-display: "Bebas Neue", Impact, sans-serif;
+      --font-body: "Outfit", system-ui, sans-serif;
+      --font-verse: "Literata", Georgia, serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #1a1a1a;
+      color: #fff;
+      font-family: var(--font-body);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: min(900px, 100%);
+      margin: 0 auto 2rem;
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(196,168,106,0.2);
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+
+    .frame {
+      position: absolute;
+      inset: 18px;
+      border: 2px solid var(--gold);
+      border-radius: 6px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .frame::after {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(196,168,106,0.4);
+      border-radius: 3px;
+    }
+
+    .content {
+      position: relative;
+      z-index: 3;
+      padding: 48px 44px 40px;
+    }
+
+    .accent-bar {
+      height: 5px;
+      background: linear-gradient(90deg, var(--yellow), var(--pink), var(--gold));
+    }
+
+    .logo-watermark {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      object-fit: contain;
+      opacity: 0.08;
+      right: -30px;
+      bottom: -20px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .kicker {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .headline {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2.4rem, 7vw, 3.8rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+    }
+    .headline .accent { color: var(--gold-light); }
+    .headline .pink { color: var(--pink-soft); }
+
+    .rule {
+      width: 72px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--pink));
+      border-radius: 2px;
+      margin: 1rem 0 1.25rem;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border: 1.5px solid var(--gold);
+      color: var(--gold-light);
+      background: rgba(196,168,106,0.08);
+    }
+    .chip .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--pink);
+      box-shadow: 0 0 10px var(--pink);
+    }
+    .chip.pink {
+      border-color: var(--pink);
+      color: #ffb3d0;
+      background: rgba(212,42,106,0.12);
+    }
+
+    .body { color: var(--text-soft); font-size: 1.05rem; max-width: 40rem; }
+    .body strong { color: #fff; font-weight: 600; }
+
+    .verse {
+      font-family: var(--font-verse);
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+      line-height: 1.45;
+      color: var(--cream);
+    }
+    .ref {
+      margin-top: 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .verse-box {
+      background: var(--black-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.35rem 1.4rem;
+      margin: 1.25rem 0;
+    }
+
+    h2.section-title {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      letter-spacing: 0.04em;
+      color: var(--gold-light);
+      margin: 1.75rem 0 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #fff;
+      margin: 1.1rem 0 0.4rem;
+    }
+
+    ul, ol { margin: 0.5rem 0 0.75rem 1.2rem; color: var(--text-soft); }
+    li { margin: 0.35rem 0; }
+    li strong { color: #fff; }
+
+    .two-col {
+      display: grid;
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+    @media (min-width: 700px) {
+      .two-col { grid-template-columns: 1fr 1fr; }
+    }
+
+    .col-card {
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      background: var(--black-soft);
+    }
+    .col-card.love { border-color: rgba(212,42,106,0.45); }
+    .col-card.justice { border-color: rgba(196,168,106,0.55); }
+    .col-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: 0.04em;
+      margin: 0 0 0.75rem;
+    }
+    .col-card.love h3 { color: var(--pink-soft); }
+    .col-card.justice h3 { color: var(--gold-light); }
+
+    .attr-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .attr-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      margin: 0;
+      font-size: 0.98rem;
+    }
+    .attr-list li:last-child { border-bottom: none; }
+    .attr-list .num {
+      font-family: var(--font-display);
+      color: var(--gold);
+      font-size: 1.2rem;
+      min-width: 1.4rem;
+      line-height: 1.2;
+    }
+
+    .q-block {
+      margin: 0.85rem 0;
+      padding: 1rem 1.1rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(196,168,106,0.06);
+      border-radius: 0 10px 10px 0;
+    }
+    .q-block.heart {
+      border-left-color: var(--pink);
+      background: rgba(212,42,106,0.07);
+    }
+    .q-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+    .q-block.heart .q-label { color: var(--pink-soft); }
+    .q-block p { color: var(--text-soft); font-size: 1rem; }
+
+    .footer-bar {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .footer-bar .invite {
+      font-size: 0.88rem;
+      color: var(--text-soft);
+      max-width: 28rem;
+      line-height: 1.4;
+    }
+    .footer-bar .meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .footer-bar .meta strong { color: #fff; }
+    .footer-bar img {
+      width: 88px;
+      height: 88px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .cover {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+    }
+    .cover .logo-hero {
+      width: min(180px, 40vw);
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 12px 30px rgba(0,0,0,0.5));
+    }
+    .cover .rule { margin-left: auto; margin-right: auto; }
+    .cover .body { margin: 0 auto; }
+
+    .leader-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-style: italic;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .time-chip {
+      display: inline-flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 0.75rem 0 0;
+    }
+
+    @media print {
+      body { background: #000; }
+      .page {
+        border: none;
+        margin: 0;
+        width: 100%;
+        page-break-after: always;
+        break-after: page;
+      }
+      .page:last-child { page-break-after: auto; }
+      .no-print { display: none !important; }
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(10,10,10,0.95);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .toolbar button, .toolbar a {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.55rem 1rem;
+      border-radius: 999px;
+      border: 1.5px solid var(--gold);
+      background: rgba(196,168,106,0.1);
+      color: var(--gold-light);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .toolbar button:hover, .toolbar a:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar no-print">
+    <button type="button" onclick="window.print()">Print / Save PDF</button>
+    <a href="#study">Jump to study</a>
+    <a href="#questions">Jump to questions</a>
+  </div>
+
+  <!-- ================= COVER ================= -->
+  <article class="page">
+    <div class="accent-bar"></div>
+    <div class="frame"></div>
+    <img class="logo-watermark" src="assets/logo.png" alt="" />
+    <div class="content cover">
+      <img class="logo-hero" src="assets/logo.png" alt="C316" />
+      <span class="chip"><span class="dot"></span> Bible Study · Week 2</span>
+      <div style="height:18px"></div>
+      <p class="kicker">YHWH · The Names &amp; Character of God</p>
+      <h1 class="headline">MERCIFUL<br /><span class="accent">&amp; GRACIOUS</span></h1>
+      <div class="rule"></div>
+      <p class="body" style="font-size:1.1rem;">
+        Exploring the character of God through Exodus 34:6–7 — where love and justice meet.
+      </p>
+      <div class="time-chip">
+        <span class="chip pink"><span class="dot"></span> Small Group</span>
+        <span class="chip">45–60 mins</span>
+      </div>
+      <div class="footer-bar" style="width:100%;margin-top:2.5rem;justify-content:center;text-align:center;">
+        <div>
+          <p class="invite">Church 316 is a church for the curious, the doubters, the followers — why not come and join us this Sunday?</p>
+          <p class="meta" style="margin-top:0.5rem;"><strong>Sundays 11:30am</strong> · Bournebrook Cres, Halesowen · churchthreesixteen.co.uk</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ================= RECAP + FOCUS ================= -->
+  <article class="page" id="study">
+    <div class="accent-bar"></div>
+    <div class="frame"></div>
+    <img class="logo-watermark" src="assets/logo.png" alt="" />
+    <div class="content">
+      <span class="chip"><span class="dot"></span> Session Guide</span>
+      <div style="height:14px"></div>
+      <p class="kicker">Getting started</p>
+      <h1 class="headline" style="font-size:2.8rem;">LAST WEEK<br /><span class="accent">&amp; THIS WEEK</span></h1>
+      <div class="rule"></div>
+
+      <h2 class="section-title">Last week: Names &amp; stories</h2>
+      <p class="body">
+        We identify people by their <strong>names</strong> and their <strong>stories</strong>.
+        In Scripture, God’s names reveal His character — not just labels, but invitations to know Him.
+      </p>
+      <ul>
+        <li><strong>Elohim</strong> — translates as <strong>God</strong> (title · deity)</li>
+        <li><strong>YHWH</strong> — translates as <strong>LORD</strong> (personal · covenant name)</li>
+      </ul>
+      <p class="body" style="margin-top:0.75rem;">
+        Elohim tells us <em>who</em> He is in power and majesty.
+        YHWH tells us He draws near — a personal God who makes Himself known.
+      </p>
+
+      <h2 class="section-title">This week: Merciful &amp; gracious</h2>
+      <p class="body">
+        After the golden calf, Moses asks to see God’s glory. God doesn’t only show power —
+        He <strong>proclaims His name</strong> and reveals His heart. This is one of the most
+        important self-descriptions of God in the whole Bible.
+      </p>
+
+      <p class="leader-note">Leader tip: Open with 2–3 minutes of silence or a short worship song, then read the passage slowly twice.</p>
+
+      <div class="footer-bar">
+        <div>
+          <p class="invite">Church for the curious — bring your questions. God can handle them.</p>
+          <p class="meta"><strong>Series:</strong> YHWH · Week 2 of character study</p>
+        </div>
+        <img src="assets/logo.png" alt="C316" />
+      </div>
+    </div>
+  </article>
+
+  <!-- ================= SCRIPTURE ================= -->
+  <article class="page">
+    <div class="accent-bar"></div>
+    <div class="frame"></div>
+    <img class="logo-watermark" src="assets/logo.png" alt="" />
+    <div class="content">
+      <span class="chip pink"><span class="dot"></span> Core Scripture</span>
+      <div style="height:14px"></div>
+      <p class="kicker">Turn to</p>
+      <h1 class="headline" style="font-size:2.8rem;">EXODUS<br /><span class="accent">34:6–7</span></h1>
+      <div class="rule"></div>
+
+      <div class="verse-box">
+        <p class="verse">
+          “And the Lord passed before him and proclaimed, ‘The <strong style="font-style:normal;color:var(--yellow);">LORD</strong>, the <strong style="font-style:normal;color:var(--yellow);">LORD God</strong>, merciful and gracious, longsuffering, and abounding in goodness and truth, keeping mercy for thousands, forgiving iniquity and transgression and sin, by no means clearing the guilty, visiting the iniquity of the fathers upon the children and the children’s children to the third and the fourth generation.’”
+        </p>
+        <p class="ref">Exodus 34:6–7 (NKJV)</p>
+      </div>
+
+      <h2 class="section-title">Notice</h2>
+      <ul>
+        <li>God speaks His own name — twice: <strong>YHWH, YHWH</strong>.</li>
+        <li>The list begins with <strong>mercy and grace</strong>, not anger.</li>
+        <li>Love does not cancel justice: He is <strong>forgiving</strong> and still <strong>does not clear the guilty</strong>.</li>
+        <li>Mercy is described as vast (“thousands”); judgment is real but measured.</li>
+      </ul>
+
+      <p class="body" style="margin-top:1rem;">
+        This is the God who is both <strong>safe to run to</strong> and <strong>too holy to treat lightly</strong>.
+      </p>
+
+      <div class="footer-bar">
+        <div>
+          <p class="meta"><strong>Read aloud:</strong> One person reads v.6, another v.7, then the group sits with it for 30 seconds.</p>
+        </div>
+        <img src="assets/logo.png" alt="C316" />
+      </div>
+    </div>
+  </article>
+
+  <!-- ================= LOVE & JUSTICE ================= -->
+  <article class="page">
+    <div class="accent-bar"></div>
+    <div class="frame"></div>
+    <img class="logo-watermark" src="assets/logo.png" alt="" />
+    <div class="content">
+      <span class="chip"><span class="dot"></span> Teaching Frame</span>
+      <div style="height:14px"></div>
+      <p class="kicker">Holding both</p>
+      <h1 class="headline" style="font-size:2.8rem;">LOVE <span class="accent">&amp;</span><br /><span class="pink">JUSTICE</span></h1>
+      <div class="rule"></div>
+      <p class="body">
+        Exodus 34 doesn’t force us to choose between a soft God and a severe God.
+        YHWH is <strong>merciful</strong> and <strong>just</strong> — perfectly both.
+      </p>
+
+      <div class="two-col">
+        <div class="col-card love">
+          <h3>LOVE</h3>
+          <ul class="attr-list">
+            <li><span class="num">01</span> <span><strong>Merciful &amp; gracious</strong> — He bends toward the broken</span></li>
+            <li><span class="num">02</span> <span><strong>Long-suffering</strong> — slow to anger, patient with us</span></li>
+            <li><span class="num">03</span> <span><strong>Goodness &amp; truth</strong> — faithful, reliable, kind</span></li>
+            <li><span class="num">04</span> <span><strong>Keeping mercy</strong> — covenant love that lasts</span></li>
+            <li><span class="num">05</span> <span><strong>Forgiving sin</strong> — iniquity, transgression, and sin covered</span></li>
+            <li><span class="num">06</span> <span><strong>1,000 generations · forever</strong> — mercy’s reach is vast</span></li>
+          </ul>
+        </div>
+        <div class="col-card justice">
+          <h3>JUSTICE</h3>
+          <ul class="attr-list">
+            <li><span class="num">!</span> <span><strong>By no means clearing the guilty</strong></span></li>
+            <li><span class="num">→</span> <span>If we refuse mercy and harden ourselves, we stand accountable before Him</span></li>
+            <li><span class="num">→</span> <span><em>“Don’t accept then: I will find you guilty.”</em></span></li>
+            <li><span class="num">→</span> <span>God’s justice is personal and real — not random rage</span></li>
+          </ul>
+          <p class="body" style="margin-top:1rem;font-size:0.95rem;">
+            The cross is where this tension resolves: justice satisfied, mercy poured out.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bar">
+        <div>
+          <p class="invite">Curiosity is not the opposite of faith — often it’s the doorway.</p>
+        </div>
+        <img src="assets/logo.png" alt="C316" />
+      </div>
+    </div>
+  </article>
+
+  <!-- ================= DEEPER TEACHING ================= -->
+  <article class="page">
+    <div class="accent-bar"></div>
+    <div class="frame"></div>
+    <img class="logo-watermark" src="assets/logo.png" alt="" />
+    <div class="content">
+      <span class="chip pink"><span class="dot"></span> Dig Deeper</span>
+      <div style="height:14px"></div>
+      <p class="kicker">Unpacking the attributes</p>
+      <h1 class="headline" style="font-size:2.6rem;">WHAT GOD<br /><span class="accent">REVEALS</span></h1>
+      <div class="rule"></div>
+
+      <h3>1. Merciful &amp; gracious</h3>
+      <p class="body">Mercy withholds what we deserve; grace gives what we don’t. God is not reluctant to forgive — it is who He is.</p>
+
+      <h3>2. Long-suffering</h3>
+      <p class="body">Slow to anger. He gives space to repent. His patience is not permission to keep sinning; it is kindness leading us home (Romans 2:4).</p>
+
+      <h3>3. Abounding in goodness &amp; truth</h3>
+      <p class="body">His love is not soft-focus sentiment. It is full of <strong>hesed</strong> (loyal love) and <strong>emet</strong> (truth/faithfulness). He can be trusted.</p>
+
+      <h3>4. Keeping mercy for thousands</h3>
+      <p class="body">Mercy multiplies across generations. The blessing of walking with God outlives our short lives.</p>
+
+      <h3>5. Forgiving iniquity, transgression, and sin</h3>
+      <p class="body">Three words for the full mess of human failure — and God names Himself as the Forgiver of all of it.</p>
+
+      <h3>6. Not clearing the guilty</h3>
+      <p class="body">Forgiveness is not indifference. Sin is serious. God will not pretend evil is fine. That is good news for victims and a warning for the unrepentant.</p>
+
+      <div class="footer-bar">
+        <div>
+          <p class="meta"><strong>Gospel hinge:</strong> At the cross, the guilty can be justified — because Jesus bore guilt in our place.</p>
+        </div>
+        <img src="assets/logo.png" alt="C316" />
+      </div>
+    </div>
+  </article>
+
+  <!-- ================= GENERATIONAL JUSTICE ================= -->
+  <article class="page">
+    <div class="accent-bar"></div>
+    <div class="frame"></div>
+    <img class="logo-watermark" src="assets/logo.png" alt="" />
+    <div class="content">
+      <span class="chip"><span class="dot"></span> Hard Text · Soft Heart</span>
+      <div style="height:14px"></div>
+      <p class="kicker">What about the children?</p>
+      <h1 class="headline" style="font-size:2.5rem;">GENERATIONS<br /><span class="accent">&amp; GUILT</span></h1>
+      <div class="rule"></div>
+      <p class="body">
+        Exodus 34 mentions consequences to the third and fourth generation.
+        Scripture also insists: <strong>each person is responsible for their own sin</strong>.
+      </p>
+
+      <div class="verse-box">
+        <p class="verse">
+          “Fathers shall not be put to death for their children, nor shall children be put to death for their fathers; a person shall be put to death for his <strong style="font-style:normal;color:var(--yellow);">own sin</strong>.”
+        </p>
+        <p class="ref">Deuteronomy 24:16</p>
+      </div>
+
+      <div class="verse-box">
+        <p class="verse">
+          “The soul who sins shall die. <strong style="font-style:normal;color:var(--yellow);">The son shall not bear the guilt of the father</strong>, nor the father bear the guilt of the son. The righteousness of the righteous shall be upon himself, and the wickedness of the wicked shall be upon himself.”
+        </p>
+        <p class="ref">Ezekiel 18:20</p>
+      </div>
+
+      <h2 class="section-title">How do we hold this together?</h2>
+      <ul>
+        <li><strong>Patterns travel</strong> — family culture, trauma, and example shape the next generation.</li>
+        <li><strong>Guilt is personal</strong> — God does not punish children as if they committed the parent’s sin.</li>
+        <li><strong>Mercy can break the cycle</strong> — “thousands of generations” outruns “three or four.”</li>
+        <li><strong>In Christ</strong> — we are not trapped by the story we inherited; we can receive a new one.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <div>
+          <p class="invite">Your family story is not the final word. YHWH’s mercy can be.</p>
+        </div>
+        <img src="assets/logo.png" alt="C316" />
+      </div>
+    </div>
+  </article>
+
+  <!-- ================= SMALL GROUP QUESTIONS ================= -->
+  <article class="page" id="questions">
+    <div class="accent-bar"></div>
+    <div class="frame"></div>
+    <img class="logo-watermark" src="assets/logo.png" alt="" />
+    <div class="content">
+      <span class="chip pink"><span class="dot"></span> Small Group</span>
+      <div style="height:14px"></div>
+      <p class="kicker">Discussion</p>
+      <h1 class="headline" style="font-size:2.6rem;">QUESTIONS<br /><span class="accent">FOR THE ROOM</span></h1>
+      <div class="rule"></div>
+      <p class="leader-note">Aim for honest conversation, not perfect answers. Leave space. Follow the Spirit. 45–60 minutes total.</p>
+
+      <h2 class="section-title">Warm-up (5–8 min)</h2>
+      <div class="q-block">
+        <div class="q-label">Q1 · Icebreaker</div>
+        <p>When you were younger, how did you picture God — more like a strict judge, a soft grandparent, distant boss, or something else? Has that picture changed?</p>
+      </div>
+      <div class="q-block">
+        <div class="q-label">Q2 · Names</div>
+        <p>Why might it matter that God reveals a <strong>personal name</strong> (YHWH / LORD) and not only a title (God / Elohim)?</p>
+      </div>
+
+      <h2 class="section-title">Into the text (15–20 min)</h2>
+      <div class="q-block">
+        <div class="q-label">Q3 · Read Exodus 34:6–7</div>
+        <p>Which word or phrase about God lands most strongly for you today — and why?</p>
+      </div>
+      <div class="q-block">
+        <div class="q-label">Q4 · Order matters</div>
+        <p>God lists mercy and grace <em>before</em> justice. What does that order teach us about His heart?</p>
+      </div>
+      <div class="q-block">
+        <div class="q-label">Q5 · Both / and</div>
+        <p>Where do you tend to lean — emphasising God’s love and soft-pedalling justice, or emphasising justice and struggling to receive mercy? What has shaped that lean?</p>
+      </div>
+      <div class="q-block">
+        <div class="q-label">Q6 · Generations</div>
+        <p>How do Deuteronomy 24:16 and Ezekiel 18:20 help us read the “third and fourth generation” language without despair — and without ignoring family patterns?</p>
+      </div>
+
+      <div class="footer-bar">
+        <div>
+          <p class="meta"><strong>Leader:</strong> If the room goes quiet on Q5, share first to model honesty.</p>
+        </div>
+        <img src="assets/logo.png" alt="C316" />
+      </div>
+    </div>
+  </article>
+
+  <!-- ================= HEART QUESTIONS + PRAYER ================= -->
+  <article class="page">
+    <div class="accent-bar"></div>
+    <div class="frame"></div>
+    <img class="logo-watermark" src="assets/logo.png" alt="" />
+    <div class="content">
+      <span class="chip pink"><span class="dot"></span> Heart · Hands · Prayer</span>
+      <div style="height:14px"></div>
+      <p class="kicker">Application</p>
+      <h1 class="headline" style="font-size:2.6rem;">LIVING THIS<br /><span class="accent">WEEK</span></h1>
+      <div class="rule"></div>
+
+      <h2 class="section-title">Heart questions (10–12 min)</h2>
+      <div class="q-block heart">
+        <div class="q-label">Q7 · Receiving mercy</div>
+        <p>Is there a place in your life where you struggle to believe God is <strong>merciful and gracious toward you</strong>? What would change if you took Him at His word?</p>
+      </div>
+      <div class="q-block heart">
+        <div class="q-label">Q8 · Refusing cheap grace</div>
+        <p>Is there an area where you have treated God’s patience as permission? What would repentance look like this week — specifically?</p>
+      </div>
+      <div class="q-block heart">
+        <div class="q-label">Q9 · Extending what we receive</div>
+        <p>Who in your world needs to meet the merciful side of God’s character <em>through you</em> this week — without you pretending sin doesn’t matter?</p>
+      </div>
+      <div class="q-block heart">
+        <div class="q-label">Q10 · Family stories</div>
+        <p>Where have you seen either <strong>destructive patterns</strong> or <strong>redeeming mercy</strong> travel through a family line? How does the gospel speak into that?</p>
+      </div>
+
+      <h2 class="section-title">Practice (this week)</h2>
+      <ul>
+        <li><strong>Daily:</strong> Pray Exodus 34:6 out loud each morning — “YHWH, merciful and gracious…”</li>
+        <li><strong>Once:</strong> Confess one specific sin to God (and a trusted person if needed), and receive forgiveness.</li>
+        <li><strong>Once:</strong> Offer a concrete act of mercy to someone who cannot repay you.</li>
+        <li><strong>Optional:</strong> Journal: “Where have I seen God’s long-suffering in my story?”</li>
+      </ul>
+
+      <h2 class="section-title">Prayer prompts (close)</h2>
+      <ol>
+        <li>Thank God for a specific mercy you have received.</li>
+        <li>Ask for a soft heart where you have been hard toward Him or others.</li>
+        <li>Pray for someone stuck in guilt — that they would meet YHWH’s forgiveness.</li>
+        <li>Pray for justice and healing where sin has harmed people in your community.</li>
+      </ol>
+
+      <div class="footer-bar">
+        <div>
+          <p class="invite">Church 316 is a church for the curious, the doubters, the followers — why not come and join us this Sunday?</p>
+          <p class="meta" style="margin-top:0.4rem;"><strong>Sundays 11:30am</strong> · Halesowen · churchthreesixteen.co.uk</p>
+        </div>
+        <img src="assets/logo.png" alt="C316" />
+      </div>
+    </div>
+  </article>
+
+  <!-- ================= LEADER CHEAT SHEET ================= -->
+  <article class="page">
+    <div class="accent-bar"></div>
+    <div class="frame"></div>
+    <img class="logo-watermark" src="assets/logo.png" alt="" />
+    <div class="content">
+      <span class="chip"><span class="dot"></span> Leaders only</span>
+      <div style="height:14px"></div>
+      <p class="kicker">One-page run sheet</p>
+      <h1 class="headline" style="font-size:2.5rem;">FACILITATOR<br /><span class="accent">NOTES</span></h1>
+      <div class="rule"></div>
+
+      <h2 class="section-title">Suggested flow (60 min)</h2>
+      <ol>
+        <li><strong>0–5</strong> Welcome · prayer · icebreaker (Q1)</li>
+        <li><strong>5–10</strong> Recap names: Elohim / YHWH</li>
+        <li><strong>10–20</strong> Read Exodus 34:6–7 · Q3–Q5</li>
+        <li><strong>20–35</strong> Love &amp; Justice frame · generational texts · Q6</li>
+        <li><strong>35–50</strong> Heart questions Q7–Q10 (pick 2–3 if short on time)</li>
+        <li><strong>50–60</strong> Practice challenge · group prayer</li>
+      </ol>
+
+      <h2 class="section-title">Watch-outs</h2>
+      <ul>
+        <li>Don’t let the group turn “justice” into shame with no gospel hope.</li>
+        <li>Don’t let “mercy” become “sin doesn’t matter.”</li>
+        <li>On family patterns: be trauma-aware; no one must share private history.</li>
+        <li>Point to Jesus as the place love and justice meet (Romans 3:23–26).</li>
+      </ul>
+
+      <h2 class="section-title">Key takeaway line</h2>
+      <div class="verse-box">
+        <p class="verse" style="font-style:normal;font-family:var(--font-body);font-size:1.15rem;">
+          YHWH is not half-love and half-justice. He is fully merciful and fully just — and at the cross, both are true for you.
+        </p>
+      </div>
+
+      <h2 class="section-title">Next week seed</h2>
+      <p class="body">
+        Invite the group to re-read Exodus 34:6–7 daily and notice which attribute they need most this week.
+      </p>
+
+      <div class="footer-bar">
+        <div>
+          <p class="invite">Church 316 · Church for the Curious</p>
+          <p class="meta"><strong>Sundays 11:30am</strong> · Bournebrook Cres, Halesowen B62 0HY</p>
+        </div>
+        <img src="assets/logo.png" alt="C316" />
+      </div>
+    </div>
+  </article>
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YHWH Week 1 · Names &amp; Stories · C316 Bible Study</title>
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Literata:ital,opsz,wght@0,7..72,500;1,7..72,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #0a0a0a; --black-soft: #141414; --gold: #c4a86a; --gold-light: #dcc896;
+      --yellow: #f0d050; --pink: #d42a6a; --pink-soft: #e85a8c; --cream: #f7f2e8; --muted: #9a9a9a;
+      --text-soft: rgba(255,255,255,0.8); --border: rgba(196,168,106,0.28);
+      --font-display: "Bebas Neue", Impact, sans-serif;
+      --font-body: "Outfit", system-ui, sans-serif;
+      --font-verse: "Literata", Georgia, serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #1a1a1a; color: #fff; font-family: var(--font-body); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+    .page { width: min(900px, 100%); margin: 0 auto 2rem; background: var(--black); position: relative; overflow: hidden; border: 1px solid rgba(196,168,106,0.2); }
+    .page::before { content: ""; position: absolute; inset: 0; opacity: 0.05; pointer-events: none; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); mix-blend-mode: overlay; }
+    .frame { position: absolute; inset: 18px; border: 2px solid var(--gold); border-radius: 6px; z-index: 2; pointer-events: none; }
+    .frame::after { content: ""; position: absolute; inset: 8px; border: 1px solid rgba(196,168,106,0.4); border-radius: 3px; }
+    .content { position: relative; z-index: 3; padding: 48px 44px 40px; }
+    .accent-bar { height: 5px; background: linear-gradient(90deg, var(--yellow), var(--pink), var(--gold)); }
+    .logo-watermark { position: absolute; width: 320px; height: 320px; object-fit: contain; opacity: 0.08; right: -30px; bottom: -20px; z-index: 1; pointer-events: none; }
+    .kicker { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .headline { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 0.95; letter-spacing: 0.02em; }
+    .headline .accent { color: var(--gold-light); }
+    .headline .pink { color: var(--pink-soft); }
+    .rule { width: 72px; height: 3px; background: linear-gradient(90deg, var(--gold), var(--pink)); border-radius: 2px; margin: 1rem 0 1.25rem; }
+    .chip { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.4rem 0.9rem; border-radius: 999px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; border: 1.5px solid var(--gold); color: var(--gold-light); background: rgba(196,168,106,0.08); }
+    .chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pink); box-shadow: 0 0 10px var(--pink); }
+    .chip.pink { border-color: var(--pink); color: #ffb3d0; background: rgba(212,42,106,0.12); }
+    .body { color: var(--text-soft); font-size: 1.05rem; max-width: 40rem; }
+    .body strong { color: #fff; font-weight: 600; }
+    .verse { font-family: var(--font-verse); font-style: italic; font-weight: 500; font-size: clamp(1.1rem, 2.5vw, 1.35rem); line-height: 1.45; color: var(--cream); }
+    .ref { margin-top: 0.85rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
+    .verse-box { background: var(--black-soft); border: 1px solid var(--border); border-radius: 14px; padding: 1.35rem 1.4rem; margin: 1.25rem 0; }
+    h2.section-title { font-family: var(--font-display); font-size: 1.9rem; letter-spacing: 0.04em; color: var(--gold-light); margin: 1.75rem 0 0.75rem; }
+    h3 { font-size: 1.05rem; font-weight: 600; color: #fff; margin: 1.1rem 0 0.4rem; }
+    ul, ol { margin: 0.5rem 0 0.75rem 1.2rem; color: var(--text-soft); }
+    li { margin: 0.35rem 0; }
+    li strong { color: #fff; }
+    .two-col { display: grid; gap: 1rem; margin: 1.25rem 0; }
+    @media (min-width: 700px) { .two-col { grid-template-columns: 1fr 1fr; } }
+    .col-card { border-radius: 14px; border: 1px solid var(--border); padding: 1.25rem; background: var(--black-soft); }
+    .col-card h3 { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.04em; color: var(--gold-light); margin: 0 0 0.75rem; }
+    .q-block { margin: 0.85rem 0; padding: 1rem 1.1rem; border-left: 3px solid var(--gold); background: rgba(196,168,106,0.06); border-radius: 0 10px 10px 0; }
+    .q-block.heart { border-left-color: var(--pink); background: rgba(212,42,106,0.07); }
+    .q-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
+    .q-block.heart .q-label { color: var(--pink-soft); }
+    .q-block p { color: var(--text-soft); font-size: 1rem; }
+    .footer-bar { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .footer-bar .invite { font-size: 0.88rem; color: var(--text-soft); max-width: 28rem; line-height: 1.4; }
+    .footer-bar .meta { font-size: 0.8rem; color: var(--muted); }
+    .footer-bar .meta strong { color: #fff; }
+    .footer-bar img { width: 88px; height: 88px; object-fit: contain; flex-shrink: 0; }
+    .cover { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; align-items: center; }
+    .cover .logo-hero { width: min(180px, 40vw); margin-bottom: 1.5rem; filter: drop-shadow(0 12px 30px rgba(0,0,0,0.5)); }
+    .cover .rule { margin-left: auto; margin-right: auto; }
+    .cover .body { margin: 0 auto; }
+    .leader-note { font-size: 0.9rem; color: var(--muted); font-style: italic; margin: 0.5rem 0 1rem; }
+    .time-chip { display: inline-flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0 0; }
+    .name-box { display: flex; flex-direction: column; gap: 0.35rem; padding: 1rem; border-radius: 12px; background: rgba(196,168,106,0.08); border: 1px solid var(--border); margin: 0.5rem 0; }
+    .name-box .he { font-family: var(--font-display); font-size: 1.6rem; color: var(--gold-light); letter-spacing: 0.06em; }
+    .name-box .en { color: var(--text-soft); font-size: 0.98rem; }
+    @media print { body { background: #000; } .page { border: none; margin: 0; width: 100%; page-break-after: always; } .page:last-child { page-break-after: auto; } .no-print { display: none !important; } }
+    .toolbar { position: sticky; top: 0; z-index: 50; background: rgba(10,10,10,0.95); border-bottom: 1px solid var(--border); padding: 0.75rem 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; justify-content: center; }
+    .toolbar button, .toolbar a { font-family: var(--font-body); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.55rem 1rem; border-radius: 999px; border: 1.5px solid var(--gold); background: rgba(196,168,106,0.1); color: var(--gold-light); cursor: pointer; text-decoration: none; }
+    .toolbar button:hover, .toolbar a:hover { background: var(--gold); color: var(--black); }
+  </style>
+</head>
+<body>
+  <div class="toolbar no-print">
+    <button type="button" onclick="window.print()">Print / Save PDF</button>
+    <a href="#study">Jump to study</a>
+    <a href="#questions">Jump to questions</a>
+  </div>
+
+  <!-- COVER -->
+  <article class="page">
+    <div class="accent-bar"></div>
+    <div class="frame"></div>
+    <img class="logo-watermark" src="assets/logo.png" alt="" />
+    <div class="content cover">
+      <img class="logo-hero" src="assets/logo.png" alt="C316" />
+      <span class="chip"><span class="dot"></span> Bible Study · Week 1</span>
+      <div style="height:18px"></div>
+      <p class="kicker">YHWH · The Names &amp; Character of God</p>
+      <h1 class="headline">NAMES<br /><span class="accent">&amp; STORIES</span></h1>
+      <div class="rule"></div>
+      <p class="body" style="font-size:1.1rem;">Who do you pray to? Meeting the God who has a name — Elohim, YHWH, and the great I AM.</p>
+      <div class="time-chip">
+        <span class="chip pink"><span class="dot"></span> Small Group</span>
+        <span class="chip">45–60 mins</span>
+      </div>
+      <div class="footer-bar" style="width:100%;margin-top:2.5rem;justify-content:center;text-align:center;">
+        <div>
+          <p class="invite">Church 316 is a church for the curious, the doubters, the followers — why not come and join us this Sunday?</p>
+          <p class="meta" style="margin-top:0.5rem;"><strong>Sundays 11:30am</strong> · Bournebrook Cres, Halesowen · churchthreesixteen.co.uk</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- OPENING -->
+  <article class="page" id="study">
+    <div class="accent-bar"></div>
+    <div class="frame"></div>
+    <img class="logo-watermark" src="assets/logo.png" alt="" />
+    <div class="content">
+      <span class="chip"><span class="dot"></span> Session Guide</span>
+      <div style="height:14px"></div>
+      <p class="kicker">Getting started</p>
+      <h1 class="headline" style="font-size:2.6rem;">TWO BIG<br /><span class="accent">QUESTIONS</span></h1>
+      <div class="rule"></div>
+      <div class="verse-box">
+        <p class="body" style="font-size:1.25rem;color:#fff;margin:0;"><strong>1.</strong> What does your name mean?</p>
+        <p class="body" style="font-size:1.25rem;color:#fff;margin:0.75rem 0 0;"><strong>2.</strong> Who do you pray to?</p>
+      </div>
+      <p class="body">Names are not just labels. They carry story, identity, and relationship. In Scripture, God’s names are how He makes Himself known.</p>
+      <h2 class="section-title">Key idea</h2>
+      <p class="body" style="font-size:1.2rem;color:#fff;">We <strong>identify</strong> people by their <strong style="color:var(--yellow);">NAMES</strong> and <strong style="color:var(--yellow);">STORIES</strong>.</p>
+      <p class="body" style="margin-top:0.75rem;">The same is true of God. To know Him, we listen to the name He reveals and the story He tells.</p>
+      <p class="leader-note">Leader tip: Let people share their name meanings briefly — it opens the room before diving into Hebrew names.</p>
+      <div class="footer-bar">
+        <div><p class="meta"><strong>Series:</strong> YHWH · Week 1 of character study</p></div>
+        <img src="assets/logo.png" alt="C316" />
+      </div>
+    </div>
+  </article>
+
+  <!-- ELOHIM -->
+  <article class="page">
+    <div class="accent-bar"></div>
+    <div class="frame"></div>
+    <img class="logo-watermark" src="assets/logo.png" alt="" />
+    <div class="content">
+      <span class="chip pink"><span class="dot"></span> Title vs Name</span>
+      <div style="height:14px"></div>
+      <p class="kicker">Hebrew foundations</p>
+      <h1 class="headline" style="font-size:2.6rem;">ELOHIM<br /><span class="accent">&amp; YHWH</span></h1>
+      <div class="rule"></div>
+      <div class="name-box">
+        <span class="he">ELOHIM</span>
+        <span class="en">Means “God” in Hebrew — a <strong style="color:#fff;">title</strong> (deity), not a personal name. Power, majesty, Creator-God language.</span>
+      </div>
+      <div class="name-box">
+        <span class="he">YHWH / YAHWEH</span>
+        <span class="en">The personal covenant name. In English Bibles usually written <strong style="color:#fff;">LORD</strong> (small caps). The name by which He is to be known.</span>
+      </div>
+      <div class="name-box">
+        <span class="he">EHYEH / EHWEH</span>
+        <span class="en">“I will be / I am” — what God says of Himself at the bush (Exodus 3:14).</span>
+      </div>
+      <p class="body" style="margin-top:1rem;">
+        <strong>God says:</strong> EHWEH = I will be / AM<br />
+        <strong>We say:</strong> YAHWEH = He is what He is
+      </p>
+      <div class="footer-bar">
+        <div><p class="invite">Curiosity is not the opposite of faith — often it’s the doorway.</p></div>
+        <img src="assets/logo.png" alt="C316" />
+      </div>
+    </div>
+  </article>
+
+  <!-- EXODUS 2 -->
+  <article class="page">
+    <div class="accent-bar"></div>
+    <div class="frame"></div>
+    <img class="logo-watermark" src="assets/logo.png" alt="" />
+    <div class="content">
+      <span class="chip"><span class="dot"></span> Core Scripture</span>
+      <div style="height:14px"></div>
+      <p class="kicker">Turn to</p>
+      <h1 class="headline" style="font-size:2.6rem;">EXODUS<br /><span class="accent">2:23–25</span></h1>
+      <div class="rule"></div>
+      <div class="verse-box">
+        <p class="verse">“Now it happened in the process of time that the king of Egypt died. Then the children of Israel groaned because of the bondage, and they cried out; and their cry came up to God because of the bondage. So God heard their groaning, and God remembered His covenant with Abraham, with Isaac, and with Jacob. And God looked upon the children of Israel, and God acknowledged them.”</p>
+        <p class="ref">Exodus 2:23–25</p>
+      </div>
+      <h2 class="section-title">Four verbs of God</h2>
+      <ul>
+        <li><strong>Heard</strong> — their cry is not ignored</li>
+        <li><strong>Remembered</strong> — covenant with Abraham, Isaac, Jacob</li>
+        <li><strong>Looked</strong> — He sees His people</li>
+        <li><strong>Acknowledged</strong> — He takes notice; He is involved</li>
+      </ul>
+      <p class="body">Before the burning bush, we already meet a God who is not distant. Elohim is attentive to pain and faithful to promise.</p>
+      <div class="footer-bar">
+        <div><p class="meta"><strong>Read aloud:</strong> One voice for Israel’s cry, another for God’s four actions.</p></div>
+        <img src="assets/logo.png" alt="C316" />
+      </div>
+    </div>
+  </article>
+
+  <!-- BURNING BUSH -->
+  <article class="page">
+    <div class="accent-bar"></div>
+    <div class="frame"></div>
+    <img class="logo-watermark" src="assets/logo.png" alt="" />
+    <div class="content">
+      <span class="chip pink"><span class="dot"></span> Exodus 3</span>
+      <div style="height:14px"></div>
+      <p class="kicker">Moses at the burning bush</p>
+      <h1 class="headline" style="font-size:2.5rem;">I AM WHO<br /><span class="accent">I AM</span></h1>
+      <div class="rule"></div>
+      <p class="body">What’s Elohim going to do? He moves toward Moses — holy ground, personal call, mission to free His people.</p>
+      <div class="verse-box">
+        <p class="verse">“I am the God of your father—the God of Abraham, the God of Isaac, and the God of Jacob.”</p>
+        <p class="ref">Exodus 3:6</p>
+      </div>
+      <div class="verse-box">
+        <p class="verse">“I have surely seen the oppression… and have heard their cry… for I know their sorrows.”</p>
+        <p class="ref">Exodus 3:7</p>
+      </div>
+      <div class="verse-box">
+        <p class="verse">“I will be with you.” … “I am who I am… I am has sent me to you.”</p>
+        <p class="ref">Exodus 3:12, 14</p>
+      </div>
+      <h2 class="section-title">Notice</h2>
+      <ul>
+        <li>Moses asks <strong>“Who am I?”</strong> — God answers with presence: <strong>“I will be with you.”</strong></li>
+        <li>Moses asks for God’s name — God reveals <strong>I AM</strong> and <strong>YHWH</strong>, the God of the fathers.</li>
+        <li>Seen · heard · know — God is not abstract; He enters the story of the oppressed.</li>
+      </ul>
+      <div class="footer-bar">
+        <div><p class="invite">The name of God is not a puzzle to solve — it’s a Person to trust.</p></div>
+        <img src="assets/logo.png" alt="C316" />
+      </div>
+    </div>
+  </article>
+
+  <!-- SHEMA + NT -->
+  <article class="page">
+    <div class="accent-bar"></div>
+    <div class="frame"></div>
+    <img class="logo-watermark" src="assets/logo.png" alt="" />
+    <div class="content">
+      <span class="chip"><span class="dot"></span> One LORD</span>
+      <div style="height:14px"></div>
+      <p class="kicker">From the bush to the Shema</p>
+      <h1 class="headline" style="font-size:2.5rem;">THE NAME<br /><span class="accent">TO KNOW</span></h1>
+      <div class="rule"></div>
+      <div class="verse-box">
+        <p class="verse">“I am the LORD (YHWH) your God (Elohim), who brought you out of Egypt… You shall have no other gods (elohim) before me.”</p>
+        <p class="ref">Deuteronomy 5:6–7</p>
+      </div>
+      <div class="verse-box">
+        <p class="verse">“Hear, O Israel: The LORD (YHWH) our God (Elohim), the LORD is one. Love the LORD your God with all your heart and with all your soul and with all your strength.”</p>
+        <p class="ref">Deuteronomy 6:4–5 · The Shema</p>
+      </div>
+      <div class="verse-box">
+        <p class="verse">“…yet for us there is but one God, the Father… and there is but one Lord, Jesus Christ…”</p>
+        <p class="ref">1 Corinthians 8:5–6</p>
+      </div>
+      <p class="body">The God who names Himself to Moses is the one God Israel is called to love fully — and the New Testament places Jesus within that same confession of one God and one Lord.</p>
+      <div class="footer-bar">
+        <div><p class="meta"><strong>Gospel thread:</strong> The I AM who saves from Egypt is the Lord who saves through Jesus.</p></div>
+        <img src="assets/logo.png" alt="C316" />
+      </div>
+    </div>
+  </article>
+
+  <!-- QUESTIONS -->
+  <article class="page" id="questions">
+    <div class="accent-bar"></div>
+    <div class="frame"></div>
+    <img class="logo-watermark" src="assets/logo.png" alt="" />
+    <div class="content">
+      <span class="chip pink"><span class="dot"></span> Small Group</span>
+      <div style="height:14px"></div>
+      <p class="kicker">Discussion</p>
+      <h1 class="headline" style="font-size:2.5rem;">QUESTIONS<br /><span class="accent">FOR THE ROOM</span></h1>
+      <div class="rule"></div>
+      <p class="leader-note">Honest conversation over perfect answers. 45–60 minutes.</p>
+
+      <h2 class="section-title">Warm-up (5–8 min)</h2>
+      <div class="q-block"><div class="q-label">Q1 · Names</div><p>What does your name mean (or what story sits behind it)? How does it feel when someone uses your name well?</p></div>
+      <div class="q-block"><div class="q-label">Q2 · Prayer</div><p>When you pray, who do you picture yourself speaking to? Has that picture changed over time?</p></div>
+
+      <h2 class="section-title">Into the text (15–20 min)</h2>
+      <div class="q-block"><div class="q-label">Q3 · Title vs name</div><p>Why does it matter that Elohim is a <strong>title</strong> and YHWH is a <strong>personal name</strong>? How could that change the way someone approaches God?</p></div>
+      <div class="q-block"><div class="q-label">Q4 · Exodus 2:23–25</div><p>Which of the four verbs — heard, remembered, looked, acknowledged — do you most need to believe about God right now? Why?</p></div>
+      <div class="q-block"><div class="q-label">Q5 · Burning bush</div><p>Moses asks “Who am I?” God answers with “I will be with you.” When have you needed presence more than a full explanation?</p></div>
+      <div class="q-block"><div class="q-label">Q6 · I AM</div><p>What does “I am who I am / I will be” say about God’s reliability in a world of shifting identities and broken promises?</p></div>
+
+      <div class="footer-bar">
+        <div><p class="meta"><strong>Leader:</strong> If Q2 feels abstract, rephrase: “Who do you talk to when life hurts?”</p></div>
+        <img src="assets/logo.png" alt="C316" />
+      </div>
+    </div>
+  </article>
+
+  <!-- HEART + PRAYER -->
+  <article class="page">
+    <div class="accent-bar"></div>
+    <div class="frame"></div>
+    <img class="logo-watermark" src="assets/logo.png" alt="" />
+    <div class="content">
+      <span class="chip pink"><span class="dot"></span> Heart · Hands · Prayer</span>
+      <div style="height:14px"></div>
+      <p class="kicker">Application</p>
+      <h1 class="headline" style="font-size:2.5rem;">LIVING THIS<br /><span class="accent">WEEK</span></h1>
+      <div class="rule"></div>
+
+      <h2 class="section-title">Heart questions (10–12 min)</h2>
+      <div class="q-block heart"><div class="q-label">Q7 · Distance</div><p>Where do you treat God more like a vague “force” (title only) than a personal YHWH who knows your name and sorrows?</p></div>
+      <div class="q-block heart"><div class="q-label">Q8 · Cry</div><p>Is there a place of bondage or pain you’ve stopped crying out about? What would it look like to bring that cry to the God who hears?</p></div>
+      <div class="q-block heart"><div class="q-label">Q9 · Mission fear</div><p>Moses felt inadequate. Where is God inviting you to step forward — and how does “I will be with you” speak into that?</p></div>
+      <div class="q-block heart"><div class="q-label">Q10 · Shema</div><p>What would it look like this week to love the LORD with more of your heart, soul, or strength — in one concrete area?</p></div>
+
+      <h2 class="section-title">Practice</h2>
+      <ul>
+        <li><strong>Daily:</strong> Pray the Shema (Deut 6:4–5) slowly once a day.</li>
+        <li><strong>Once:</strong> Write down a personal “name” for how you’ve known God (e.g. Provider, Friend) — then thank Him using YHWH’s revealed name: “LORD, you are…”</li>
+        <li><strong>Once:</strong> Tell someone part of your story of how God heard or saw you.</li>
+        <li><strong>Optional:</strong> Read Exodus 3 slowly and underline every time God says “I”.</li>
+      </ul>
+
+      <h2 class="section-title">Prayer prompts</h2>
+      <ol>
+        <li>Thank God that He has a name and a story of rescue.</li>
+        <li>Ask Him to be near in a place of sorrow or oppression.</li>
+        <li>Pray for courage where you feel like Moses: “Who am I?”</li>
+        <li>Worship Jesus as the one Lord through whom we live (1 Cor 8:6).</li>
+      </ol>
+
+      <div class="footer-bar">
+        <div>
+          <p class="invite">Church 316 is a church for the curious, the doubters, the followers — why not come and join us this Sunday?</p>
+          <p class="meta" style="margin-top:0.4rem;"><strong>Sundays 11:30am</strong> · Halesowen · churchthreesixteen.co.uk</p>
+        </div>
+        <img src="assets/logo.png" alt="C316" />
+      </div>
+    </div>
+  </article>
+
+  <!-- LEADER -->
+  <article class="page">
+    <div class="accent-bar"></div>
+    <div class="frame"></div>
+    <img class="logo-watermark" src="assets/logo.png" alt="" />
+    <div class="content">
+      <span class="chip"><span class="dot"></span> Leaders only</span>
+      <div style="height:14px"></div>
+      <p class="kicker">One-page run sheet</p>
+      <h1 class="headline" style="font-size:2.4rem;">FACILITATOR<br /><span class="accent">NOTES</span></h1>
+      <div class="rule"></div>
+      <h2 class="section-title">Suggested flow (60 min)</h2>
+      <ol>
+        <li><strong>0–8</strong> Welcome · prayer · Q1–Q2 (names &amp; who we pray to)</li>
+        <li><strong>8–15</strong> Elohim vs YHWH · title vs name</li>
+        <li><strong>15–28</strong> Exodus 2:23–25 · four verbs · Q4</li>
+        <li><strong>28–42</strong> Burning bush · I AM · Q5–Q6</li>
+        <li><strong>42–52</strong> Shema · 1 Cor 8 · heart questions Q7–Q10 (pick 2–3)</li>
+        <li><strong>52–60</strong> Practice challenge · group prayer</li>
+      </ol>
+      <h2 class="section-title">Watch-outs</h2>
+      <ul>
+        <li>Keep Hebrew simple — don’t get lost in pronunciation debates.</li>
+        <li>Don’t shame people who only know God as “God” — invite them deeper.</li>
+        <li>Connect clearly to Jesus for Christians who may not know OT names.</li>
+        <li>Next week seeds Week 2: character of God — merciful &amp; gracious (Ex 34:6–7).</li>
+      </ul>
+      <h2 class="section-title">Key takeaway</h2>
+      <div class="verse-box">
+        <p class="verse" style="font-style:normal;font-family:var(--font-body);font-size:1.15rem;">
+          We know people by names and stories. YHWH has given us both — so we don’t pray into the air, but to the God who is, who hears, and who is with us.
+        </p>
+      </div>
+      <div class="footer-bar">
+        <div>
+          <p class="invite">Church 316 · Church for the Curious</p>
+          <p class="meta"><strong>Sundays 11:30am</strong> · Bournebrook Cres, Halesowen B62 0HY</p>
+        </div>
+        <img src="assets/logo.png" alt="C316" />
+      </div>
+    </div>
+  </article>
+</body>
+</html>
