@@ -31,8 +31,7 @@
       justify-content: center;
       padding: 0.75rem;
       background:
-        linear-gradient(180deg, rgba(8,8,8,0.45), rgba(8,8,8,0.84)),
-        url("/assets/hero-worship.jpg") center 38% / cover no-repeat;
+        linear-gradient(180deg, rgba(8,8,8,0.45), rgba(8,8,8,0.84));
     }
     .live-offline-inner {
       text-align: center;
@@ -83,9 +82,7 @@
 <body>
   <header class="site-nav">
     <div class="inner">
-      <a class="nav-brand" href="/">
-        <img src="/assets/logo-transparent.png" alt="C316" />
-      </a>
+      <a class="nav-brand" href="/"><span class="nav-word">C316</span></a>
       <nav class="nav-links" aria-label="Primary">
         <a href="/sundays">Sundays</a>
         <a href="/messages">Watch</a>
@@ -97,7 +94,6 @@
   </header>
 
   <div class="mobile-nav" id="mobileNav">
-    <img class="nav-logo-lg" src="/assets/logo-circle.png" alt="" />
     <a href="/">Home</a>
     <a href="/sundays">Sundays</a>
     <a href="/messages">Watch</a>
@@ -107,9 +103,6 @@
 
   <main>
     <section class="live-stage has-video" id="liveStage">
-      <div class="cine-media" aria-hidden="true">
-        <img src="/assets/hero-worship.jpg" alt="" style="object-position:center 38%" />
-      </div>
       <div class="cine-shade"></div>
       <div class="live-copy">
         <span class="chip" id="liveBadge"><span class="dot"></span> Sundays 11:30am</span>
@@ -118,7 +111,6 @@
         <div class="live-player" id="livePlayer">
           <div class="live-offline" id="liveOffline">
             <div class="live-offline-inner">
-              <img class="live-offline-logo" src="/assets/logo-circle.png" alt="" width="52" height="52" />
               <p class="live-offline-kicker">Next live service</p>
               <p class="live-offline-when">Sunday <span>11:30am</span></p>
               <p class="live-offline-date" id="liveNextDate">Every Sunday</p>
@@ -139,7 +131,6 @@
 
   <footer class="site-footer">
     <div class="inner">
-      <img class="logo" src="/assets/logo-transparent.png" alt="C316" />
       <p class="invite">Church 316 is a church for the curious, the doubters, the followers — why not come and join us this Sunday?</p>
       <div class="meta-line">
         <span><strong>Sundays 11:30am</strong> · Howley Grange Scout Hut</span>

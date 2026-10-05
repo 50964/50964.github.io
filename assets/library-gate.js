@@ -29,7 +29,6 @@
     gate.id = "libraryGate";
     gate.innerHTML =
       '<div class="library-gate-card">' +
-        '<img src="/assets/logo-circle.png" alt="C316" />' +
         '<p class="kicker">Leaders</p>' +
         '<h1>THE LIBRARY</h1>' +
         '<p class="library-gate-copy">Preach notes, slides, and studies. Enter the C316 leaders password.</p>' +
@@ -67,7 +66,7 @@
     st.textContent =
       "html.library-wait body>*:not(#libraryGate){visibility:hidden!important;pointer-events:none}" +
       "#libraryGate{position:fixed;inset:0;z-index:5000;display:grid;place-items:center;padding:1.25rem;" +
-      "background:linear-gradient(180deg,rgba(8,8,8,.55),rgba(8,8,8,.92)),url('/assets/hero-sanctuary.jpg') center 40%/cover no-repeat}" +
+      "background:#0a0a0a}" +
       ".library-gate-card{width:min(100%,420px);text-align:center;background:rgba(10,10,10,.78);border:1px solid rgba(196,168,106,.28);border-radius:18px;padding:2rem 1.5rem 1.5rem}" +
       ".library-gate-card img{width:88px;height:88px;margin:0 auto .85rem;object-fit:contain;display:block}" +
       ".library-gate-card .kicker{font-size:.72rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#c4a86a}" +

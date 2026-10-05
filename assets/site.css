@@ -307,12 +307,16 @@ ul { list-style: none; }
   align-items: center;
   min-width: 0;
 }
-.nav-brand img {
-  width: var(--logo-nav);
-  height: var(--logo-nav);
-  object-fit: contain;
-  background: transparent;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+.nav-word {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  color: var(--cream);
+}
+.mobile-nav .nav-word {
+  font-size: 3rem;
+  margin-bottom: 0.35rem;
 }
 .nav-brand-text { display: none; }
 
@@ -691,9 +695,7 @@ ul { list-style: none; }
   justify-content: center;
   padding: 0.75rem;
   text-align: center;
-  background:
-    linear-gradient(180deg, rgba(8, 8, 8, 0.45) 0%, rgba(8, 8, 8, 0.84) 100%),
-    url("/assets/hero-worship.jpg") center 38% / cover no-repeat;
+  background: #111;
 }
 .live-offline-inner {
   position: relative;
@@ -778,6 +780,22 @@ ul { list-style: none; }
 }
 
 /* ---------- Cinematic full-bleed panels ---------- */
+.home-poster {
+  background: #000;
+  margin-top: var(--nav-h);
+  min-height: calc(100dvh - var(--nav-h));
+  display: grid;
+  place-items: center;
+  padding: 0.75rem 0 1.5rem;
+}
+.home-poster img {
+  width: min(100%, 1440px);
+  height: auto;
+  max-height: calc(100dvh - var(--nav-h) - 2rem);
+  object-fit: contain;
+  margin: 0 auto;
+}
+
 .cine-hero,
 .cine-panel {
   position: relative;
@@ -787,6 +805,7 @@ ul { list-style: none; }
   align-items: flex-end;
   overflow: hidden;
   color: var(--white);
+  background: #0a0a0a;
 }
 .cine-panel { min-height: 88vh; }
 .cine-media {
@@ -910,19 +929,14 @@ ul { list-style: none; }
   background: linear-gradient(to bottom, var(--gold), transparent);
 }
 
-body.home .site-nav {
-  background: transparent;
-  border-bottom-color: transparent;
-}
+body.home .site-nav,
 body.home .site-nav.is-solid {
-  background: rgba(10, 10, 10, 0.88);
+  background: rgba(10, 10, 10, 0.92);
   border-bottom-color: rgba(196, 168, 106, 0.18);
 }
 
 .page-hero {
-  background:
-    linear-gradient(to bottom, rgba(7,7,7,0.55), rgba(7,7,7,0.88)),
-    url("/assets/hero-table.jpg") center 70%/cover no-repeat;
+  background: #0a0a0a;
 }
 @keyframes rise {
   from { opacity: 0; transform: translateY(18px); }
@@ -1470,7 +1484,7 @@ body.home .site-nav.is-solid {
 }
 .series-row {
   display: grid;
-  grid-template-columns: 118px 1fr;
+  grid-template-columns: 1fr;
   gap: 1.15rem;
   align-items: center;
   padding: 0.85rem;
@@ -1712,9 +1726,7 @@ html.library-wait body > *:not(#libraryGate) {
   display: grid;
   place-items: center;
   padding: 1.25rem;
-  background:
-    linear-gradient(180deg, rgba(8,8,8,0.55), rgba(8,8,8,0.92)),
-    url("/assets/hero-sanctuary.jpg") center 40% / cover no-repeat;
+  background: #0a0a0a;
 }
 .library-gate-card {
   width: min(100%, 420px);

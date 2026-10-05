@@ -16,10 +16,8 @@
     }
     var mobile = document.getElementById("mobileNav");
     if (mobile) {
-      var logo = mobile.querySelector(".nav-logo-lg");
-      var src = logo ? logo.getAttribute("src") : "/assets/logo-transparent.png";
       mobile.innerHTML =
-        '<img class="nav-logo-lg" src="' + src + '" alt="" />' +
+        '<a class="nav-word" href="/">C316</a>' +
         '<a href="/">Home</a>' +
         NAV.map(function (l) { return '<a href="' + l.href + '">' + l.label + "</a>"; }).join("") +
         '<a class="btn btn-primary" href="/sundays" style="margin-top:1rem">Plan a Visit</a>';
