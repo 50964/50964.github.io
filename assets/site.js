@@ -7,6 +7,101 @@
     { href: "/about", label: "About" }
   ];
 
+  /* One Story wall chart, Sep 2026 – Feb 2027. Public announcements
+     always show the next four Sundays and drop a Sunday after 13:00. */
+  var PLAN = [
+    { date: "2026-09-06", series: "Come As You Are", theme: "Welcome and identity", title: "Room at the Table", ref: "Luke 14:15–24", line: "Jesus still makes space for the ones who feel left out." },
+    { date: "2026-09-13", series: "Come As You Are", theme: "Welcome and identity", title: "Curious Is Welcome", ref: "John 1:35–46", line: "You don’t need all the answers to take a first step." },
+    { date: "2026-09-20", series: "Come As You Are", theme: "Welcome and identity", title: "The Name on Our Door", ref: "John 3:16–17", line: "For God so loved the world — including Halesowen." },
+    { date: "2026-09-27", series: "Come As You Are", theme: "Welcome and identity", title: "Bring Them With You", ref: "Mark 2:1–12", line: "Faith often starts when friends carry someone to Jesus." },
+    { date: "2026-10-04", series: "Gone Fishing", theme: "Mission · people", title: "The Call", ref: "Matthew 4:18–22", line: "Jesus still calls ordinary people from ordinary places." },
+    { date: "2026-10-11", series: "Gone Fishing", theme: "Mission · people", title: "Restored", ref: "John 21:9–17", line: "Failure is not the end of your calling." },
+    { date: "2026-10-18", series: "Gone Fishing", theme: "Mission · people", title: "The Net", ref: "Luke 5:1–11", line: "The miracle is on the other side of obedience." },
+    { date: "2026-10-25", series: "Gone Fishing", theme: "Mission · people", title: "Sent", ref: "Matthew 28:16–20", line: "You do not need to feel ready to be sent." },
+    { date: "2026-11-01", series: "Roots", theme: "Scripture and trust", title: "Why This Book?", ref: "2 Timothy 3:14–17", line: "We open this book because God still speaks." },
+    { date: "2026-11-08", series: "Roots", theme: "Scripture and trust", title: "When God Feels Quiet", ref: "Psalm 13", line: "You can tell God the truth and still trust him." },
+    { date: "2026-11-15", series: "Roots", theme: "Scripture and trust", title: "Trust Over Control", ref: "Proverbs 3:5–6 · Romans 12:1–2", line: "Control is often fear in a smart coat." },
+    { date: "2026-11-22", series: "Roots", theme: "Scripture and trust", title: "People of the Word", ref: "Colossians 3:12–17", line: "The word of Christ belongs in the room, not only on the stand." },
+    { date: "2026-11-29", series: "Roots", theme: "Scripture and trust", title: "Advent Prelude: Hope", ref: "Isaiah 9:2–7", line: "Hope does not deny the night. It names the Light." },
+    { date: "2026-12-06", series: "Light for the Street", theme: "Advent · Christmas", title: "Promise Kept", ref: "Luke 1:26–38", line: "Christmas is a kept promise — and a human yes." },
+    { date: "2026-12-13", series: "Light for the Street", theme: "Advent · Christmas", title: "Room for Jesus?", ref: "Luke 2:1–7", line: "The King arrives at the edge. A manger is enough." },
+    { date: "2026-12-20", series: "Light for the Street", theme: "Advent · Christmas", title: "Good News of Great Joy", ref: "Luke 2:8–20", line: "Good news finds the night shift first." },
+    { date: "2026-12-27", series: "Light for the Street", theme: "Advent · Christmas", title: "What Will You Do?", ref: "Matthew 2:1–12", line: "Meeting Jesus changes the way back." },
+    { date: "2027-01-03", series: "New Mercies", theme: "Reset · depth", title: "Mercies, Not Resolutions", ref: "Lamentations 3:22–24", line: "Start the year on mercy, not on shame." },
+    { date: "2027-01-10", series: "New Mercies", theme: "Reset · depth", title: "One Step Toward Jesus", ref: "Mark 1:14–20", line: "You do not need a five-year plan. You need one step." },
+    { date: "2027-01-17", series: "New Mercies", theme: "Reset · depth", title: "Practices That Form Us", ref: "Acts 2:42–47", line: "Following Jesus is a rhythm, not a vibe." },
+    { date: "2027-01-24", series: "New Mercies", theme: "Reset · depth", title: "When Community Costs", ref: "Hebrews 10:24–25", line: "Presence is a gift. Absence is easy." },
+    { date: "2027-01-31", series: "New Mercies", theme: "Reset · depth", title: "Stay Soft", ref: "Hebrews 3:12–15", line: "Stay interruptible. Stay soft." },
+    { date: "2027-02-07", series: "Love That Stays", theme: "Neighbours · vision", title: "Loved First", ref: "1 John 4:7–12", line: "We love because he first loved us." },
+    { date: "2027-02-14", series: "Love That Stays", theme: "Neighbours · vision", title: "Love Your Neighbours", ref: "Luke 10:25–37", line: "Mercy crosses the road." },
+    { date: "2027-02-21", series: "Love That Stays", theme: "Neighbours · vision", title: "Church Like Family", ref: "Romans 12:9–18", line: "Church is a people you belong to, not an event you attend." },
+    { date: "2027-02-28", series: "Love That Stays", theme: "Neighbours · vision", title: "Still Sent", ref: "John 20:19–23", line: "The story does not end in the locked room." }
+  ];
+  var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+  function londonNow(from) {
+    var parts = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Europe/London",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      hourCycle: "h23"
+    }).formatToParts(from || new Date());
+    var map = {};
+    parts.forEach(function (p) { if (p.type !== "literal") map[p.type] = p.value; });
+    return {
+      iso: map.year + "-" + map.month + "-" + map.day,
+      minutes: Number(map.hour) * 60 + Number(map.minute)
+    };
+  }
+  function planWhen(iso) {
+    var bits = iso.split("-");
+    return Number(bits[2]) + " " + MONTHS[Number(bits[1]) - 1];
+  }
+  function upcoming(count, from) {
+    var london = londonNow(from);
+    return PLAN.filter(function (s) {
+      if (s.date > london.iso) return true;
+      return s.date === london.iso && london.minutes < 13 * 60;
+    }).slice(0, count || 4);
+  }
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;" }[c];
+    });
+  }
+  function paintComing() {
+    var london = londonNow();
+    var next = upcoming(4);
+    document.querySelectorAll("[data-services]").forEach(function (el) {
+      var n = Number(el.getAttribute("data-services")) || 4;
+      el.innerHTML = upcoming(n).map(function (s) {
+        var thisSunday = s.date === london.iso;
+        var when = (thisSunday ? "This Sunday" : "Sunday") + " " + planWhen(s.date) + " · 11:30–13:00 · " + s.series;
+        return '<article class="series-row">' +
+          "<div>" +
+          '<p class="week">' + esc(when) + "</p>" +
+          "<h3>" + esc(s.title) + "</h3>" +
+          '<p class="verse-line">' + esc(s.line) + "</p>" +
+          '<p class="ref">' + esc(s.ref) + "</p>" +
+          "</div></article>";
+      }).join("");
+    });
+    var first = next[0];
+    var kicker = document.getElementById("seriesKicker");
+    var title = document.getElementById("seriesTitle");
+    var blurb = document.getElementById("seriesBlurb");
+    if (first && kicker && title && blurb) {
+      kicker.textContent = first.series;
+      title.textContent = first.series;
+      var prefix = first.date === london.iso ? "This Sunday" : "Next";
+      blurb.textContent = first.theme + ". " + prefix + ": " + first.title + ", " + planWhen(first.date) + ".";
+    }
+    return next;
+  }
+
   function paintChrome() {
     var nav = document.querySelector(".nav-links");
     if (nav) {
@@ -35,6 +130,7 @@
     }
   }
   paintChrome();
+  var coming = paintComing();
 
   var introEl = document.getElementById("logoIntro");
   var audio = document.getElementById("c316Audio");
@@ -343,24 +439,12 @@
        to a different Church 3:16 that happens to be streaming. */
     var fbLive = fbUrl || (fbId ? "https://www.facebook.com/" + fbId : "");
 
-    function nextService(from) {
-      var d = new Date(from.getTime());
-      var add = d.getDay() === 0
-        ? (d.getHours() * 60 + d.getMinutes() < 13 * 60 ? 0 : 7)
-        : 7 - d.getDay();
-      d.setDate(d.getDate() + add);
-      return d;
-    }
-    function formatServiceDay(d) {
-      var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      return d.getDate() + " " + months[d.getMonth()];
-    }
-    var service = nextService(london);
-    var isThisSunday = service.getDate() === london.getDate() && service.getMonth() === london.getMonth();
-    if (nextDate) {
-      nextDate.textContent = isThisSunday
-        ? "This Sunday · " + formatServiceDay(service)
-        : "Sunday " + formatServiceDay(service);
+    var nextPlan = (coming && coming[0]) || upcoming(1)[0];
+    var londonPlan = londonNow();
+    var planWhenLabel = nextPlan ? planWhen(nextPlan.date) : "";
+    var planIsToday = nextPlan && nextPlan.date === londonPlan.iso;
+    if (nextDate && nextPlan) {
+      nextDate.textContent = (planIsToday ? "This Sunday · " : "Sunday ") + planWhenLabel + " · " + nextPlan.title;
     }
 
     stage.classList.add("has-video");
@@ -395,6 +479,8 @@
           ? "We're gathered. Watch below — or be in the room."
           : "We're gathered. Press play to join in from wherever you are.";
       }
+    } else if (status && nextPlan) {
+      status.textContent = "Next live service: " + nextPlan.title + ", " + planWhenLabel + ". " + nextPlan.ref + ". The stream appears here when we go live.";
     } else if (status) {
       status.textContent = "Next live service: Sunday 11:30am. The stream appears here when we go live.";
     }
