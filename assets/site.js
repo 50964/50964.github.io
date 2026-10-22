@@ -93,11 +93,14 @@
     var kicker = document.getElementById("seriesKicker");
     var title = document.getElementById("seriesTitle");
     var blurb = document.getElementById("seriesBlurb");
+    var when = document.getElementById("seriesWhen");
     if (first && kicker && title && blurb) {
-      kicker.textContent = first.series;
-      title.textContent = first.series;
-      var prefix = first.date === london.iso ? "This Sunday" : "Next";
-      blurb.textContent = first.theme + ". " + prefix + ": " + first.title + ", " + planWhen(first.date) + ".";
+      var thisSunday = first.date === london.iso;
+      var whenLabel = (thisSunday ? "This Sunday" : "Sunday") + " " + planWhen(first.date) + " · 11:30–13:00";
+      kicker.textContent = thisSunday ? "This Sunday" : "Next Sunday";
+      title.textContent = first.title;
+      blurb.textContent = whenLabel + " · " + first.series + ". " + first.line;
+      if (when) when.innerHTML = '<span class="dot"></span> 11:30–13:00';
     }
     return next;
   }
