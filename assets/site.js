@@ -1,6 +1,7 @@
 /* C316 site interactions */
 (function () {
   var NAV = [
+    { href: "/xmas", label: "Xmas lunch" },
     { href: "/sundays", label: "Sundays" },
     { href: "/messages", label: "Watch" },
     { href: "/library", label: "Library" },
