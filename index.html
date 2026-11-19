@@ -298,14 +298,6 @@ button.btn {
 }
 .fine { margin-top: 22px; color: var(--dim); line-height: 1.7; }
 .fine a { text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.35); }
-.xmas-line { margin: 18px 0 0; }
-.xmas-line a {
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,.35);
-  font-size: clamp(1.15rem, 3vw, 1.45rem);
-  letter-spacing: .03em;
-}
 @media (min-width: 800px) {
   h1 { font-size: clamp(6rem, 9vw, 10rem); }
   .slots { grid-template-columns: 1fr 1fr 1fr; }
@@ -411,7 +403,6 @@ button.btn {
       <li><span class="when">6 Dec <small>11:30</small></span><span class="preach">Promise Kept</span><span class="ref plain">Luke 1:26–38</span></li>
       <li><span class="when">13 Dec <small>11:30</small></span><span class="preach">Room for Jesus?</span><span class="ref plain">Luke 2:1–7</span></li>
     </ul>
-    <p class="xmas-line" id="xmasLine" hidden><a href="/xmas">6 Dec · Free Christmas lunch · 3pm</a></p>
     <p class="sub plain">Same room. Same time. Halesowen.</p>
   </div>
 </section>
@@ -529,10 +520,6 @@ button.btn {
       }
       window.prompt("Copy this and send it to one person", full);
     });
-  }
-  var lunch = document.getElementById("xmasLine");
-  if (lunch && (iso < "2026-12-06" || (iso === "2026-12-06" && minutes < 17 * 60))) {
-    lunch.hidden = false;
   }
 })();
 </script>
