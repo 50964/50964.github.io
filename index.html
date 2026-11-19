@@ -341,7 +341,7 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
   <div class="copy">
     <p class="kicker">Our next weeks</p>
     <h2>FOUR<br>SUNDAYS.</h2>
-    <ul class="weeks" id="weeks">
+    <ul class="weeks" id="week-list">
       <li>22 Nov <small>11:30</small></li>
       <li>29 Nov <small>11:30</small></li>
       <li>6 Dec <small>11:30</small></li>
@@ -418,7 +418,7 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
   var next = DATES.filter(function (d) {
     return d > iso || (d === iso && minutes < 13 * 60);
   }).slice(0, 4);
-  var weeks = document.getElementById("weeks");
+  var weeks = document.getElementById("week-list");
   if (weeks && next.length) {
     weeks.innerHTML = next.map(function (d) {
       var b = d.split("-");
