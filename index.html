@@ -65,7 +65,7 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px 14px;
-  max-width: 100%;
+  width: 100%;
 }
 .links::-webkit-scrollbar { display: none; }
 .links a { white-space: nowrap; color: rgba(255,255,255,.72); }
@@ -78,8 +78,28 @@ nav {
   width: 0;
   background: rgba(255,255,255,.7);
 }
+.ground {
+  position: fixed;
+  z-index: 0;
+  inset: -12vh 0;
+  pointer-events: none;
+  background: #000 url("/assets/art-christ.jpg") center 28% / cover no-repeat;
+  filter: grayscale(1) brightness(.62) contrast(1.08);
+  opacity: .42;
+  will-change: transform;
+}
+.veil {
+  position: fixed;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(#000 0, rgba(0,0,0,.2) 16vh, rgba(0,0,0,.55) 100%),
+    radial-gradient(ellipse at 50% 32%, rgba(0,0,0,.12), rgba(0,0,0,.78) 74%);
+}
 .scene {
   position: relative;
+  z-index: 2;
   min-height: 100vh;
   min-height: 100svh;
   display: flex;
@@ -88,17 +108,7 @@ nav {
   text-align: center;
   padding: 18vh 6vw 12vh;
   overflow: hidden;
-  background: #000;
-}
-.art {
-  position: absolute;
-  z-index: 0;
-  pointer-events: none;
-  user-select: none;
-  filter: grayscale(1) brightness(.42) contrast(1.2);
-  mix-blend-mode: lighten;
-  opacity: .22;
-  will-change: transform, opacity;
+  background: transparent;
 }
 .copy { position: relative; z-index: 1; width: min(920px, 100%); }
 .kicker {
@@ -257,13 +267,16 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
   .slots { grid-template-columns: 1fr 1fr 1fr; }
   .slots .slot { min-height: 240px; }
   nav { flex-direction: row; justify-content: space-between; padding-left: 28px; padding-right: 28px; }
+  .links { width: auto; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .art { transform: none !important; }
+  .ground { transform: none !important; }
 }
 </style>
 </head>
 <body>
+<div class="ground" id="ground" aria-hidden="true"></div>
+<div class="veil" aria-hidden="true"></div>
 <div class="scrub" id="scrub"></div>
 <nav>
   <a class="brand" href="#top">Church 316</a>
@@ -279,7 +292,6 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
 </nav>
 
 <section class="scene" id="top">
-  <img class="art" data-mid data-p="70" data-max="0.42" src="/assets/art-christ.jpg" alt="" style="width:min(86vw,680px);top:16vh;left:50%;">
   <div class="copy">
     <h1><span>CHURCH</span><span>316</span></h1>
     <p class="lead">For God so loved…</p>
@@ -287,7 +299,6 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
 </section>
 
 <section class="scene" id="story">
-  <img class="art" data-p="120" data-max="0.4" src="/assets/art-cross.jpg" alt="" style="width:min(70vw,460px);right:-8vw;top:6vh;">
   <div class="copy">
     <p class="kicker">Our story</p>
     <h2><span>AN ATHEIST</span><span>WHO FOUND</span><span>GOD.</span></h2>
@@ -297,7 +308,6 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
 </section>
 
 <section class="scene" id="gathering">
-  <img class="art" data-mid data-p="100" data-max="0.26" src="/assets/art-tomb.jpg" alt="" style="width:min(120vw,1100px);left:50%;bottom:-6vh;">
   <div class="copy">
     <p class="kicker">Our gathering</p>
     <h2><span>SUNDAY</span><span>11:30</span></h2>
@@ -312,7 +322,6 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
 </section>
 
 <section class="scene" id="beliefs">
-  <img class="art" data-p="90" data-max="0.36" src="/assets/art-christ.jpg" alt="" style="width:min(64vw,420px);left:-10vw;top:12vh;">
   <div class="copy">
     <p class="kicker">Our beliefs</p>
     <h2>JESUS<br>AT THE CENTRE.</h2>
@@ -327,7 +336,6 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
 </section>
 
 <section class="scene" id="podcasts">
-  <img class="art" data-p="70" data-max="0.3" src="/assets/art-cup.jpg" alt="" style="width:min(72vw,520px);right:-6vw;bottom:4vh;">
   <div class="copy">
     <p class="kicker">Our podcasts</p>
     <h2>THE TALKS<br>SIT HERE.</h2>
@@ -337,7 +345,6 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
 </section>
 
 <section class="scene" id="weeks">
-  <img class="art" data-mid data-p="110" data-max="0.24" src="/assets/art-cross.jpg" alt="" style="width:min(50vw,340px);left:50%;top:4vh;">
   <div class="copy">
     <p class="kicker">Our next weeks</p>
     <h2>FOUR<br>SUNDAYS.</h2>
@@ -353,7 +360,6 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
 </section>
 
 <section class="scene" id="live">
-  <img class="art" data-mid data-p="60" data-max="0.24" src="/assets/art-tomb.jpg" alt="" style="width:min(100vw,820px);left:50%;top:12vh;">
   <div class="copy">
     <p class="kicker">Our live feed</p>
     <h2>WATCH<br>SUNDAY.</h2>
@@ -363,7 +369,6 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
 </section>
 
 <section class="scene" id="contact">
-  <img class="art" data-p="50" data-max="0.26" src="/assets/art-cup.jpg" alt="" style="width:min(48vw,340px);left:6vw;bottom:6vh;">
   <div class="copy">
     <p class="kicker">Contact</p>
     <h2>CHURCH<br>316</h2>
@@ -380,25 +385,13 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
 (function () {
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var scrub = document.getElementById("scrub");
-  var arts = [].slice.call(document.querySelectorAll(".art"));
+  var ground = document.getElementById("ground");
   function place() {
     var max = document.documentElement.scrollHeight - window.innerHeight;
     scrub.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
-    var vh = window.innerHeight || 1;
-    for (var i = 0; i < arts.length; i++) {
-      var el = arts[i];
-      var host = el.closest(".scene");
-      var r = host.getBoundingClientRect();
-      var delta = (r.top + r.height / 2 - vh / 2) / vh;
-      var near = Math.max(0, 1 - Math.abs(delta));
-      var cap = parseFloat(el.dataset.max || "0.3");
-      el.style.opacity = String(0.08 + near * cap);
-      if (reduce) continue;
-      var shift = delta * parseFloat(el.dataset.p || "40");
-      var scale = 0.94 + near * 0.12;
-      var x = el.hasAttribute("data-mid") ? "-50%" : "0px";
-      el.style.transform = "translate3d(" + x + "," + shift.toFixed(1) + "px,0) scale(" + scale.toFixed(3) + ")";
-    }
+    if (!ground || reduce) return;
+    var t = max > 0 ? window.scrollY / max : 0;
+    ground.style.transform = "translate3d(0," + ((0.5 - t) * 8).toFixed(2) + "vh,0)";
   }
   window.addEventListener("scroll", place, { passive: true });
   window.addEventListener("resize", place);
