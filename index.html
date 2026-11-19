@@ -439,7 +439,8 @@ button.btn {
     scrub.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
     if (!ground || reduce) return;
     var t = max > 0 ? window.scrollY / max : 0;
-    ground.style.transform = "translate3d(0," + ((0.5 - t) * 8).toFixed(2) + "vh,0)";
+    var scale = 1 + t * 0.045;
+    ground.style.transform = "translate3d(0," + ((0.5 - t) * 8).toFixed(2) + "vh,0) scale(" + scale.toFixed(3) + ")";
   }
   window.addEventListener("scroll", place, { passive: true });
   window.addEventListener("resize", place);
