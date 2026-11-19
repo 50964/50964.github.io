@@ -83,7 +83,7 @@ nav {
   z-index: 0;
   inset: -12vh 0;
   pointer-events: none;
-  background: #000 url("/assets/art-christ.jpg") center 28% / cover no-repeat;
+  background: #000 url("/assets/art-portrait.jpg") center 30% / cover no-repeat;
   filter: grayscale(1) brightness(.62) contrast(1.08);
   opacity: .42;
   will-change: transform;
@@ -110,7 +110,7 @@ nav {
   overflow: hidden;
   background: transparent;
 }
-.copy { position: relative; z-index: 1; width: min(920px, 100%); }
+.copy { position: relative; z-index: 1; width: min(920px, 100%); min-width: 0; }
 .kicker {
   margin: 0 0 12px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -191,16 +191,34 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
   margin: 26px auto 0;
   padding: 0;
   list-style: none;
-  width: min(420px, 100%);
+  width: min(520px, 100%);
+  text-align: left;
 }
 .weeks li {
+  display: block;
+  padding: 16px 0 14px;
+  border-top: 1px solid rgba(255,255,255,.16);
+}
+.weeks .when {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   gap: 16px;
-  padding: 14px 0;
-  border-top: 1px solid rgba(255,255,255,.16);
-  font-size: clamp(1.4rem, 4vw, 1.8rem);
-  letter-spacing: .03em;
+  font-size: clamp(1.15rem, 3vw, 1.45rem);
+  letter-spacing: .04em;
+}
+.weeks .preach {
+  display: block;
+  margin-top: 6px;
+  font-size: clamp(1.45rem, 4.4vw, 2.05rem);
+  line-height: 1.02;
+  letter-spacing: .01em;
+}
+.weeks .ref {
+  display: block;
+  margin-top: 6px;
+  font-size: .95rem;
+  color: var(--dim);
 }
 .weeks small {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -208,7 +226,33 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
   font-weight: 650;
   letter-spacing: .16em;
   color: rgba(255,255,255,.5);
-  align-self: center;
+}
+.qr {
+  display: block;
+  width: max-content;
+  margin: 26px auto 0;
+  padding: 12px;
+  background: #fff;
+  line-height: 0;
+}
+.qr img { width: min(220px, 58vw); height: auto; }
+button.btn {
+  appearance: none;
+  display: flex;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  background: transparent;
+  font-family: Anton, Impact, Haettenschweiler, sans-serif;
+  cursor: pointer;
+}
+.invite-line { margin: 22px 0 0; }
+.invite-line a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.35);
+  font-size: clamp(1.2rem, 3.2vw, 1.6rem);
+  letter-spacing: .03em;
 }
 .frame {
   margin: 26px auto 0;
@@ -281,6 +325,7 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
 <nav>
   <a class="brand" href="#top">Church 316</a>
   <div class="links">
+    <a href="#invite">Invite</a>
     <a href="#story">Story</a>
     <a href="#gathering">Gathering</a>
     <a href="#beliefs">Beliefs</a>
@@ -295,6 +340,18 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
   <div class="copy">
     <h1><span>CHURCH</span><span>316</span></h1>
     <p class="lead">For God so loved…</p>
+    <p class="invite-line"><a href="#invite">Invite one person</a></p>
+  </div>
+</section>
+
+<section class="scene" id="invite">
+  <div class="copy">
+    <p class="kicker">Bring someone</p>
+    <h2>INVITE<br>ONE.</h2>
+    <p class="sub plain">One person this week. Send this, or let them scan.</p>
+    <a class="qr" href="/one"><img src="/assets/invite-qr.png" width="574" height="574" alt="QR code. Scans to churchthreesixteen.co.uk/one"></a>
+    <button class="btn" type="button" id="sendInvite">Send the invite</button>
+    <p class="fine plain" id="sendNote"><a href="/one">churchthreesixteen.co.uk/one</a></p>
   </div>
 </section>
 
@@ -349,10 +406,10 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
     <p class="kicker">Our next weeks</p>
     <h2>FOUR<br>SUNDAYS.</h2>
     <ul class="weeks" id="week-list">
-      <li>22 Nov <small>11:30</small></li>
-      <li>29 Nov <small>11:30</small></li>
-      <li>6 Dec <small>11:30</small></li>
-      <li>13 Dec <small>11:30</small></li>
+      <li><span class="when">22 Nov <small>11:30</small></span><span class="preach">People of the Word</span><span class="ref plain">Colossians 3:12–17</span></li>
+      <li><span class="when">29 Nov <small>11:30</small></span><span class="preach">Advent Prelude: Hope</span><span class="ref plain">Isaiah 9:2–7</span></li>
+      <li><span class="when">6 Dec <small>11:30</small></span><span class="preach">Promise Kept</span><span class="ref plain">Luke 1:26–38</span></li>
+      <li><span class="when">13 Dec <small>11:30</small></span><span class="preach">Room for Jesus?</span><span class="ref plain">Luke 2:1–7</span></li>
     </ul>
     <p class="xmas-line" id="xmasLine" hidden><a href="/xmas">6 Dec · Free Christmas lunch · 3pm</a></p>
     <p class="sub plain">Same room. Same time. Halesowen.</p>
@@ -397,9 +454,41 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
   window.addEventListener("resize", place);
   place();
 
-  /* Same Sunday list as assets/site.js. Drops a Sunday after 13:00 London. */
-  var DATES = ["2026-09-06","2026-09-13","2026-09-20","2026-09-27","2026-10-04","2026-10-11","2026-10-18","2026-10-25","2026-11-01","2026-11-08","2026-11-15","2026-11-22","2026-11-29","2026-12-06","2026-12-13","2026-12-20","2026-12-27","2027-01-03","2027-01-10","2027-01-17","2027-01-24","2027-01-31","2027-02-07","2027-02-14","2027-02-21","2027-02-28"];
+  /* Same Sundays and titles as assets/site.js. Drops a Sunday after 13:00 London. */
+  var PLAN = [
+    { date: "2026-09-06", title: "Room at the Table", ref: "Luke 14:15–24" },
+    { date: "2026-09-13", title: "Curious Is Welcome", ref: "John 1:35–46" },
+    { date: "2026-09-20", title: "The Name on Our Door", ref: "John 3:16–17" },
+    { date: "2026-09-27", title: "Bring Them With You", ref: "Mark 2:1–12" },
+    { date: "2026-10-04", title: "The Call", ref: "Matthew 4:18–22" },
+    { date: "2026-10-11", title: "Restored", ref: "John 21:9–17" },
+    { date: "2026-10-18", title: "The Net", ref: "Luke 5:1–11" },
+    { date: "2026-10-25", title: "Sent", ref: "Matthew 28:16–20" },
+    { date: "2026-11-01", title: "Why This Book?", ref: "2 Timothy 3:14–17" },
+    { date: "2026-11-08", title: "When God Feels Quiet", ref: "Psalm 13" },
+    { date: "2026-11-15", title: "Trust Over Control", ref: "Proverbs 3:5–6 · Romans 12:1–2" },
+    { date: "2026-11-22", title: "People of the Word", ref: "Colossians 3:12–17" },
+    { date: "2026-11-29", title: "Advent Prelude: Hope", ref: "Isaiah 9:2–7" },
+    { date: "2026-12-06", title: "Promise Kept", ref: "Luke 1:26–38" },
+    { date: "2026-12-13", title: "Room for Jesus?", ref: "Luke 2:1–7" },
+    { date: "2026-12-20", title: "Good News of Great Joy", ref: "Luke 2:8–20" },
+    { date: "2026-12-27", title: "What Will You Do?", ref: "Matthew 2:1–12" },
+    { date: "2027-01-03", title: "Mercies, Not Resolutions", ref: "Lamentations 3:22–24" },
+    { date: "2027-01-10", title: "One Step Toward Jesus", ref: "Mark 1:14–20" },
+    { date: "2027-01-17", title: "Practices That Form Us", ref: "Acts 2:42–47" },
+    { date: "2027-01-24", title: "When Community Costs", ref: "Hebrews 10:24–25" },
+    { date: "2027-01-31", title: "Stay Soft", ref: "Hebrews 3:12–15" },
+    { date: "2027-02-07", title: "Loved First", ref: "1 John 4:7–12" },
+    { date: "2027-02-14", title: "Love Your Neighbours", ref: "Luke 10:25–37" },
+    { date: "2027-02-21", title: "Church Like Family", ref: "Romans 12:9–18" },
+    { date: "2027-02-28", title: "Still Sent", ref: "John 20:19–23" }
+  ];
   var SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  function esc(s) {
+    return String(s).replace(/[&<>]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c];
+    });
+  }
   var parts = new Intl.DateTimeFormat("en-GB", {
     timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit",
     hour: "2-digit", minute: "2-digit", hourCycle: "h23"
@@ -408,15 +497,38 @@ h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
   parts.forEach(function (p) { if (p.type !== "literal") map[p.type] = p.value; });
   var iso = map.year + "-" + map.month + "-" + map.day;
   var minutes = Number(map.hour) * 60 + Number(map.minute);
-  var next = DATES.filter(function (d) {
-    return d > iso || (d === iso && minutes < 13 * 60);
+  var next = PLAN.filter(function (s) {
+    return s.date > iso || (s.date === iso && minutes < 13 * 60);
   }).slice(0, 4);
   var weeks = document.getElementById("week-list");
   if (weeks && next.length) {
-    weeks.innerHTML = next.map(function (d) {
-      var b = d.split("-");
-      return "<li>" + Number(b[2]) + " " + SHORT[Number(b[1]) - 1] + " <small>11:30</small></li>";
+    weeks.innerHTML = next.map(function (s) {
+      var b = s.date.split("-");
+      return "<li><span class=\"when\">" + Number(b[2]) + " " + SHORT[Number(b[1]) - 1] +
+        " <small>11:30</small></span><span class=\"preach\">" + esc(s.title) +
+        "</span><span class=\"ref plain\">" + esc(s.ref) + "</span></li>";
     }).join("");
+  }
+  var send = document.getElementById("sendInvite");
+  var note = document.getElementById("sendNote");
+  var inviteUrl = "https://churchthreesixteen.co.uk/one";
+  var inviteText = "Come with me on Sunday. Church 316, 11:30, Howley Grange Scout Hut, Halesowen.";
+  if (send) {
+    send.addEventListener("click", function () {
+      var payload = { title: "Church 316", text: inviteText, url: inviteUrl };
+      if (navigator.share) {
+        navigator.share(payload).catch(function () {});
+        return;
+      }
+      var full = inviteText + " " + inviteUrl;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(full).then(function () {
+          if (note) note.textContent = "Link copied. Send it to one person.";
+        });
+        return;
+      }
+      window.prompt("Copy this and send it to one person", full);
+    });
   }
   var lunch = document.getElementById("xmasLine");
   if (lunch && (iso < "2026-12-06" || (iso === "2026-12-06" && minutes < 17 * 60))) {

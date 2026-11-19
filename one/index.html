@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>You are invited — Church 316</title>
+<meta name="description" content="Someone invited you. Sunday 11:30 at Howley Grange Scout Hut, Halesowen. Come as you are. Then invite one person.">
+<meta property="og:title" content="You are invited — Church 316">
+<meta property="og:description" content="Sunday 11:30 at Howley Grange Scout Hut, Halesowen. Come as you are.">
+<meta property="og:url" content="https://churchthreesixteen.co.uk/one">
+<link rel="icon" href="/assets/logo-mark.png" type="image/png">
+<style>
+@font-face {
+  font-family: "Anton";
+  src: url("/assets/anton.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #000; color: #f4f4f4; }
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  font-family: Anton, Impact, Haettenschweiler, sans-serif;
+  text-align: center;
+}
+a { color: inherit; }
+.ground {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  background: #000 url("/assets/art-portrait.jpg") center 30% / cover no-repeat;
+  filter: grayscale(1) brightness(.62) contrast(1.08);
+  opacity: .42;
+}
+.veil {
+  position: fixed;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(#000 0, rgba(0,0,0,.35) 18vh, rgba(0,0,0,.62) 100%);
+}
+main {
+  position: relative;
+  z-index: 2;
+  width: min(640px, 100%);
+  margin: 0 auto;
+  padding: calc(28px + env(safe-area-inset-top)) 6vw 48px;
+}
+.kicker, .plain {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 520;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.kicker {
+  margin: 0 0 14px;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+}
+h1, h2 { margin: 0; font-weight: 400; line-height: .88; letter-spacing: .01em; }
+h1 { font-size: clamp(3.4rem, 16vw, 6.4rem); }
+h2 { margin-top: 48px; font-size: clamp(2.8rem, 12vw, 4.8rem); }
+.when { margin: 18px 0 0; font-size: clamp(1.4rem, 4vw, 1.9rem); }
+.preach { margin: 8px 0 0; font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.02; }
+.ref { margin: 8px 0 0; color: rgba(244,244,244,.62); font-size: 1rem; }
+.addr { margin: 22px 0 0; font-size: clamp(1.35rem, 4vw, 1.9rem); line-height: 1.08; }
+.sub { margin: 16px auto 0; max-width: 26em; color: rgba(244,244,244,.62); font-size: 1.05rem; line-height: 1.45; }
+.fine { margin-top: 16px; color: rgba(244,244,244,.62); }
+.fine a, .map {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.35);
+}
+.map { display: inline-block; margin-top: 14px; font-size: 1.05rem; }
+.qr {
+  display: block;
+  width: max-content;
+  margin: 22px auto 0;
+  padding: 12px;
+  background: #fff;
+  line-height: 0;
+}
+.qr img { width: min(220px, 58vw); height: auto; }
+.btn {
+  display: flex;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  margin-top: 22px;
+  padding: 0 22px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-family: Anton, Impact, Haettenschweiler, sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: .04em;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="ground" aria-hidden="true"></div>
+<div class="veil" aria-hidden="true"></div>
+<main>
+  <p class="kicker">Church 316</p>
+  <h1>YOU ARE<br>INVITED.</h1>
+  <p class="when" id="when">Sunday 22 Nov · 11:30</p>
+  <p class="preach" id="preach">People of the Word</p>
+  <p class="ref plain" id="ref">Colossians 3:12–17</p>
+  <p class="addr">Howley Grange Scout Hut<br>Bournebrook Crescent<br>Halesowen B62 0HY</p>
+  <p class="sub plain">Until 1:00. Come as you are. Songs, then a talk from the Bible.</p>
+  <a class="map plain" href="https://maps.google.com/?q=Howley+Grange+Scout+Hut,+Bournebrook+Crescent,+Halesowen+B62+0HY">Map</a>
+  <h2>INVITE<br>ONE.</h2>
+  <p class="sub plain">Pass it on. One person. Send this, or let them scan.</p>
+  <a class="qr" href="/one"><img src="/assets/invite-qr.png" width="574" height="574" alt="QR code. Scans to churchthreesixteen.co.uk/one"></a>
+  <button class="btn" type="button" id="sendInvite">Send the invite</button>
+  <p class="fine plain" id="sendNote"><a href="/">churchthreesixteen.co.uk</a></p>
+</main>
+<script>
+(function () {
+  var PLAN = [
+    { date: "2026-09-06", title: "Room at the Table", ref: "Luke 14:15–24" },
+    { date: "2026-09-13", title: "Curious Is Welcome", ref: "John 1:35–46" },
+    { date: "2026-09-20", title: "The Name on Our Door", ref: "John 3:16–17" },
+    { date: "2026-09-27", title: "Bring Them With You", ref: "Mark 2:1–12" },
+    { date: "2026-10-04", title: "The Call", ref: "Matthew 4:18–22" },
+    { date: "2026-10-11", title: "Restored", ref: "John 21:9–17" },
+    { date: "2026-10-18", title: "The Net", ref: "Luke 5:1–11" },
+    { date: "2026-10-25", title: "Sent", ref: "Matthew 28:16–20" },
+    { date: "2026-11-01", title: "Why This Book?", ref: "2 Timothy 3:14–17" },
+    { date: "2026-11-08", title: "When God Feels Quiet", ref: "Psalm 13" },
+    { date: "2026-11-15", title: "Trust Over Control", ref: "Proverbs 3:5–6 · Romans 12:1–2" },
+    { date: "2026-11-22", title: "People of the Word", ref: "Colossians 3:12–17" },
+    { date: "2026-11-29", title: "Advent Prelude: Hope", ref: "Isaiah 9:2–7" },
+    { date: "2026-12-06", title: "Promise Kept", ref: "Luke 1:26–38" },
+    { date: "2026-12-13", title: "Room for Jesus?", ref: "Luke 2:1–7" },
+    { date: "2026-12-20", title: "Good News of Great Joy", ref: "Luke 2:8–20" },
+    { date: "2026-12-27", title: "What Will You Do?", ref: "Matthew 2:1–12" },
+    { date: "2027-01-03", title: "Mercies, Not Resolutions", ref: "Lamentations 3:22–24" },
+    { date: "2027-01-10", title: "One Step Toward Jesus", ref: "Mark 1:14–20" },
+    { date: "2027-01-17", title: "Practices That Form Us", ref: "Acts 2:42–47" },
+    { date: "2027-01-24", title: "When Community Costs", ref: "Hebrews 10:24–25" },
+    { date: "2027-01-31", title: "Stay Soft", ref: "Hebrews 3:12–15" },
+    { date: "2027-02-07", title: "Loved First", ref: "1 John 4:7–12" },
+    { date: "2027-02-14", title: "Love Your Neighbours", ref: "Luke 10:25–37" },
+    { date: "2027-02-21", title: "Church Like Family", ref: "Romans 12:9–18" },
+    { date: "2027-02-28", title: "Still Sent", ref: "John 20:19–23" }
+  ];
+  var SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit",
+    hour: "2-digit", minute: "2-digit", hourCycle: "h23"
+  }).formatToParts(new Date());
+  var map = {};
+  parts.forEach(function (p) { if (p.type !== "literal") map[p.type] = p.value; });
+  var iso = map.year + "-" + map.month + "-" + map.day;
+  var minutes = Number(map.hour) * 60 + Number(map.minute);
+  var next = PLAN.filter(function (s) {
+    return s.date > iso || (s.date === iso && minutes < 13 * 60);
+  })[0];
+  if (next) {
+    var b = next.date.split("-");
+    document.getElementById("when").textContent = "Sunday " + Number(b[2]) + " " + SHORT[Number(b[1]) - 1] + " · 11:30";
+    document.getElementById("preach").textContent = next.title;
+    document.getElementById("ref").textContent = next.ref;
+  }
+  var send = document.getElementById("sendInvite");
+  var note = document.getElementById("sendNote");
+  var inviteUrl = "https://churchthreesixteen.co.uk/one";
+  var inviteText = "Come with me on Sunday. Church 316, 11:30, Howley Grange Scout Hut, Halesowen.";
+  send.addEventListener("click", function () {
+    var payload = { title: "Church 316", text: inviteText, url: inviteUrl };
+    if (navigator.share) {
+      navigator.share(payload).catch(function () {});
+      return;
+    }
+    var full = inviteText + " " + inviteUrl;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(full).then(function () {
+        note.textContent = "Link copied. Send it to one person.";
+      });
+      return;
+    }
+    window.prompt("Copy this and send it to one person", full);
+  });
+})();
+</script>
+</body>
+</html>
