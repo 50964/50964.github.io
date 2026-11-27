@@ -109,3 +109,7 @@ h2.huge{font-size:clamp(5.5rem,30vw,13rem);line-height:.85;color:var(--cream-hi)
 .frame.is-live .frame-idle{display:none}
 .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .page-top{min-height:calc(88svh - var(--nav-h));border-top:0}
+.ticket{width:100%;max-width:30rem;border:2px solid var(--ink);border-radius:18px;padding:18px 20px;background:var(--cream);display:grid;gap:4px}
+.ticket-when{font-family:var(--mono);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.85rem}
+.panel .ticket-preach{font-weight:900;font-variation-settings:"wdth" 112;text-transform:uppercase;font-size:clamp(1.5rem,6vw,2.2rem);line-height:1.05}
+.ticket-ref{font-family:var(--mono);font-size:.85rem}
