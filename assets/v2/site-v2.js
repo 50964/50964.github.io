@@ -95,6 +95,23 @@
     }
   }
 
+  /* Story timeline: expand on tap, reveal on scroll */
+  var items = document.querySelectorAll(".tl-item");
+  items.forEach(function (it) {
+    var b = it.querySelector(".tl-btn");
+    b.addEventListener("click", function () {
+      var o = it.classList.toggle("open");
+      b.setAttribute("aria-expanded", o);
+    });
+  });
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (items.length && "IntersectionObserver" in window && !reduceMotion) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.15 });
+    items.forEach(function (it, i) { it.classList.add("reveal"); it.style.transitionDelay = (i % 3) * 80 + "ms"; io.observe(it); });
+  }
+
   /* Nav */
   var t = document.querySelector(".nav-toggle"), n = document.getElementById("nav");
   if (t && n) {
