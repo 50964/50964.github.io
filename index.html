@@ -1,528 +1,162 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Church 316</title>
-<meta name="description" content="Church 316. For God so loved. Sundays 11:30–1:00 at Howley Grange Scout Hut, Halesowen. Come as you are.">
-<meta property="og:title" content="Church 316">
-<meta property="og:description" content="For God so loved. Sundays 11:30 at Howley Grange Scout Hut, Halesowen.">
-<meta property="og:url" content="https://churchthreesixteen.co.uk/">
-<link rel="icon" href="/assets/logo-mark.png" type="image/png">
-<style>
-@font-face {
-  font-family: "Anton";
-  src: url("/assets/anton.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: block;
-}
-:root {
-  --bg: #000;
-  --ink: #f4f4f4;
-  --dim: rgba(244,244,244,.62);
-  --line: rgba(244,244,244,.28);
-}
-* { box-sizing: border-box; }
-html { background: var(--bg); }
-body {
-  margin: 0;
-  background: #000;
-  color: var(--ink);
-  font-family: Anton, Impact, Haettenschweiler, sans-serif;
-  overflow-x: hidden;
-}
-a { color: inherit; }
-img { display: block; max-width: 100%; }
-.plain {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-weight: 520;
-  letter-spacing: 0;
-  text-transform: none;
-}
-nav {
-  position: fixed;
-  z-index: 20;
-  top: 0; left: 0; right: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: calc(14px + env(safe-area-inset-top)) 16px 12px;
-  background: linear-gradient(#000 55%, rgba(0,0,0,0));
-}
-.brand, .links a {
-  text-decoration: none;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 11px;
-  font-weight: 650;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: #fff;
-}
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px 14px;
-  width: 100%;
-}
-.links::-webkit-scrollbar { display: none; }
-.links a { white-space: nowrap; color: rgba(255,255,255,.72); }
-.links a:focus-visible, .btn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
-.scrub {
-  position: fixed;
-  z-index: 30;
-  top: 0; left: 0;
-  height: 1px;
-  width: 0;
-  background: rgba(255,255,255,.7);
-}
-.ground {
-  position: fixed;
-  z-index: 0;
-  inset: -12vh 0;
-  pointer-events: none;
-  background: #000 url("/assets/art-portrait.jpg") center 30% / cover no-repeat;
-  filter: grayscale(1) brightness(.62) contrast(1.08);
-  opacity: .42;
-  will-change: transform;
-}
-.veil {
-  position: fixed;
-  z-index: 1;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(#000 0, rgba(0,0,0,.2) 16vh, rgba(0,0,0,.55) 100%),
-    radial-gradient(ellipse at 50% 32%, rgba(0,0,0,.12), rgba(0,0,0,.78) 74%);
-}
-.scene {
-  position: relative;
-  z-index: 2;
-  min-height: 100vh;
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 18vh 6vw 12vh;
-  overflow: hidden;
-  background: transparent;
-}
-.copy { position: relative; z-index: 1; width: min(920px, 100%); min-width: 0; }
-.kicker {
-  margin: 0 0 12px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 650;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.55);
-}
-h1, h2 {
-  margin: 0;
-  font-weight: 400;
-  letter-spacing: .01em;
-  line-height: .86;
-}
-h1 {
-  font-size: clamp(4.4rem, 18vw, 9.2rem);
-}
-h1 span, h2 span { display: block; }
-.lead {
-  margin: 18px auto 0;
-  font-size: clamp(1.35rem, 4vw, 2.15rem);
-  letter-spacing: .02em;
-}
-h2 { font-size: clamp(3.1rem, 11vw, 6.6rem); }
-.sub {
-  margin: 18px auto 0;
-  max-width: 28em;
-  font-size: 1.05rem;
-  line-height: 1.45;
-  color: var(--dim);
-}
-.slot {
-  margin: 28px auto 0;
-  width: min(520px, 100%);
-  min-height: 220px;
-  border: 1px solid var(--line);
-  background: #050505;
-  display: grid;
-  place-items: center;
-  color: rgba(255,255,255,.42);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 11px;
-  font-weight: 650;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-}
-.slots {
-  margin: 28px auto 0;
-  width: min(880px, 100%);
-  display: grid;
-  gap: 10px;
-}
-.slots .slot { margin: 0; width: 100%; min-height: 160px; }
-.beliefs {
-  margin: 22px auto 0;
-  padding: 0;
-  list-style: none;
-  max-width: 16em;
-}
-.beliefs li {
-  font-size: clamp(1.55rem, 4.2vw, 2.15rem);
-  line-height: 1.05;
-  padding: 8px 0 7px;
-  border-top: 1px solid rgba(255,255,255,.16);
-}
-.beliefs li span {
-  display: block;
-  margin-top: 4px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: .95rem;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1.35;
-  color: var(--dim);
-}
-.weeks {
-  margin: 26px auto 0;
-  padding: 0;
-  list-style: none;
-  width: min(520px, 100%);
-  text-align: left;
-}
-.weeks li {
-  display: block;
-  padding: 16px 0 14px;
-  border-top: 1px solid rgba(255,255,255,.16);
-}
-.weeks .when {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 16px;
-  font-size: clamp(1.15rem, 3vw, 1.45rem);
-  letter-spacing: .04em;
-}
-.weeks .preach {
-  display: block;
-  margin-top: 6px;
-  font-size: clamp(1.45rem, 4.4vw, 2.05rem);
-  line-height: 1.02;
-  letter-spacing: .01em;
-}
-.weeks .ref {
-  display: block;
-  margin-top: 6px;
-  font-size: .95rem;
-  color: var(--dim);
-}
-.weeks small {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 650;
-  letter-spacing: .16em;
-  color: rgba(255,255,255,.5);
-}
-.qr {
-  display: block;
-  width: max-content;
-  margin: 26px auto 0;
-  padding: 12px;
-  background: #fff;
-  line-height: 0;
-}
-.qr img { width: min(220px, 58vw); height: auto; }
-button.btn {
-  appearance: none;
-  display: flex;
-  width: max-content;
-  margin-left: auto;
-  margin-right: auto;
-  background: transparent;
-  font-family: Anton, Impact, Haettenschweiler, sans-serif;
-  cursor: pointer;
-}
-.invite-line { margin: 22px 0 0; }
-.invite-line a {
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,.35);
-  font-size: clamp(1.2rem, 3.2vw, 1.6rem);
-  letter-spacing: .03em;
-}
-.frame {
-  margin: 26px auto 0;
-  width: min(640px, 100%);
-  aspect-ratio: 16 / 9;
-  border: 1px solid var(--line);
-  background: #050505;
-  display: grid;
-  place-items: center;
-  color: rgba(255,255,255,.5);
-}
-.frame strong {
-  display: block;
-  font-weight: 400;
-  font-size: clamp(1.6rem, 4vw, 2.2rem);
-  letter-spacing: .04em;
-}
-.frame span {
-  display: block;
-  margin-top: 8px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 58px;
-  margin-top: 22px;
-  padding: 0 22px;
-  border: 1px solid #fff;
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.25rem;
-  letter-spacing: .04em;
-}
-.addr {
-  margin: 22px auto 0;
-  font-size: clamp(1.55rem, 4.4vw, 2.3rem);
-  line-height: 1.05;
-}
-.fine { margin-top: 22px; color: var(--dim); line-height: 1.7; }
-.fine a { text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.35); }
-@media (min-width: 800px) {
-  h1 { font-size: clamp(6rem, 9vw, 10rem); }
-  .slots { grid-template-columns: 1fr 1fr 1fr; }
-  .slots .slot { min-height: 240px; }
-  nav { flex-direction: row; justify-content: space-between; padding-left: 28px; padding-right: 28px; }
-  .links { width: auto; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .ground { transform: none !important; }
-}
-</style>
+<meta name="theme-color" content="#F27A34">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/v2/v2.css?v=2">
+<title>Church 316 · Halesowen</title>
+<meta name="description" content="Church 316 is a church for the curious, the doubters, the followers. Sundays 11:30 at Howley Grange Scout Hut, Halesowen.">
+<meta property="og:title" content="Church 316 · Halesowen">
+<meta property="og:description" content="A church for the curious, the doubters, the followers. Sundays 11:30.">
+<meta property="og:image" content="https://churchthreesixteen.co.uk/assets/v2/hero-1200.jpg">
+<link rel="preload" as="image" href="/assets/v2/hero-1200.webp" imagesrcset="/assets/v2/hero-800.webp 800w, /assets/v2/hero-1200.webp 1200w, /assets/v2/hero-1728.webp 1728w" imagesizes="100vw">
+
 </head>
 <body>
-<div class="ground" id="ground" aria-hidden="true"></div>
-<div class="veil" aria-hidden="true"></div>
-<div class="scrub" id="scrub"></div>
-<nav>
-  <a class="brand" href="#top">Church 316</a>
-  <div class="links">
-    <a href="#invite">Invite</a>
-    <a href="#story">Story</a>
-    <a href="#gathering">Gathering</a>
-    <a href="#beliefs">Beliefs</a>
-    <a href="#podcasts">Podcasts</a>
-    <a href="#weeks">Next weeks</a>
-    <a href="#live">Live</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
 
-<section class="scene" id="top">
-  <div class="copy">
-    <h1><span>CHURCH</span><span>316</span></h1>
-    <p class="lead">For God so loved…</p>
-    <p class="invite-line"><a href="#invite">Invite one person</a></p>
-  </div>
-</section>
+<header class="nav" id="nav">
+  <a class="nav-brand" href="/#home" aria-label="Church 316 home">Church <b>3:16</b></a>
+  <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><span></span><span></span></button>
+  <nav id="nav-links" class="nav-links">
+    <a href="/#about">About</a>
+    <a href="/#sundays">Sundays</a>
+    <a href="/#story">Story</a>
+    <a href="/#invite">Invite</a>
+    <a href="/live/">Live</a>
+    <a href="/podcasts/">Podcast</a>
+    <a href="/#contact">Contact</a>
+  </nav>
+</header>
 
-<section class="scene" id="invite">
-  <div class="copy">
-    <p class="kicker">Bring someone</p>
-    <h2>INVITE<br>ONE.</h2>
-    <p class="sub plain">One person this week. Send this, or let them scan.</p>
-    <a class="qr" href="/one"><img src="/assets/invite-qr.png" width="574" height="574" alt="QR code. Scans to churchthreesixteen.co.uk/one"></a>
-    <button class="btn" type="button" id="sendInvite">Send the invite</button>
-    <p class="fine plain" id="sendNote"><a href="/one">churchthreesixteen.co.uk/one</a></p>
-  </div>
-</section>
+<main>
 
-<section class="scene" id="story">
-  <div class="copy">
-    <p class="kicker">Our story</p>
-    <h2><span>AN ATHEIST</span><span>WHO FOUND</span><span>GOD.</span></h2>
-    <p class="sub plain">Math did not grow up in church. For most of his life he was a committed atheist. Faith came slowly, not in one crisis. For over a decade he has walked with Jesus. Church 316 is for people like him. The curious. The doubters. The followers. Bold on Jesus. Gentle on people.</p>
-    <div class="slot">Your photo</div>
-  </div>
-</section>
-
-<section class="scene" id="gathering">
-  <div class="copy">
-    <p class="kicker">Our gathering</p>
-    <h2><span>SUNDAY</span><span>11:30</span></h2>
-    <p class="sub plain">Until 1:00. Come as you are. Songs, then a talk from the Bible. About an hour and a half. New here? Just walk in.</p>
-    <p class="addr">Howley Grange Scout Hut<br>Bournebrook Crescent<br>Halesowen B62 0HY</p>
-    <div class="slots">
-      <div class="slot">Your photo</div>
-      <div class="slot">Your photo</div>
-      <div class="slot">Your photo</div>
+  <!-- HOME -->
+  <section class="hero" id="home">
+    <picture>
+      <source type="image/webp" srcset="/assets/v2/hero-800.webp 800w, /assets/v2/hero-1200.webp 1200w, /assets/v2/hero-1728.webp 1728w" sizes="100vw">
+      <img class="hero-img" src="/assets/v2/hero-1200.jpg" srcset="/assets/v2/hero-800.jpg 800w, /assets/v2/hero-1200.jpg 1200w, /assets/v2/hero-1728.jpg 1728w" sizes="100vw" width="1728" height="1152" alt="Church: 3:16. A man in a hoodie and cap sits on a stool against an orange and cream background.">
+    </picture>
+    <div class="hero-bottom">
+      <p class="kicker">Halesowen · Sundays 11:30</p>
+      <p class="lede">For the curious.<br>The doubters.<br>The followers.</p>
+      <a class="btn" href="#sundays">See you Sunday</a>
+      <a class="scroll-cue" href="#about" aria-label="Scroll down">↓</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="scene" id="beliefs">
-  <div class="copy">
-    <p class="kicker">Our beliefs</p>
-    <h2>JESUS<br>AT THE CENTRE.</h2>
-    <p class="sub plain">Everything begins and ends with him.</p>
-    <ul class="beliefs">
-      <li>People matter<span class="plain">Every person is loved by God.</span></li>
-      <li>Come as you are<span class="plain">Honest. Imperfect. Growing.</span></li>
-      <li>Open hands<span class="plain">With our time, our money, and our hearts.</span></li>
-      <li>Hope<span class="plain">God is restoring all things. Including us.</span></li>
+  <!-- ABOUT -->
+  <section class="panel cream" id="about">
+    <p class="kicker">01 // Who we are</p>
+    <h2>A church for<br>the curious.</h2>
+    <p class="big">Bold on Jesus.<br>Gentle on people.</p>
+    <p>For the hopeful, the in-between, and anyone still asking questions.</p>
+    <ul class="values">
+      <li><strong>Jesus at the centre</strong><span>Everything begins and ends with him.</span></li>
+      <li><strong>People matter</strong><span>Every person is loved by God.</span></li>
+      <li><strong>Come as you are</strong><span>Honest. Imperfect. Growing.</span></li>
+      <li><strong>Open hands</strong><span>With our time, our money, and our hearts.</span></li>
+      <li><strong>Hope</strong><span>God is restoring all things. Including us.</span></li>
     </ul>
-  </div>
-</section>
+  </section>
 
-<section class="scene" id="podcasts">
-  <div class="copy">
-    <p class="kicker">Our podcasts</p>
-    <h2>THE TALKS<br>SIT HERE.</h2>
-    <p class="sub plain">When a feed is connected, the latest talk plays in this frame. Nothing is invented in the meantime.</p>
-    <div class="frame"><div><strong>PODCAST</strong><span>Waiting for your feed</span></div></div>
-  </div>
-</section>
+  <!-- SUNDAYS -->
+  <section class="panel orange" id="sundays">
+    <p class="kicker">02 // Sundays</p>
+    <h2 class="huge">11:30</h2>
+    <p class="big">Every Sunday, until 1:00.</p>
+    <p>Come as you are. Songs, then a talk from the Bible. About an hour and a half. New here? Just walk in.</p>
+    <address class="place">
+      <strong>Howley Grange Scout Hut</strong>
+      Bournebrook Crescent<br>
+      Halesowen B62 0HY
+    </address>
+    <div class="btn-row">
+      <a class="btn dark" href="https://maps.google.com/?q=Howley+Grange+Scout+Hut,+Bournebrook+Crescent,+Halesowen+B62+0HY" target="_blank" rel="noopener">Open map</a>
+      <a class="btn ghost" href="https://what3words.com/bunny.jars.stews" target="_blank" rel="noopener">///bunny.jars.stews</a>
+    </div>
+  </section>
 
-<section class="scene" id="weeks">
-  <div class="copy">
-    <p class="kicker">Our next weeks</p>
-    <h2>FOUR<br>SUNDAYS.</h2>
+  <!-- NEXT FOUR SUNDAYS -->
+  <section class="panel cream" id="weeks">
+    <p class="kicker">03 // Next weeks</p>
+    <h2>Four<br>Sundays.</h2>
     <ul class="weeks" id="week-list">
-      <li><span class="when">22 Nov <small>11:30</small></span><span class="preach">People of the Word</span><span class="ref plain">Colossians 3:12–17</span></li>
-      <li><span class="when">29 Nov <small>11:30</small></span><span class="preach">Advent Prelude: Hope</span><span class="ref plain">Isaiah 9:2–7</span></li>
-      <li><span class="when">6 Dec <small>11:30</small></span><span class="preach">Promise Kept</span><span class="ref plain">Luke 1:26–38</span></li>
-      <li><span class="when">13 Dec <small>11:30</small></span><span class="preach">Room for Jesus?</span><span class="ref plain">Luke 2:1–7</span></li>
+      <li><span class="when">29 Nov <small>11:30</small></span><span class="preach">Advent Prelude: Hope</span><span class="ref">Isaiah 9:2–7</span></li>
+      <li><span class="when">6 Dec <small>11:30</small></span><span class="preach">Promise Kept</span><span class="ref">Luke 1:26–38</span></li>
+      <li><span class="when">13 Dec <small>11:30</small></span><span class="preach">Room for Jesus?</span><span class="ref">Luke 2:1–7</span></li>
+      <li><span class="when">20 Dec <small>11:30</small></span><span class="preach">Good News of Great Joy</span><span class="ref">Luke 2:8–20</span></li>
     </ul>
-    <p class="sub plain">Same room. Same time. Halesowen.</p>
-  </div>
-</section>
+    <p>Same room. Same time. Halesowen.</p>
+  </section>
 
-<section class="scene" id="live">
-  <div class="copy">
-    <p class="kicker">Our live feed</p>
-    <h2>WATCH<br>SUNDAY.</h2>
-    <div class="frame"><div><strong>LIVE</strong><span>Opens Sunday at 11:30</span></div></div>
-    <a class="btn" href="https://www.facebook.com/profile.php?id=61586615711328">Watch on Facebook</a>
-  </div>
-</section>
+  <!-- STORY -->
+  <section class="panel orange" id="story">
+    <p class="kicker">04 // Math's story</p>
+    <h2>An atheist<br>who found God.</h2>
+    <p>Math did not grow up in church. For most of his life he was a committed atheist.</p>
+    <p>Faith came slowly, not in one crisis. For over a decade he has walked with Jesus.</p>
+    <p class="big">Church 316 is for people like him.</p>
+  </section>
 
-<section class="scene" id="contact">
-  <div class="copy">
-    <p class="kicker">Contact</p>
-    <h2>CHURCH<br>316</h2>
-    <p class="lead">See you Sunday.</p>
-    <p class="addr">Howley Grange Scout Hut<br>Bournebrook Crescent<br>Halesowen B62 0HY</p>
-    <p class="fine plain">
-      <a href="mailto:hello@churchthreesixteen.co.uk">hello@churchthreesixteen.co.uk</a><br>
-      churchthreesixteen.co.uk
-    </p>
-  </div>
-</section>
+  <!-- SCRIPTURE -->
+  <section class="panel cream verse">
+    <p class="kicker">John 3:16 (NKJV)</p>
+    <blockquote>
+      <p>For God so loved the world that He gave His only begotten Son,</p>
+      <p>that whoever believes in Him should not perish but have everlasting life.</p>
+    </blockquote>
+  </section>
 
-<script>
-(function () {
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var scrub = document.getElementById("scrub");
-  var ground = document.getElementById("ground");
-  function place() {
-    var max = document.documentElement.scrollHeight - window.innerHeight;
-    scrub.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
-    if (!ground || reduce) return;
-    var t = max > 0 ? window.scrollY / max : 0;
-    var scale = 1 + t * 0.045;
-    ground.style.transform = "translate3d(0," + ((0.5 - t) * 8).toFixed(2) + "vh,0) scale(" + scale.toFixed(3) + ")";
-  }
-  window.addEventListener("scroll", place, { passive: true });
-  window.addEventListener("resize", place);
-  place();
+  <!-- INVITE ONE -->
+  <section class="panel orange" id="invite">
+    <p class="kicker">05 // Bring someone</p>
+    <h2>Invite<br>one.</h2>
+    <p class="big">One person this week.</p>
+    <p>Send this, or let them scan.</p>
+    <a class="qr" href="/one"><img src="/assets/invite-qr.png" width="574" height="574" alt="QR code. Scans to churchthreesixteen.co.uk/one"></a>
+    <button class="btn dark" type="button" id="sendInvite">Share the invite</button>
+    <p class="fine" id="sendNote"><a href="/one">churchthreesixteen.co.uk/one</a></p>
+  </section>
 
-  /* Same Sundays and titles as assets/site.js. Drops a Sunday after 13:00 London. */
-  var PLAN = [
-    { date: "2026-09-06", title: "Room at the Table", ref: "Luke 14:15–24" },
-    { date: "2026-09-13", title: "Curious Is Welcome", ref: "John 1:35–46" },
-    { date: "2026-09-20", title: "The Name on Our Door", ref: "John 3:16–17" },
-    { date: "2026-09-27", title: "Bring Them With You", ref: "Mark 2:1–12" },
-    { date: "2026-10-04", title: "The Call", ref: "Matthew 4:18–22" },
-    { date: "2026-10-11", title: "Restored", ref: "John 21:9–17" },
-    { date: "2026-10-18", title: "The Net", ref: "Luke 5:1–11" },
-    { date: "2026-10-25", title: "Sent", ref: "Matthew 28:16–20" },
-    { date: "2026-11-01", title: "Why This Book?", ref: "2 Timothy 3:14–17" },
-    { date: "2026-11-08", title: "When God Feels Quiet", ref: "Psalm 13" },
-    { date: "2026-11-15", title: "Trust Over Control", ref: "Proverbs 3:5–6 · Romans 12:1–2" },
-    { date: "2026-11-22", title: "People of the Word", ref: "Colossians 3:12–17" },
-    { date: "2026-11-29", title: "Advent Prelude: Hope", ref: "Isaiah 9:2–7" },
-    { date: "2026-12-06", title: "Promise Kept", ref: "Luke 1:26–38" },
-    { date: "2026-12-13", title: "Room for Jesus?", ref: "Luke 2:1–7" },
-    { date: "2026-12-20", title: "Good News of Great Joy", ref: "Luke 2:8–20" },
-    { date: "2026-12-27", title: "What Will You Do?", ref: "Matthew 2:1–12" },
-    { date: "2027-01-03", title: "Mercies, Not Resolutions", ref: "Lamentations 3:22–24" },
-    { date: "2027-01-10", title: "One Step Toward Jesus", ref: "Mark 1:14–20" },
-    { date: "2027-01-17", title: "Practices That Form Us", ref: "Acts 2:42–47" },
-    { date: "2027-01-24", title: "When Community Costs", ref: "Hebrews 10:24–25" },
-    { date: "2027-01-31", title: "Stay Soft", ref: "Hebrews 3:12–15" },
-    { date: "2027-02-07", title: "Loved First", ref: "1 John 4:7–12" },
-    { date: "2027-02-14", title: "Love Your Neighbours", ref: "Luke 10:25–37" },
-    { date: "2027-02-21", title: "Church Like Family", ref: "Romans 12:9–18" },
-    { date: "2027-02-28", title: "Still Sent", ref: "John 20:19–23" }
-  ];
-  var SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  function esc(s) {
-    return String(s).replace(/[&<>]/g, function (c) {
-      return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c];
-    });
-  }
-  var parts = new Intl.DateTimeFormat("en-GB", {
-    timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit",
-    hour: "2-digit", minute: "2-digit", hourCycle: "h23"
-  }).formatToParts(new Date());
-  var map = {};
-  parts.forEach(function (p) { if (p.type !== "literal") map[p.type] = p.value; });
-  var iso = map.year + "-" + map.month + "-" + map.day;
-  var minutes = Number(map.hour) * 60 + Number(map.minute);
-  var next = PLAN.filter(function (s) {
-    return s.date > iso || (s.date === iso && minutes < 13 * 60);
-  }).slice(0, 4);
-  var weeks = document.getElementById("week-list");
-  if (weeks && next.length) {
-    weeks.innerHTML = next.map(function (s) {
-      var b = s.date.split("-");
-      return "<li><span class=\"when\">" + Number(b[2]) + " " + SHORT[Number(b[1]) - 1] +
-        " <small>11:30</small></span><span class=\"preach\">" + esc(s.title) +
-        "</span><span class=\"ref plain\">" + esc(s.ref) + "</span></li>";
-    }).join("");
-  }
-  var send = document.getElementById("sendInvite");
-  var note = document.getElementById("sendNote");
-  var inviteUrl = "https://churchthreesixteen.co.uk/one";
-  var inviteText = "Come with me on Sunday. Church 316, 11:30, Howley Grange Scout Hut, Halesowen.";
-  if (send) {
-    send.addEventListener("click", function () {
-      var payload = { title: "Church 316", text: inviteText, url: inviteUrl };
-      if (navigator.share) {
-        navigator.share(payload).catch(function () {});
-        return;
-      }
-      var full = inviteText + " " + inviteUrl;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(full).then(function () {
-          if (note) note.textContent = "Link copied. Send it to one person.";
-        });
-        return;
-      }
-      window.prompt("Copy this and send it to one person", full);
-    });
-  }
-})();
-</script>
+  <!-- WATCH -->
+  <section class="panel black" id="watch">
+    <p class="kicker">06 // Live and podcast</p>
+    <h2>Watch<br>Sunday.</h2>
+    <p>The live feed opens on Sunday at 11:30.</p>
+    <div class="btn-row">
+      <a class="btn" href="/live/">Live stream</a>
+      <a class="btn ghost light" href="/podcasts/">Podcast</a>
+    </div>
+  </section>
+
+  <!-- GET INVOLVED -->
+  <section class="panel cream" id="involved">
+    <p class="kicker">07 // Get involved</p>
+    <h2>Lend a hand.</h2>
+    <p>Want to help make Sundays happen? Find out how to volunteer.</p>
+    <a class="btn dark" href="https://churchthreesixteen.my.canva.site/" target="_blank" rel="noopener">Volunteer</a>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="panel black" id="contact">
+    <p class="kicker">08 // Contact</p>
+    <h2>Say hello.</h2>
+    <p>Got a question? Want to let us know you're coming? Drop us a line.</p>
+    <a class="btn orange-btn" href="mailto:hello@churchthreesixteen.co.uk">hello@churchthreesixteen.co.uk</a>
+    <p><a class="link" href="https://www.facebook.com/profile.php?id=61586615711328" target="_blank" rel="noopener">Find us on Facebook</a></p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p>Church 316 is a church for the curious, the doubters, the followers. Why not come and join us this Sunday?</p>
+  <p class="mono">Sundays 11:30 · Howley Grange Scout Hut · Bournebrook Crescent, Halesowen B62 0HY</p>
+  <p class="mono">© Church Three Sixteen · C316</p>
+</footer>
+<script src="/assets/v2/site-v2.js?v=2" defer></script>
 </body>
 </html>
