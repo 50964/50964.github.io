@@ -112,6 +112,31 @@
     items.forEach(function (it, i) { it.classList.add("reveal"); it.style.transitionDelay = (i % 3) * 80 + "ms"; io.observe(it); });
   }
 
+  /* Finale: fit #JUSTONEDROP edge to edge */
+  var fw = document.querySelector(".fin-word");
+  function fit(el, target) {
+    el.style.fontSize = "100px";
+    var w = el.scrollWidth || el.getBoundingClientRect().width;
+    if (w) el.style.fontSize = (100 * target / w) + "px";
+  }
+  function fitAll() {
+    if (!fw) return;
+    var target = fw.parentNode.clientWidth * 0.98;
+    var spans = fw.querySelectorAll(".fl");
+    if (window.matchMedia("(min-width: 700px)").matches) {
+      spans.forEach(function (s) { s.style.fontSize = ""; });
+      fw.style.width = "max-content"; fit(fw, target); fw.style.width = "";
+    } else {
+      fw.style.fontSize = "";
+      spans.forEach(function (s) { s.style.display = "inline-block"; fit(s, target); s.style.display = ""; });
+    }
+  }
+  if (fw) {
+    fitAll();
+    window.addEventListener("resize", fitAll);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitAll);
+  }
+
   /* Nav */
   var t = document.querySelector(".nav-toggle"), n = document.getElementById("nav");
   if (t && n) {
