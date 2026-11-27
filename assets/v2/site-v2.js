@@ -42,6 +42,14 @@
   var next = PLAN.filter(function (s) { return s.date > now.iso || (s.date === now.iso && now.mins < 13 * 60); });
   function label(d) { var b = d.split("-"); return Number(b[2]) + " " + SHORT[Number(b[1]) - 1]; }
 
+  /* /one invite page: next Sunday from the same plan */
+  var oneWhen = document.getElementById("oneWhen");
+  if (oneWhen && next[0]) {
+    oneWhen.textContent = (next[0].date === now.iso ? "Today" : "Sunday " + label(next[0].date)) + " · 11:30";
+    document.getElementById("onePreach").textContent = next[0].title;
+    document.getElementById("oneRef").textContent = next[0].ref;
+  }
+
   var list = document.getElementById("week-list");
   if (list && next.length) {
     list.innerHTML = next.slice(0, 4).map(function (s) {
